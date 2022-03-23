@@ -15,6 +15,6 @@ namespace transport {
 			Bus SplitBus(TransportCatalogue& TC, std::string_view str);
 		}
 
-		void read(TransportCatalogue& TC);
+		void read(TransportCatalogue& TC, std::istream& input);
 	}
 }

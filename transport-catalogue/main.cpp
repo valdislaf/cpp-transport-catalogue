@@ -11,8 +11,8 @@ using namespace transport;
 int main() { 
 
     TransportCatalogue TC;
-    input::read(TC);
-    output::out(TC); 
+    input::read(TC, std::cin);
+    output::out(TC, std::cin);
 
     return 0;
 }

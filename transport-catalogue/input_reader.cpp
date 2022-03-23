@@ -116,16 +116,16 @@ namespace transport {
             }
         }
 
-        void read(TransportCatalogue& TC) {
+        void read(TransportCatalogue& TC, std::istream& input) {
             string n;
-            std::getline(std::cin, n);
+            std::getline(input, n);
 
             if (n != "") {
                 std::string str;
                 vector<string>buses;
 
                 for (int i = 0; i < stoi(n); ++i) {
-                    std::getline(std::cin, str);
+                    std::getline(input, str);
                     if (str != "") {
                         auto it1 = str.find_first_not_of(' ');
                         str = str.substr(it1);

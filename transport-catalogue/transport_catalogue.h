@@ -1,5 +1,6 @@
 #pragma once
 
+#include <algorithm>
 #include <deque>
 #include <iomanip>
 #include <iostream>
@@ -24,60 +25,55 @@ namespace transport {
             double latitude_;
             double longitude_;
             std::unordered_map<std::string, uint64_t>tostop_;
-            auto AsTuple() const {
-                return tie(name_, latitude_, longitude_, tostop_);
-            }
-
+            std::tuple<std::string, 
+                double,
+                double, 
+                std::unordered_map<std::string, uint64_t>> AsTuple() const; 
+          
         public:
 
-            Stop(std::string_view name,
-                double latitude,
-                double longitude)
-                :name_(name),
-                latitude_(latitude),
-                longitude_(longitude) {
-            }
+            Stop(std::string_view name, 
+                double latitude, 
+                double longitude);
 
-            Stop(std::string_view name,
-                double latitude,
-                double longitude, std::unordered_map<std::string, uint64_t>tostop)
-                :name_(name),
-                latitude_(latitude),
-                longitude_(longitude),
-                tostop_(tostop) {
-            }
+            Stop(std::string_view name, 
+                double latitude, 
+                double longitude, 
+                std::unordered_map<std::string, 
+                uint64_t>tostop);
+               
+            size_t Hash() const; 
 
-            size_t Hash() const {
-                std::hash<double> d_hasher;
-                auto h1 = d_hasher(latitude_);
-                auto h2 = d_hasher(longitude_);
-                return  static_cast<size_t>(h1 * 37 + h2);
-            }
+            std::string_view name() const;
 
-            std::string_view name() const {
-                return name_;
-            }
+            double latitude() const; 
 
-            double latitude() const {
-                return latitude_;
-            }
+            double longitude() const; 
 
-            double longitude() const {
-                return longitude_;
-            }
+            std::unordered_map<std::string, uint64_t> tostop() const; 
 
-            std::unordered_map<std::string, uint64_t> tostop() const {
-                return tostop_;
-            }
-
-            bool operator==(const Stop& other) const {
-                return AsTuple() == other.AsTuple();
-            }
+            bool operator==(const Stop& other) const;
         };
 
         struct Bus {
             std::string name;
             std::deque<const Stop*>stops;
+        };
+
+        struct Routeinfo {
+            const Bus* bus;
+            uint64_t routelength;
+            std::string_view bus_name;
+            size_t bus_stops_size;
+            size_t unique_stops;
+            double curvature;
+        };
+
+        struct Stopinfo {
+            std::string_view name_bus;
+            bool found;
+            std::set<std::string_view> sw;
+            size_t size;
         };
 
         class TransportCatalogue
@@ -93,31 +89,32 @@ namespace transport {
 
             void AddBus(Bus&& bus);
 
-            size_t GetUniqs(const Bus* bus);
+            size_t GetUnique(const Bus* bus);
 
             double GetDistance(const Bus* bus);
 
-            std::unordered_map<const Stop*, std::deque<const Bus*>> GetListBuses();
+            const Stopinfo GetListBuses(std::string_view str);
 
             uint64_t GetRouteLength(const Bus* bus);
 
             double GetCurvature(const Bus* bus, uint64_t routelength);
 
+            const Routeinfo GetRouteinfo(std::string_view str);
+
         private:
 
-            std::deque<Bus> buses_;
-            std::deque<Stop> stops_;
+            std::deque<Bus> dequebuses_;
+            std::unordered_map<std::string_view, const Bus*> buses_;
+            std::deque<Stop> dequestops_;
+            std::unordered_map<std::string_view, const Stop*> stops_;
             std::unordered_map<const Stop*, std::deque<const Bus*>> stopbuses_;
 
         };
     }
 
-    namespace detail {
-        
+    namespace detail {        
         struct HasherBus {
-            size_t operator()(const catalogue::Stop* stop) const {
-                return static_cast<size_t>((*stop).Hash());
-            }
+            size_t operator()(const catalogue::Stop* stop) const;
         };
 
     }

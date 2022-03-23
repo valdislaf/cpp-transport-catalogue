@@ -1,19 +1,31 @@
 #pragma once
  
-#include "transport_catalogue.h"
- 
-namespace transport {
+#include  <string>
+#include  <iostream>
+#include  <ostream>
+#include <sstream>
 
+#include "transport_catalogue.h"
+
+namespace transport {
+	
 	using namespace catalogue;
 
 	namespace output {
 
 		namespace  requestseparator {
 
-			void Query(TransportCatalogue& TC, std::string_view str);
+			std::ostream& operator<<(std::ostream& out, const  Routeinfo& routeinfo);
+
+			std::ostream& operator<<(std::ostream& out, const  Stopinfo& request);			
+
+			class RequestHandler {
+			public:
+			void handle(TransportCatalogue& TC, std::string_view str);
+			};
 		}
 
-		void out(TransportCatalogue& TC);
+		void out(TransportCatalogue& TC, std::istream& input);
 
 	}
 }
