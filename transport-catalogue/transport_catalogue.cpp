@@ -40,7 +40,7 @@ namespace transport {
 
         }
 
-        const Stopinfo TransportCatalogue::GetListBuses(string_view str)
+        const StopInfo TransportCatalogue::GetListBuses(string_view str)
         {
             bool found = false;
             std::set<string_view> sw{};
@@ -79,7 +79,7 @@ namespace transport {
             return static_cast<double>(routelength) / static_cast<double>(GetDistance(bus));
         }
 
-        const Routeinfo TransportCatalogue::GetRouteinfo(string_view str)
+        const RouteInfo TransportCatalogue::GetRouteInfo(string_view str)
         {
             const Bus* bus = GetBus(str);
             if (bus == nullptr) { return { bus,0,str ,0,0,0}; }

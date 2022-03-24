@@ -15,9 +15,9 @@ namespace transport {
 
 		namespace  requestseparator {
 
-			std::ostream& operator<<(std::ostream& out, const  Routeinfo& routeinfo);
+			std::ostream& operator<<(std::ostream& out, const  RouteInfo& routeinfo);
 
-			std::ostream& operator<<(std::ostream& out, const  Stopinfo& request);			
+			std::ostream& operator<<(std::ostream& out, const  StopInfo& request);			
 
 			class RequestHandler {
 			public:

@@ -60,7 +60,7 @@ namespace transport {
             std::deque<const Stop*>stops;
         };
 
-        struct Routeinfo {
+        struct RouteInfo {
             const Bus* bus;
             uint64_t routelength;
             std::string_view bus_name;
@@ -69,7 +69,7 @@ namespace transport {
             double curvature;
         };
 
-        struct Stopinfo {
+        struct StopInfo {
             std::string_view name_bus;
             bool found;
             std::set<std::string_view> sw;
@@ -93,13 +93,13 @@ namespace transport {
 
             double GetDistance(const Bus* bus);
 
-            const Stopinfo GetListBuses(std::string_view str);
+            const StopInfo GetListBuses(std::string_view str);
 
             uint64_t GetRouteLength(const Bus* bus);
 
             double GetCurvature(const Bus* bus, uint64_t routelength);
 
-            const Routeinfo GetRouteinfo(std::string_view str);
+            const RouteInfo GetRouteInfo(std::string_view str);
 
         private:
 

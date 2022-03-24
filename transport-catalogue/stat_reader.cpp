@@ -10,7 +10,7 @@ namespace transport {
 
         namespace  requestseparator {
 
-            std::ostream& operator<<(std::ostream& out, const  Routeinfo& routeinfo) {
+            std::ostream& operator<<(std::ostream& out, const  RouteInfo& routeinfo) {
 
                 if (routeinfo.bus == nullptr) {
                     out << "Bus " << routeinfo.bus_name
@@ -34,7 +34,7 @@ namespace transport {
                 return out;
             }
 
-            std::ostream& operator<<(std::ostream& out, const Stopinfo& request)
+            std::ostream& operator<<(std::ostream& out, const StopInfo& request)
             {
                 out << "Stop ";
                 out << request.name_bus << ": ";
@@ -52,9 +52,8 @@ namespace transport {
 
             void RequestHandler::handle(TransportCatalogue& TC, std::string_view str)
             {
-                if (str.substr(0, 3) == "Bus") {
-                    str = str.substr(4);                   
-                    cout << TC.GetRouteinfo(str);
+                if (str.substr(0, 3) == "Bus") {                                      
+                    cout << TC.GetRouteInfo(str.substr(4));
                 }
 
                 if (str.substr(0, 4) == "Stop") {
