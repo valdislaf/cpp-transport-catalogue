@@ -4,65 +4,24 @@
 #include <deque>
 #include <iomanip>
 #include <iostream>
+#include <numeric>
 #include <set>
-#include <string>
 #include <string_view>
+#include <string>
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
 
+#include "domain.h"
 #include "geo.h"
 
 namespace transport {
 
     namespace catalogue {
 
-        class Stop {
-
-        private:
-
-            std::string name_;
-            double latitude_;
-            double longitude_;
-            std::unordered_map<std::string, uint64_t>tostop_;
-            std::tuple<std::string, 
-                double,
-                double, 
-                std::unordered_map<std::string, uint64_t>> AsTuple() const; 
-          
-        public:
-
-            Stop(std::string_view name, 
-                double latitude, 
-                double longitude);
-
-            Stop(std::string_view name, 
-                double latitude, 
-                double longitude, 
-                std::unordered_map<std::string, 
-                uint64_t>tostop);
-               
-            size_t Hash() const; 
-
-            std::string_view name() const;
-
-            double latitude() const; 
-
-            double longitude() const; 
-
-            std::unordered_map<std::string, uint64_t> tostop() const; 
-
-            bool operator==(const Stop& other) const;
-        };
-
-        struct Bus {
-            std::string name;
-            std::deque<const Stop*>stops;
-        };
-
         struct RouteInfo {
             const Bus* bus;
-            uint64_t routelength;
+            double routelength;
             std::string_view bus_name;
             size_t bus_stops_size;
             size_t unique_stops;
@@ -82,9 +41,9 @@ namespace transport {
         public:
 
             const Bus* GetBus(std::string_view stop);
-
+            const std::deque<const Bus*> GetBuses();
             const Stop* GetStop(std::string_view stop);
-
+            const std::deque<const Stop*> GetStops();
             void AddStop(Stop&& stop);
 
             void AddBus(Bus&& bus);
@@ -95,9 +54,9 @@ namespace transport {
 
             const StopInfo GetListBuses(std::string_view str);
 
-            uint64_t GetRouteLength(const Bus* bus);
+            double GetRouteLength(const Bus* bus);
 
-            double GetCurvature(const Bus* bus, uint64_t routelength);
+            double GetCurvature(const Bus* bus, int routelength);
 
             const RouteInfo GetRouteInfo(std::string_view str);
 
@@ -112,9 +71,9 @@ namespace transport {
         };
     }
 
-    namespace detail {        
+    namespace detail {
         struct HasherBus {
-            size_t operator()(const catalogue::Stop* stop) const;
+            size_t operator()(const Stop* stop) const;
         };
 
     }
