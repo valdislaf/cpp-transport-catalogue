@@ -35,12 +35,10 @@ namespace svg {
         out << "/>"sv;
     }
 
-    Polyline& Polyline::AddPoint(Point point)
-    {
+    Polyline& Polyline::AddPoint(Point point) {
         points_.push_back(point);
         return *this;
     }
-
 
     void Polyline::RenderObject(const RenderContext& context) const
     {
@@ -63,48 +61,39 @@ namespace svg {
 
     }
 
-
-    Text& Text::SetPosition(Point pos)
-    {
+    Text& Text::SetPosition(Point pos) {
         pos_ = pos;
         return *this;
 
     }
 
-    Text& Text::SetOffset(Point offset)
-    {
+    Text& Text::SetOffset(Point offset) {
         offset_ = offset;
         return *this;
     }
 
-    Text& Text::SetFontSize(uint32_t size)
-    {
+    Text& Text::SetFontSize(uint32_t size) {
         size_ = size;
         return *this;
     }
 
-    Text& Text::SetFontFamily(std::string font_family)
-    {
+    Text& Text::SetFontFamily(std::string font_family) {
         font_family_ = font_family;
         return *this;
     }
 
-    Text& Text::SetFontWeight(std::string font_weight)
-    {
+    Text& Text::SetFontWeight(std::string font_weight) {
         font_weight_ = font_weight;
         return *this;
     }
 
-    Text& Text::SetData(std::string data)
-    {
+    Text& Text::SetData(std::string data) {
         data_ = data;
         return *this;
     }
 
-    void Text::RenderObject(const RenderContext& context) const
-    {
+    void Text::RenderObject(const RenderContext& context) const {
         auto& out = context.out;
-
         out << "  <text"sv;
         RenderAttrs(context.out);
         out << " x=\""sv;
@@ -132,8 +121,7 @@ namespace svg {
     }
 
     std::ostream& operator<<(std::ostream& out, const StrokeLineCap& line_cap) {
-        switch (line_cap)
-        {
+        switch (line_cap) {
         case StrokeLineCap::BUTT: return out << "butt"s;
         case StrokeLineCap::ROUND: return out << "round"s;
         case StrokeLineCap::SQUARE: return out << "square"s;
@@ -142,8 +130,7 @@ namespace svg {
     }
 
     std::ostream& operator<<(std::ostream& out, const StrokeLineJoin& line_join) {
-        switch (line_join)
-        {
+        switch (line_join) {
         case StrokeLineJoin::ARCS: return out << "arcs"s;
         case StrokeLineJoin::BEVEL: return out << "bevel"s;
         case StrokeLineJoin::MITER: return out << "miter"s;
@@ -153,8 +140,7 @@ namespace svg {
         }
     }
 
-    void Document::Render(std::ostream& out) const
-    {
+    void Document::Render(std::ostream& out) const {
         out << "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"sv << std::endl;
         out << "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">"sv << std::endl;
         RenderContext ptx(out, 0, 0);
@@ -163,16 +149,7 @@ namespace svg {
         }
         out << "</svg>"sv;
     }
-    void Document::RenderSVG(std::ostream& out) const
-    {
-        /*out << "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"sv << std::endl;
-        out << "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">"sv << std::endl;*/
-        RenderContext ptx(out, 0, 0);
-        for (auto& doc : objects_) {
-            doc.get()->Render(ptx);
-        }
-        /*out << "</svg>"sv;*/
-    }
+
     Rgb::Rgb(uint8_t red, uint8_t green, uint8_t blue) :red(red), green(green), blue(blue) {
     }
 
@@ -182,6 +159,7 @@ namespace svg {
     void OstreamColorPrinter::operator()(std::monostate) const {
         out << "none"sv;
     }
+
     void OstreamColorPrinter::operator()(std::string str) const {
         out << str;
     }

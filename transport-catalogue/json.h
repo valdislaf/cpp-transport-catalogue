@@ -15,7 +15,7 @@ namespace json {
 class Node;
 using Dict = std::map<std::string, Node>;
 using Array = std::vector<Node>;
-using Node_JSON = std::variant<std::nullptr_t, Array, Dict, bool, int, double, std::string>;
+using NodeJson = std::variant<std::nullptr_t, Array, Dict, bool, int, double, std::string>;
 
 struct OstreamNodePrinter {
     std::ostream& out;
@@ -42,17 +42,9 @@ public:
     using runtime_error::runtime_error;
 };
 
-class Node {
-public:
-    explicit Node() = default;
-
-    template<typename T>
-    Node(T value)
-        :json_node_(std::move(value)) {
-    }   
-    
-    explicit Node(Array&& value);
-    explicit Node(Dict&& value);
+class Node : NodeJson {
+    using variant::variant;
+public:  
     bool operator == (const Node& rhs) const;
     bool operator != (const Node& rhs) const;
     bool IsNull() const;
@@ -69,18 +61,16 @@ public:
     const Dict& AsMap() const;
     int AsInt() const;
     const std::string& AsString() const;
-    const  Node_JSON& GetData() const;
-
-protected:
-    Node_JSON json_node_;   
+    const  NodeJson& GetData() const;
 };
 
 class Document :public Node {
 public:
+
     explicit Document(Node root);
 
     const Node& GetRoot() const;
-    const  Node_JSON& GetData() const;
+    const  NodeJson& GetData() const;
 
     bool operator == (const Document& rhs) const;
     bool operator != (const Document& rhs) const;
@@ -92,7 +82,6 @@ private:
 Node LoadNumber(std::istream& input);
 
 Document Load(std::istream& input);
-
 
 void Print(const Document& doc, std::ostream& output);
 

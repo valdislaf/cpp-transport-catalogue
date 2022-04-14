@@ -62,11 +62,11 @@ namespace transport {
 
         private:
 
-            std::deque<Bus> dequebuses_;
+            std::deque<Bus> deque_buses_;
             std::unordered_map<std::string_view, const Bus*> buses_;
-            std::deque<Stop> dequestops_;
+            std::deque<Stop> deque_stops_;
             std::unordered_map<std::string_view, const Stop*> stops_;
-            std::unordered_map<const Stop*, std::deque<const Bus*>> stopbuses_;
+            std::unordered_map<const Stop*, std::deque<const Bus*>> stop_buses_;
 
         };
     }

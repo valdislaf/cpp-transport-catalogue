@@ -13,23 +13,19 @@ namespace transport {
             return nullptr;
         }
 
-        const std::deque<const Bus*> TransportCatalogue::GetBuses()
-        {
-            
+        const std::deque<const Bus*> TransportCatalogue::GetBuses() {
+
             std::deque<const Bus*>buses;
             std::set<std::string_view>buses_names;
 
             for (auto& st : buses_) {
-                buses_names.insert(st.first);                
+                buses_names.insert(st.first);
             }
             for (auto& st : buses_names) {
                 buses.push_back(buses_.at(st));
             }
-
-
             return buses;
         }
-
 
         const Stop* TransportCatalogue::GetStop(string_view stop) {
             if (stops_.count(stop) != 0) {
@@ -52,28 +48,26 @@ namespace transport {
 
             return stops;
         }
-        
 
         void TransportCatalogue::AddStop(Stop&& stop) {
-            dequestops_.push_back(move(stop));
-            stopbuses_[&dequestops_.back()];
-            stops_[dequestops_.back().name()] = &dequestops_.back();
+            deque_stops_.push_back(move(stop));
+            stop_buses_[&deque_stops_.back()];
+            stops_[deque_stops_.back().name()] = &deque_stops_.back();
         }
 
         void TransportCatalogue::AddBus(Bus&& bus) {
-            dequebuses_.push_back(move(bus));
-            for (auto s : dequebuses_.back().stops) {
-                stopbuses_[s].push_back(&dequebuses_.back());
+            deque_buses_.push_back(move(bus));
+            for (auto s : deque_buses_.back().stops) {
+                stop_buses_[s].push_back(&deque_buses_.back());
             }
-            buses_[dequebuses_.back().name] = &dequebuses_.back();
+            buses_[deque_buses_.back().name] = &deque_buses_.back();
 
         }
 
-        const StopInfo TransportCatalogue::GetListBuses(string_view str)
-        {
+        const StopInfo TransportCatalogue::GetListBuses(string_view str) {
             bool found = false;
             std::set<string_view> sw{};
-            for (auto& s : stopbuses_) {
+            for (auto& s : stop_buses_) {
                 if (s.first->name() == str) {
                     found = true;
                     for (auto a : s.second) {
@@ -85,8 +79,7 @@ namespace transport {
             return { str, found , sw, sw.size() };
         }
 
-        double TransportCatalogue::GetRouteLength(const Bus* bus)
-        {
+        double TransportCatalogue::GetRouteLength(const Bus* bus) {
             double len = 0.0;
 
             for (int i = 0; i < bus->stops.size() - 1; ++i) {
@@ -102,29 +95,25 @@ namespace transport {
             return len;
         }
 
-        double TransportCatalogue::GetCurvature(const Bus* bus, int routelength)
-        {
+        double TransportCatalogue::GetCurvature(const Bus* bus, int routelength) {
             return static_cast<double>(routelength) / static_cast<double>(GetDistance(bus));
         }
 
-        const RouteInfo TransportCatalogue::GetRouteInfo(string_view str)
-        {
+        const RouteInfo TransportCatalogue::GetRouteInfo(string_view str) {
             const Bus* bus = GetBus(str);
             if (bus == nullptr) { return { bus,0,str ,0,0,0 }; }
             double routelength = GetRouteLength(bus);
             return { bus, routelength, str, bus->stops.size(), GetUnique(bus), GetCurvature(bus, routelength) };
         }
 
-        size_t TransportCatalogue::GetUnique(const Bus* bus)
-        {
+        size_t TransportCatalogue::GetUnique(const Bus* bus) {
             std::unordered_set<const Stop*, transport::detail::HasherBus> stops_uniq_;
             stops_uniq_.insert(bus->stops.begin(), bus->stops.end());
 
             return stops_uniq_.size();
         }
 
-        double TransportCatalogue::GetDistance(const Bus* bus)
-        {
+        double TransportCatalogue::GetDistance(const Bus* bus) {
             return  transform_reduce(
                 next(bus->stops.begin()), bus->stops.end(), bus->stops.begin(),  // входной диапазон
                 0.0,  // начальное значение
@@ -133,7 +122,8 @@ namespace transport {
                     return geocoordinates::ComputeDistance(
                         { (*lhs).latitude(),(*lhs).longitude() },
                         { (*rhs).latitude(),(*rhs).longitude() }
-                    ); }  // map-операция
+                    );
+                }  // map-операция
             );
         }
 

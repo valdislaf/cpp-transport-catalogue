@@ -17,21 +17,23 @@
 #include "json_reader.h"
 #include "transport_catalogue.h"
 #include "map_renderer.h"
-
+#include "request_handler.h"
 using namespace transport::catalogue;
 using namespace std::literals;
 using namespace svg;
 
-void AddStopJson(TransportCatalogue& TC, json::Node LoadStop);
+std::vector<json::Node> JsonBuses(const RouteInfo& response, json::Node& doc);
 
-void AddBusJson(TransportCatalogue& TC, json::Node LoadBus);
+std::vector<json::Node> JsonStops(const StopInfo& response, json::Node& doc);
 
-void FormatResponse(const json::Document& LoadInput, TransportCatalogue& TC);
+void FormatResponse(const json::Document& load_input, RequestHandler& handler, std::ostream& out);
 
-Color GetColorFromDict(json::Node color);
+std::string PrintSVG(std::istream& input);
 
-RenderSettings SetRenerSettings(json::Dict render_settings);
+std::vector<json::Node> JsonMap(RequestHandler& handler, json::Node& doc, json::Document& load_input);
 
+void AddStopJson(RequestHandler& handler, json::Node load_stop);
 
+void AddBusJson(RequestHandler& handler, json::Node load_bus);
 
-void JsonReader(std::istream& in);
+void JsonReader(std::istream& in, std::ostream& out);

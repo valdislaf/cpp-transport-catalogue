@@ -67,7 +67,6 @@ namespace svg {
 
     std::ostream& operator<<(std::ostream& out, const StrokeLineJoin& line_join);
 
-
     struct Point {
         Point() = default;
         Point(double x, double y)
@@ -143,7 +142,6 @@ namespace svg {
         virtual ~Drawable() = default;
     };
 
-
     template <typename Owner>
     class PathProps {
 
@@ -177,11 +175,8 @@ namespace svg {
     protected:
         ~PathProps() = default;
 
-
-
         void RenderAttrs(std::ostream& out) const {
             using namespace std::literals;
-
 
             if (fill_color_) {
                 std::ostringstream strm;
@@ -195,13 +190,14 @@ namespace svg {
                 out << " stroke=\""sv << strm.str() << "\""sv;
             }
 
-
             if (stroke_width_) {
                 out << " stroke-width=\""sv << *stroke_width_ << "\""sv;
             }
+
             if (stroke_line_cap_) {
                 out << " stroke-linecap=\""sv; out << *stroke_line_cap_; out << "\""sv;
             }
+
             if (stroke_line_join_) {
                 out << " stroke-linejoin=\""sv; out << *stroke_line_join_; out << "\""sv;
             }
@@ -312,8 +308,7 @@ namespace svg {
             objects_.emplace_back(std::move(obj));
         }
 
-        void Render(std::ostream& out) const;
-        void RenderSVG(std::ostream& out) const;       
+        void Render(std::ostream& out) const;         
 
     };
 

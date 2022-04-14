@@ -1,10 +1,16 @@
 #pragma once
 
-#include "svg.h"
-
 #include <algorithm>
 #include <deque>
+
 #include "geo.h"
+#include "json.h"
+#include "json_reader.h"
+#include "svg.h"
+#include "transport_catalogue.h"
+#include "request_handler.h"
+
+using namespace transport::catalogue;
 /*
  * В этом файле вы можете разместить код, отвечающий за визуализацию карты маршрутов в формате SVG.
  * Визуализация маршрутов вам понадобится во второй части итогового проекта.
@@ -14,8 +20,7 @@
 using namespace svg;
 using namespace transport::geocoordinates;
 
-struct RenderSettings
-{
+struct RenderSettings{
     double width;
     double height;
     double padding;
@@ -30,10 +35,8 @@ struct RenderSettings
     Point  bus_label_offset;
 };
 
-
  const double EPSILON = 1e-6;
  bool IsZero(double value);
-
 
 class SphereProjector {
 public:
@@ -90,4 +93,35 @@ private:
     double min_lon_ = 0;
     double max_lat_ = 0;
     double zoom_coeff_ = 0;
+};
+
+Color GetColorFromDict(json::Node color);
+
+RenderSettings SetRenerSettings(json::Dict render_settings);
+
+std::deque<Coordinates> GetCoordStops(const std::deque<const Stop*>& stops, const std::deque<const Bus*>& buses);
+
+void AddBusesToXml(svg::Document& doc_svg, 
+    RenderSettings& rs, 
+    SphereProjector& scale, 
+    const std::deque<const Bus*>& buses
+);
+
+void AddStopsToXml(svg::Document& doc_svg,
+    RenderSettings& rs,
+    SphereProjector& scale,
+    const std::deque<const Bus*>& buses,
+    const std::deque<const Stop*>& stops
+);
+
+class RenderXml {
+public:
+    RenderXml(RequestHandler& handler, json::Dict render_settings);
+
+    svg::Document&& GetXml() {
+       return std::move(doc_svg_);
+    }
+
+private:
+    svg::Document doc_svg_;
 };

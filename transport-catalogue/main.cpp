@@ -20,9 +20,8 @@ int main() {
     std::ifstream is;
     is.open(full_path.c_str(), std::ios::in | std::ios::binary);//ios::binary - бинарное открытие,ios::in - операции ввода
     std::string line;
-    if (is.is_open())
-    {
-        JsonReader(is);
+    if (is.is_open()) {
+        JsonReader(is,std::cout);
     }
     is.close();     // закрываем файл
 
