@@ -2,7 +2,7 @@
 
 namespace transport {
 
-    namespace geocoordinates {
+    namespace geo_coordinates {
 
         bool Coordinates::operator==(const Coordinates& other) const
         {

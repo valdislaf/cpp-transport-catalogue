@@ -6,7 +6,7 @@ const double RADIUS_EARTH = 6371000.0;
 
 namespace transport {
 
-    namespace geocoordinates {
+    namespace geo_coordinates {
 
         struct Coordinates {
             double lat;

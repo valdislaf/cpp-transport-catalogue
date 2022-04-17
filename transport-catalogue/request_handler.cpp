@@ -31,6 +31,10 @@ void RequestHandler::AddStop(Stop&& stop){
     db_.AddStop(std::move(stop));
 }
 
+void RequestHandler::AddStopsLength(std::string stops, int Length){
+    db_.AddStopsLength(stops, Length);
+}
+
 void RequestHandler::AddBus(Bus&& bus){
     db_.AddBus(std::move(bus));
 }

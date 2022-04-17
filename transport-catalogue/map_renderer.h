@@ -18,7 +18,7 @@ using namespace transport::catalogue;
  */
 
 using namespace svg;
-using namespace transport::geocoordinates;
+using namespace transport::geo_coordinates;
 
 struct RenderSettings{
     double width;

@@ -1,4 +1,5 @@
 #include "transport_catalogue.h"
+#include <cassert>
 
 using namespace std;
 
@@ -52,7 +53,12 @@ namespace transport {
         void TransportCatalogue::AddStop(Stop&& stop) {
             deque_stops_.push_back(move(stop));
             stop_buses_[&deque_stops_.back()];
-            stops_[deque_stops_.back().name()] = &deque_stops_.back();
+            stops_[deque_stops_.back().name] = &deque_stops_.back();
+
+        }
+
+        void TransportCatalogue::AddStopsLength(std::string stops, int Length) {
+            stop_to_stop_[stops] = Length;
         }
 
         void TransportCatalogue::AddBus(Bus&& bus) {
@@ -68,7 +74,7 @@ namespace transport {
             bool found = false;
             std::set<string_view> sw{};
             for (auto& s : stop_buses_) {
-                if (s.first->name() == str) {
+                if (s.first->name == str) {
                     found = true;
                     for (auto a : s.second) {
                         sw.insert(a->name);
@@ -79,20 +85,24 @@ namespace transport {
             return { str, found , sw, sw.size() };
         }
 
-        double TransportCatalogue::GetRouteLength(const Bus* bus) {
-            double len = 0.0;
-
+        double TransportCatalogue::GetRouteLength(const Bus* bus) {         
+            double route_lenght = 0.0;
             for (int i = 0; i < bus->stops.size() - 1; ++i) {
-                string_view name = (*bus).stops[i + 1]->name();
-                if (bus->stops[i]->tostop().count(name.data())) {
-                    len += bus->stops[i]->tostop().at(name.data());
+           
+            const  string& name_stop = (*bus).stops[i]->name;
+            const  string& name_next = (*bus).stops[i + 1]->name;
+
+
+                if (stop_to_stop_.count(name_stop + name_next)) {
+                    route_lenght += stop_to_stop_.at(name_stop + name_next);
                 }
                 else {
-                    len += GetStop(name.data())->tostop().at(bus->stops[i]->name().data());
+                    route_lenght += stop_to_stop_.at(name_next + name_stop);
                 }
-            }
 
-            return len;
+            }
+        
+            return route_lenght;
         }
 
         double TransportCatalogue::GetCurvature(const Bus* bus, int routelength) {
@@ -107,7 +117,7 @@ namespace transport {
         }
 
         size_t TransportCatalogue::GetUnique(const Bus* bus) {
-            std::unordered_set<const Stop*, transport::detail::HasherBus> stops_uniq_;
+            std::unordered_set<const Stop*> stops_uniq_;
             stops_uniq_.insert(bus->stops.begin(), bus->stops.end());
 
             return stops_uniq_.size();
@@ -119,17 +129,13 @@ namespace transport {
                 0.0,  // начальное значение
                 plus<>{},  // reduce-операция (группирующая функция)
                 [](const Stop* lhs, const Stop* rhs) {
-                    return geocoordinates::ComputeDistance(
-                        { (*lhs).latitude(),(*lhs).longitude() },
-                        { (*rhs).latitude(),(*rhs).longitude() }
+                    return geo_coordinates::ComputeDistance(
+                        { (*lhs).coord.lat,(*lhs).coord.lng },
+                        { (*rhs).coord.lat,(*rhs).coord.lng }
                     );
                 }  // map-операция
             );
         }
 
     }
-}
-
-size_t transport::detail::HasherBus::operator()(const Stop* stop) const {
-    return static_cast<size_t>((*stop).Hash());
 }

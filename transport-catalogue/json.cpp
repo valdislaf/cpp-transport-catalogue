@@ -62,7 +62,6 @@ namespace json {
                 }
 
             }
-
             //if(ch!= '\"') { throw ParsingError("Failed to convert JSON"s); }
             return Node(move(line));
         }
@@ -316,10 +315,13 @@ namespace json {
     }
 
     void Print(const Document& doc, std::ostream& output) {
+
+        auto a = doc.GetRoot().GetData();
+
         std::ostringstream strm;
-        std::visit(OstreamNodePrinter{ strm }, doc.GetRoot().GetData());
+        std::visit(OstreamNodePrinter2{ strm }, doc.GetRoot().GetData());
         output << strm.str();
-        output << endl;
+        // output << endl;
 
     }
 
@@ -330,33 +332,36 @@ namespace json {
 
     void OstreamNodePrinter::operator()(const Array& arr) const
     {
-        out << "[\n \t";
+        out << "[\n"s;
         bool fl = false;
         for (const auto& el : arr) {
             if (fl) {
-                out << ", ";
+                out << ",\n"s;
             }
             std::ostringstream strm;
             std::visit(OstreamNodePrinter{ strm }, el.GetData());
+            // out << "           "s;
             out << strm.str();
             fl = true;
         }
-        out << " ]";
+        out << "\n]"s;
     }
 
     void OstreamNodePrinter::operator()(const Dict& dict) const
     {
-        out << "\n\n  {\n";
+        out << "    {\n"s;
         bool fl = false;
         for (const auto& el : dict) {
             if (fl) {
-                out << ", \n";
+                out << ",\n"s;
             }
-            out << "\t";
+            out << "        "s;
             out << '\"';
             out << el.first;
             out << '\"';
-            out << ": ";
+            out << ": "s;
+
+
             std::ostringstream strm;
             std::visit(OstreamNodePrinter{
                 strm
@@ -364,7 +369,7 @@ namespace json {
             out << strm.str();
             fl = true;
         }
-        out << "\n  }";
+        out << "\n    }"s;
     }
 
     void OstreamNodePrinter::operator()(bool b) const {
@@ -381,17 +386,126 @@ namespace json {
 
     void OstreamNodePrinter::operator()(const std::string& str) const {
         string str_out;
-        str_out += '\"';
+        str_out += "\""s;
         for (const char& c : str) {
-            if (c == '\n' || c == '\r' || c == '\"' || c == '\t' || c == '\\' || c == '\b' || c == '\f') {
-                str_out += '\\';
-                str_out += c;
+            if (c == '\n') {
+                str_out += '\\';  str_out += 'n';
+            }
+            else  if (c == '\r') {
+                str_out += '\\';  str_out += 'r';
+            }
+            else  if (c == '\"') {
+                str_out += '\\'; str_out += '"';
+            }
+            else  if (c == '\\') {
+                str_out += '\\'; str_out += '\\';
             }
             else {
                 str_out += c;
             }
         }
         str_out += '\"';
+
+        out << str_out;
+    }
+
+
+    void OstreamNodePrinter2::operator()(std::nullptr_t) const
+    {
+        out << "null";
+    }
+
+    void OstreamNodePrinter2::operator()(const Array& arr) const
+    {
+        out << "[\n"s;
+        bool fl = false;
+        for (const auto& el : arr) {
+            if (fl) {
+                out << ",\n"s;
+            }
+
+            std::ostringstream strm;
+            std::visit(OstreamNodePrinter2{ strm }, el.GetData());
+            // out << "           "s;
+            out << strm.str();
+            fl = true;
+        }
+        auto maa = arr[arr.size() - 1];
+        if (maa.IsMap()) {
+            out << "\n]"s;
+        }
+        else {
+            out << "\n        ]"s;
+        }
+    }
+
+    void OstreamNodePrinter2::operator()(const Dict& dict) const
+    {
+        out << "    {\n"s;
+        bool fl = false;
+        for (const auto& el : dict) {
+            if (fl) {
+                out << ",\n"s;
+            }
+            out << "        "s;
+            out << '\"';
+            out << el.first;
+            out << '\"';
+            out << ": "s;
+
+            if (el.first == "buses") {
+                std::ostringstream strm;
+                std::visit(OstreamNodePrinter2{
+                    strm
+                    }, el.second.GetData());
+                out << strm.str();
+            }
+            else {
+                std::ostringstream strm;
+                std::visit(OstreamNodePrinter{
+                    strm
+                    }, el.second.GetData());
+                out << strm.str();
+            }
+            fl = true;
+        }
+        out << "\n    }"s;
+    }
+
+    void OstreamNodePrinter2::operator()(bool b) const {
+        out << boolalpha << b;
+    }
+
+    void OstreamNodePrinter2::operator()(int i) const {
+        out << i;
+    }
+
+    void OstreamNodePrinter2::operator()(double d) const {
+        out << d;
+    }
+
+    void OstreamNodePrinter2::operator()(const std::string& str) const {
+        string str_out;
+        str_out += "            \""s;
+        for (const char& c : str) {
+            if (c == '\n') {
+                str_out += '\\';  str_out += 'n';
+            }
+            else  if (c == '\r') {
+                str_out += '\\';  str_out += 'r';
+            }
+            else  if (c == '\"') {
+                str_out += '\\'; str_out += '"';
+            }
+            else  if (c == '\\') {
+                str_out += '\\'; str_out += '\\';
+            }
+            else {
+                str_out += c;
+            }
+        }
+        str_out += '\"';
+
         out << str_out;
     }
 

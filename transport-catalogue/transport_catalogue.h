@@ -44,7 +44,10 @@ namespace transport {
             const std::deque<const Bus*> GetBuses();
             const Stop* GetStop(std::string_view stop);
             const std::deque<const Stop*> GetStops();
+
             void AddStop(Stop&& stop);
+
+            void AddStopsLength(std::string stops, int Length);
 
             void AddBus(Bus&& bus);
 
@@ -67,14 +70,8 @@ namespace transport {
             std::deque<Stop> deque_stops_;
             std::unordered_map<std::string_view, const Stop*> stops_;
             std::unordered_map<const Stop*, std::deque<const Bus*>> stop_buses_;
-
+            std::unordered_map<std::string, int>stop_to_stop_;
         };
     }
 
-    namespace detail {
-        struct HasherBus {
-            size_t operator()(const Stop* stop) const;
-        };
-
-    }
 }

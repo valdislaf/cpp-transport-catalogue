@@ -56,6 +56,8 @@ public:
 
     void AddStop(Stop&& stop);
 
+    void AddStopsLength(std::string stops, int Length);
+
     void AddBus(Bus&& bus);
 
     const Stop* GetStop(const std::string& stop);

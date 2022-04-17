@@ -54,10 +54,10 @@ RenderSettings SetRenerSettings(json::Dict render_settings) {
 int GetStopCount(const Stop* stop, const std::deque<const Bus*>& buses) {
     int chek_stop = 0;
     for (auto& bus : buses) {
-        std::string name = stop->name().data();
+        std::string name = stop->name;
         for (const auto& stop : bus->stops) {
-            if (stop->name().data() == name) {
-                ++chek_stop; 
+            if (stop->name == name) {
+                ++chek_stop;
             }
         }
     }
@@ -65,23 +65,23 @@ int GetStopCount(const Stop* stop, const std::deque<const Bus*>& buses) {
 }
 
 
-std::deque<Coordinates> GetCoordStops(const std::deque<const Stop*>& stops, const std::deque<const Bus*>& buses){
+std::deque<Coordinates> GetCoordStops(const std::deque<const Stop*>& stops, const std::deque<const Bus*>& buses) {
     std::deque<Coordinates>coord_stops;
     for (const auto& stop : stops) {
-      
+
         if (GetStopCount(stop, buses) > 0) {
             // только непустые остановки!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             coord_stops.push_back({
-                stop->latitude(), stop->longitude()
+                stop->coord.lat, stop->coord.lng
                 });
         }
     }
     return coord_stops;
 }
 
-void AddBusesToXml(svg::Document& doc_svg, 
-    RenderSettings& rs, 
-    SphereProjector& scale, 
+void AddBusesToXml(svg::Document& doc_svg,
+    RenderSettings& rs,
+    SphereProjector& scale,
     const std::deque<const Bus*>& buses) {
 
     std::vector<svg::Text> text_bus;
@@ -93,7 +93,7 @@ void AddBusesToXml(svg::Document& doc_svg,
             svg::Polyline polyline;
             for (const auto& stop : bus->stops) {
                 polyline.AddPoint(scale({
-                    stop->latitude(), stop->longitude()
+                    stop->coord.lat, stop->coord.lng
                     }));
             }
 
@@ -126,13 +126,13 @@ void AddBusesToXml(svg::Document& doc_svg,
 
             svg::Text text_roundtrip = text;
             text_roundtrip.SetPosition(scale({
-                    bus->stops[0]->latitude(),
-                    bus->stops[0]->longitude()
+                    bus->stops[0]->coord.lat,
+                    bus->stops[0]->coord.lng
                 }));
             svg::Text text_p_roundtrip = text_p;
             text_p_roundtrip.SetPosition(scale({
-                    bus->stops[0]->latitude(),
-                    bus->stops[0]->longitude()
+                    bus->stops[0]->coord.lat,
+                    bus->stops[0]->coord.lng
                 }));
 
             text_bus.push_back(text_roundtrip);
@@ -143,14 +143,14 @@ void AddBusesToXml(svg::Document& doc_svg,
                 if (bus->stops[0] != bus->stops[(bus->stops.size() - 1) / 2]) {
                     svg::Text text_no_roundtrip = text;
                     text_no_roundtrip.SetPosition(scale({
-                            bus->stops[(bus->stops.size() - 1) / 2]->latitude(),
-                             bus->stops[(bus->stops.size() - 1) / 2]->longitude()
+                            bus->stops[(bus->stops.size() - 1) / 2]->coord.lat,
+                             bus->stops[(bus->stops.size() - 1) / 2]->coord.lng
                         }));;
 
                     svg::Text text_p_no_roundtrip = text_p;
                     text_p_no_roundtrip.SetPosition(scale({
-                             bus->stops[(bus->stops.size() - 1) / 2]->latitude(),
-                             bus->stops[(bus->stops.size() - 1) / 2]->longitude()
+                             bus->stops[(bus->stops.size() - 1) / 2]->coord.lat,
+                             bus->stops[(bus->stops.size() - 1) / 2]->coord.lng
                         }));
                     text_bus.push_back(text_no_roundtrip);
                     text_bus.push_back(text_p_no_roundtrip);
@@ -170,14 +170,13 @@ void AddBusesToXml(svg::Document& doc_svg,
     for (const auto& txt : text_bus) {
         doc_svg.Add(txt);
     }
-
 }
 
-void AddStopsToXml(svg::Document& doc_svg, 
-    RenderSettings& rs, 
-    SphereProjector& scale, 
-    const std::deque<const Bus*>& buses, 
-    const std::deque<const Stop*>& stops){
+void AddStopsToXml(svg::Document& doc_svg,
+    RenderSettings& rs,
+    SphereProjector& scale,
+    const std::deque<const Bus*>& buses,
+    const std::deque<const Stop*>& stops) {
 
     std::vector<svg::Text> text;
     for (const auto& stop : stops) {
@@ -185,20 +184,20 @@ void AddStopsToXml(svg::Document& doc_svg,
         int chek_stop = GetStopCount(stop, buses);
 
         if (chek_stop > 0) {
-            std::cerr << "buses count: " << chek_stop << " stop_name: " << stop->name().data() << "\n";
+            std::cerr << "buses count: " << chek_stop << " stop_name: " << stop->name << "\n";
             svg::Circle circle;
             doc_svg.Add(circle.SetCenter(scale({
-                stop->latitude(),stop->longitude()
+                stop->coord.lat, stop->coord.lng
                 }))
                 .SetRadius(rs.stop_radius)
                 .SetFillColor("white")
             );
 
             svg::Text txt;
-            text.push_back(txt.SetData(stop->name().data())
+            text.push_back(txt.SetData(stop->name)
                 .SetPosition(scale({
-                   stop->latitude(),
-                    stop->longitude()
+                   stop->coord.lat,
+                    stop->coord.lng
                     }))
                 .SetOffset(rs.stop_label_offset)
                 .SetFontSize(rs.stop_label_font_size)
@@ -212,11 +211,11 @@ void AddStopsToXml(svg::Document& doc_svg,
             );
 
             svg::Text txtt;
-            text.push_back(txtt.SetData(stop->name().data())
+            text.push_back(txtt.SetData(stop->name)
                 .SetFillColor("black")
                 .SetPosition(scale({
-                   stop->latitude(),
-                    stop->longitude()
+                   stop->coord.lat,
+                    stop->coord.lng
                     }))
                 .SetOffset(rs.stop_label_offset)
                 .SetFontSize(rs.stop_label_font_size)
@@ -237,14 +236,14 @@ RenderXml::RenderXml(RequestHandler& handler, json::Dict render_settings) {
     const auto& stops = handler.GetStops();
     const auto& buses = handler.GetBuses();
 
-    std::deque<Coordinates>coord_stops = GetCoordStops(stops, buses);   
+    std::deque<Coordinates>coord_stops = GetCoordStops(stops, buses);
 
     SphereProjector scale(coord_stops.begin(), coord_stops.end(), rs.width, rs.height, rs.padding);
 
     std::cerr << "----------buses--------------------------" << "\n";
 
     AddBusesToXml(doc_svg_, rs, scale, buses);
-  
+
     std::cerr << "----------stops--------------------------" << "\n";
 
     AddStopsToXml(doc_svg_, rs, scale, buses, stops);

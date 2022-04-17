@@ -36,13 +36,30 @@ struct OstreamNodePrinter {
 
 };
 
+struct OstreamNodePrinter2 {
+    std::ostream& out;
+
+    void operator()(std::nullptr_t) const;
+
+    void operator()(const Array& arr) const;
+
+    void operator()(const Dict& dict) const;
+
+    void operator()(bool b) const;
+
+    void operator()(int i) const;
+
+    void operator()(double d) const;
+
+    void operator()(const std::string& str) const;
+};
 // Эта ошибка должна выбрасываться при ошибках парсинга JSON
 class ParsingError : public std::runtime_error {
 public:
     using runtime_error::runtime_error;
 };
 
-class Node : NodeJson {
+class Node : public NodeJson {
     using variant::variant;
 public:  
     bool operator == (const Node& rhs) const;

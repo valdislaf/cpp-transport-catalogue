@@ -2,7 +2,8 @@
 
 #include <deque>
 #include <string>
-#include <unordered_map>
+
+#include "geo.h"
 
 /*
  * В этом файле вы можете разместить классы/структуры, которые являются частью предметной области (domain)
@@ -16,43 +17,9 @@
  *
  */
 
-
-class Stop {
-
-private:
-
-    std::string name_;
-    double latitude_;
-    double longitude_;
-    std::unordered_map<std::string, int>tostop_;
-    std::tuple<std::string,
-        double,
-        double,
-        std::unordered_map<std::string, int>> AsTuple() const;
-
-public:
-
-    Stop(std::string_view name,
-        double latitude,
-        double longitude);
-
-    Stop(std::string_view name,
-        double latitude,
-        double longitude,
-        std::unordered_map<std::string,
-        int>tostop);
-
-    size_t Hash() const;
-
-    std::string_view name() const;
-
-    double latitude() const;
-
-    double longitude() const;
-
-    std::unordered_map<std::string, int> tostop() const;
-
-    bool operator==(const Stop& other) const;
+struct Stop {
+    std::string name;
+    transport::geo_coordinates::Coordinates coord;   
 };
 
 struct Bus {
