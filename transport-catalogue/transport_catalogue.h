@@ -21,7 +21,7 @@ namespace transport {
 
         struct RouteInfo {
             const Bus* bus;
-            double routelength;
+            double route_length;
             std::string_view bus_name;
             size_t bus_stops_size;
             size_t unique_stops;

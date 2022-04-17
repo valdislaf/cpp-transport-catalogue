@@ -16,7 +16,7 @@ json::Dict JsonBuses(const RouteInfo& response, json::Node& doc) {
     else {
         dict["curvature"s] = response.curvature;
         dict["request_id"s] = doc.AsMap().at("id"s).AsInt();
-        dict["route_length"s] = response.routelength;
+        dict["route_length"s] = response.route_length;
         dict["stop_count"s] = static_cast<int>(response.bus_stops_size);
         dict["unique_stop_count"s] = static_cast<int>(response.unique_stops);
     }
@@ -42,33 +42,6 @@ json::Dict JsonStops(const StopInfo& response, json::Node& doc) {
     }
 
     return dict;
-}
-
-std::string PrintSVG(std::istream& input) {
-    std::string str;
-    while (input) {
-        char c = input.get();
-        if (c == -1) {
-            break;
-        }
-        if (c == '\n') {
-            str += '\\';  str += 'n';
-        }
-        else  if (c == '\r') {
-            str += '\\';  str += 'r';
-        }
-        else  if (c == '\"') {
-            str += '\\'; str += '"';
-        }
-        else  if (c == '\\') {
-            str += '\\'; str += '\\';
-        }
-        else {
-            str += c;
-        }
-    }
-
-    return str;
 }
 
 json::Dict JsonMap(RequestHandler& handler, json::Node& doc, json::Document& load_input) {
@@ -140,23 +113,23 @@ void FormatResponse(json::Document& load_input, RequestHandler& handler, std::os
 
     for (auto& doc : stat_requests) {
         if (doc.AsMap().at("type"s).AsString() == "Bus"s) {
-            const auto& jsonbuses = JsonBuses(handler.GetRouteInfo(doc.AsMap().at("name"s).AsString()), doc);
-            final_array.push_back(jsonbuses);
+            const auto& json_buses = JsonBuses(handler.GetRouteInfo(doc.AsMap().at("name"s).AsString()), doc);
+            final_array.push_back(json_buses);
         }
 
         if (doc.AsMap().at("type"s).AsString() == "Stop"s) {
-            const auto& jsonstops = JsonStops(handler.GetListBuses(doc.AsMap().at("name"s).AsString()), doc);
-            final_array.push_back(jsonstops);
+            const auto& json_stops = JsonStops(handler.GetListBuses(doc.AsMap().at("name"s).AsString()), doc);
+            final_array.push_back(json_stops);
         }
 
         if (doc.AsMap().at("type"s).AsString() == "Map"s) {
-            const auto& jsonmap = JsonMap(handler, doc, load_input);
-            final_array.push_back(jsonmap);
+            const auto& json_map = JsonMap(handler, doc, load_input);
+            final_array.push_back(json_map);
         }
     }
 
-    json::Document d(final_array);
-    json::Print(d, out);
+    json::Document doc(final_array);
+    json::Print(doc, out);
 
 }
 

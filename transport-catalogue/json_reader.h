@@ -29,8 +29,6 @@ json::Dict JsonStops(const StopInfo& response, json::Node& doc);
 
 void FormatResponse(const json::Document& load_input, RequestHandler& handler, std::ostream& out);
 
-std::string PrintSVG(std::istream& input);
-
 json::Dict JsonMap(RequestHandler& handler, json::Node& doc, json::Document& load_input);
 
 void AddStopJson(RequestHandler& handler, json::Node load_stop);
