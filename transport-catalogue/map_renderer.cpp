@@ -13,8 +13,8 @@ bool IsZero(double value) {
 Color GetColorFromDict(json::Node color) {
     Color color_;
     if (color.IsArray()) {
-        int rgba = 4;
-        int rgb = 3;
+        size_t rgba = 4;
+        size_t rgb = 3;
         if (color.AsArray().size() == rgba) {
             color_ = Rgba(color.AsArray()[0].AsInt(), color.AsArray()[1].AsInt(), color.AsArray()[2].AsInt(), color.AsArray()[3].AsDouble());
         }
@@ -146,7 +146,6 @@ void AddBusesToXml(svg::Document& doc_svg,
                             bus->stops[(bus->stops.size() - 1) / 2]->coord.lat,
                              bus->stops[(bus->stops.size() - 1) / 2]->coord.lng
                         }));;
-
                     svg::Text text_p_no_roundtrip = text_p;
                     text_p_no_roundtrip.SetPosition(scale({
                              bus->stops[(bus->stops.size() - 1) / 2]->coord.lat,
@@ -161,7 +160,7 @@ void AddBusesToXml(svg::Document& doc_svg,
                 ++col_i;
             }
 
-            if (rs.color_palette.size() == col_i) {
+            if (rs.color_palette.size() == static_cast<size_t>(col_i)) {
                 col_i = 0;
             }
         }
@@ -202,7 +201,6 @@ void AddStopsToXml(svg::Document& doc_svg,
                 .SetOffset(rs.stop_label_offset)
                 .SetFontSize(rs.stop_label_font_size)
                 .SetFontFamily("Verdana")
-
                 .SetFillColor(rs.underlayer_color)
                 .SetStrokeColor(rs.underlayer_color)
                 .SetStrokeWidth(rs.underlayer_width)

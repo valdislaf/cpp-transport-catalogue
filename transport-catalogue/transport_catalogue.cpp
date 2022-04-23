@@ -87,7 +87,7 @@ namespace transport {
 
         double TransportCatalogue::GetRouteLength(const Bus* bus) {         
             double route_lenght = 0.0;
-            for (int i = 0; i < bus->stops.size() - 1; ++i) {
+            for (size_t i = 0; i < bus->stops.size() - 1; ++i) {
            
             const  string& name_stop = (*bus).stops[i]->name;
             const  string& name_next = (*bus).stops[i + 1]->name;
