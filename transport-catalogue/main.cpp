@@ -21,11 +21,11 @@ int main() {
     is.open(full_path.c_str(), std::ios::in | std::ios::binary);//ios::binary - бинарное открытие,ios::in - операции ввода
     std::string line;
     if (is.is_open()) {
-    //    JsonReader(is,std::cout);
+       JsonReader(is,std::cout);
     }
     is.close();     // закрываем файл
 
-    JsonReader(std::cin,std::cout);
+   // JsonReader(std::cin,std::cout);
    
 
 
