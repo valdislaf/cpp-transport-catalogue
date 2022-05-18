@@ -19,7 +19,7 @@
 
 struct Stop {
     std::string name;
-    transport::geo_coordinates::Coordinates coord;   
+    transport::geo_coordinates::Coordinates coord;
 };
 
 struct Bus {

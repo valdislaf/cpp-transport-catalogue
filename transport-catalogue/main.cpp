@@ -16,7 +16,7 @@ int main() {
        * Вывести в stdout ответы в виде JSON
        */
     
-    std::string full_path = "s10_final_opentest_3.json";   
+    std::string full_path = "ex04.txt";   
     std::ifstream is;
     is.open(full_path.c_str(), std::ios::in | std::ios::binary);//ios::binary - бинарное открытие,ios::in - операции ввода
     std::string line;
@@ -26,10 +26,6 @@ int main() {
     is.close();     // закрываем файл
 
    // JsonReader(std::cin,std::cout);
-   
-
-
-
    return 0;
 
 }

@@ -58,8 +58,16 @@ namespace transport {
         }
 
         void TransportCatalogue::AddStopsLength(std::string stops, int Length) {
+         
             stop_to_stop_[stops] = Length;
+            
         }
+
+        void TransportCatalogue::AddStopsDistance(std::pair<const Stop*, const Stop*> stop, size_t Length) {
+            stops_distance_[stop] = Length;
+        }
+
+        
 
         void TransportCatalogue::AddBus(Bus&& bus) {
             deque_buses_.push_back(move(bus));
@@ -114,6 +122,16 @@ namespace transport {
             if (bus == nullptr) { return { bus,0,str ,0,0,0 }; }
             double routelength = GetRouteLength(bus);
             return { bus, routelength, str, bus->stops.size(), GetUnique(bus), GetCurvature(bus, routelength) };
+        }
+
+        const std::unordered_map<std::string, int> TransportCatalogue::GetStopsLengths()
+        {
+            return stop_to_stop_;
+        }
+
+        const std::unordered_map<std::pair<const Stop*, const Stop*>, size_t, transport::catalogue::TransportCatalogue::Hasher> TransportCatalogue::GetStopsDistance()
+        {
+            return stops_distance_;
         }
 
         size_t TransportCatalogue::GetUnique(const Bus* bus) {

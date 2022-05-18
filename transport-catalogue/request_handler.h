@@ -1,6 +1,7 @@
 #pragma once
 
 #include "transport_catalogue.h"
+#include "transport_catalogue.h"
 
 using namespace transport::catalogue;
 /*
@@ -56,11 +57,19 @@ public:
 
     void AddStop(Stop&& stop);
 
+    const Bus* GetBus(std::string_view bus);
+
     void AddStopsLength(std::string stops, int Length);
 
     void AddBus(Bus&& bus);
 
     const Stop* GetStop(const std::string& stop);
+
+    const std::unordered_map<std::string, int> GetStopsLengths();
+
+    void AddStopsDistance(std::pair<const Stop*, const Stop*> stop, size_t Length);
+
+    const  std::unordered_map<std::pair<const Stop*, const Stop*>, size_t, transport::catalogue::TransportCatalogue::Hasher> GetStopsDistance();
 
 private:
 

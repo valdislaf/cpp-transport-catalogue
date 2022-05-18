@@ -24,7 +24,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "4",
                 "span_count": 2,
                 "time": 76.188,
                 "type": "Bus"
@@ -81,19 +81,19 @@
             },
             {
                 "bus": "1",
-                "span_count": 3,
-                "time": 203.65,
+                "span_count": 2,
+                "time": 29.7636,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "11",
-                "span_count": 5,
-                "time": 276.61,
+                "span_count": 6,
+                "time": 450.496,
                 "type": "Bus"
             }
         ],
@@ -108,20 +108,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "20",
-                "span_count": 2,
-                "time": 240.956,
+                "bus": "64k",
+                "span_count": 5,
+                "time": 588.74,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Kremlin",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "44",
-                "span_count": 6,
-                "time": 437.731,
+                "span_count": 3,
+                "time": 89.9481,
                 "type": "Bus"
             }
         ],
@@ -742,7 +742,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "22k",
+                "bus": "2k",
                 "span_count": 2,
                 "time": 171.422,
                 "type": "Bus"
@@ -819,7 +819,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 227.409,
                 "type": "Bus"
@@ -905,7 +905,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "4",
                 "span_count": 1,
                 "time": 134.172,
                 "type": "Bus"
@@ -1055,7 +1055,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "6k",
                 "span_count": 2,
                 "time": 143.934,
                 "type": "Bus"
@@ -1137,7 +1137,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "2k",
                 "span_count": 2,
                 "time": 246.692,
                 "type": "Bus"
@@ -1195,7 +1195,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "8",
                 "span_count": 2,
                 "time": 123.063,
                 "type": "Bus"
@@ -1406,7 +1406,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "25k",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 163.419,
                 "type": "Bus"
@@ -1490,7 +1490,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "22k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 121.047,
                 "type": "Bus"
@@ -1552,7 +1552,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 159.766,
                 "type": "Bus"
@@ -1630,7 +1630,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 33.9426,
                 "type": "Bus"
@@ -1771,7 +1771,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "12",
                 "span_count": 2,
                 "time": 88.3633,
                 "type": "Bus"
@@ -1877,19 +1877,19 @@
             },
             {
                 "bus": "79",
-                "span_count": 3,
-                "time": 250.504,
+                "span_count": 4,
+                "time": 349.485,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "35",
-                "span_count": 2,
-                "time": 151.729,
+                "span_count": 1,
+                "time": 52.7471,
                 "type": "Bus"
             }
         ],
@@ -1940,7 +1940,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "26",
+                "bus": "8",
                 "span_count": 1,
                 "time": 9.03429,
                 "type": "Bus"
@@ -1958,19 +1958,19 @@
             },
             {
                 "bus": "44",
-                "span_count": 7,
-                "time": 306.058,
+                "span_count": 6,
+                "time": 300.083,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Ostozhenka 80",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "94k",
-                "span_count": 5,
-                "time": 508.085,
+                "span_count": 6,
+                "time": 514.06,
                 "type": "Bus"
             }
         ],
@@ -2302,19 +2302,19 @@
             },
             {
                 "bus": "7k",
-                "span_count": 5,
-                "time": 280.629,
+                "span_count": 4,
+                "time": 90.4596,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "49",
-                "span_count": 9,
-                "time": 1055.11,
+                "span_count": 10,
+                "time": 1245.28,
                 "type": "Bus"
             }
         ],
@@ -2418,19 +2418,19 @@
             },
             {
                 "bus": "79",
-                "span_count": 5,
-                "time": 448.867,
+                "span_count": 6,
+                "time": 639.036,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "7k",
-                "span_count": 3,
-                "time": 256.135,
+                "span_count": 2,
+                "time": 65.9659,
                 "type": "Bus"
             }
         ],
@@ -2722,7 +2722,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "26",
+                "bus": "8",
                 "span_count": 2,
                 "time": 98.1546,
                 "type": "Bus"
@@ -2805,7 +2805,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "22k",
+                "bus": "2k",
                 "span_count": 2,
                 "time": 171.422,
                 "type": "Bus"
@@ -2861,7 +2861,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
+                "bus": "9k",
                 "span_count": 1,
                 "time": 180.056,
                 "type": "Bus"
@@ -2982,19 +2982,19 @@
             },
             {
                 "bus": "82k",
-                "span_count": 4,
-                "time": 512.532,
+                "span_count": 5,
+                "time": 702.701,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
-                "bus": "23k",
-                "span_count": 3,
-                "time": 261.751,
+                "bus": "3k",
+                "span_count": 2,
+                "time": 71.5817,
                 "type": "Bus"
             }
         ],
@@ -3081,20 +3081,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "35",
-                "span_count": 2,
-                "time": 184.802,
+                "bus": "9k",
+                "span_count": 3,
+                "time": 310.863,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "71k",
-                "span_count": 8,
-                "time": 992.585,
+                "span_count": 7,
+                "time": 866.524,
                 "type": "Bus"
             }
         ],
@@ -3323,19 +3323,19 @@
             },
             {
                 "bus": "86k",
-                "span_count": 4,
-                "time": 360.482,
+                "span_count": 3,
+                "time": 271.362,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "92k",
-                "span_count": 4,
-                "time": 328.129,
+                "span_count": 5,
+                "time": 417.249,
                 "type": "Bus"
             }
         ],
@@ -3440,7 +3440,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 33.9426,
                 "type": "Bus"
@@ -3604,7 +3604,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 67.5066,
                 "type": "Bus"
@@ -3653,7 +3653,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 227.409,
                 "type": "Bus"
@@ -3732,19 +3732,19 @@
             },
             {
                 "bus": "1",
-                "span_count": 2,
-                "time": 182.256,
+                "span_count": 1,
+                "time": 8.36936,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "50",
-                "span_count": 2,
-                "time": 72.3026,
+                "span_count": 3,
+                "time": 246.189,
                 "type": "Bus"
             }
         ],
@@ -3788,19 +3788,19 @@
             },
             {
                 "bus": "49",
-                "span_count": 4,
-                "time": 492.745,
+                "span_count": 3,
+                "time": 318.859,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "77k",
-                "span_count": 2,
-                "time": 153.523,
+                "span_count": 3,
+                "time": 327.41,
                 "type": "Bus"
             }
         ],
@@ -3868,19 +3868,19 @@
             },
             {
                 "bus": "35",
-                "span_count": 4,
-                "time": 258.459,
+                "span_count": 3,
+                "time": 68.2903,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "79",
-                "span_count": 5,
-                "time": 448.867,
+                "span_count": 6,
+                "time": 639.036,
                 "type": "Bus"
             }
         ],
@@ -3965,19 +3965,19 @@
             },
             {
                 "bus": "87k",
-                "span_count": 6,
-                "time": 716.539,
+                "span_count": 7,
+                "time": 805.66,
                 "type": "Bus"
             },
             {
-                "stop_name": "Yandex",
+                "stop_name": "Luzhniki",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "78k",
-                "span_count": 2,
-                "time": 146.095,
+                "span_count": 1,
+                "time": 56.9749,
                 "type": "Bus"
             }
         ],
@@ -4120,20 +4120,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "79",
-                "span_count": 4,
-                "time": 412.21,
+                "bus": "1",
+                "span_count": 1,
+                "time": 111.961,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
-                "bus": "29k",
-                "span_count": 1,
-                "time": 182.548,
+                "bus": "87k",
+                "span_count": 4,
+                "time": 482.798,
                 "type": "Bus"
             }
         ],
@@ -4180,7 +4180,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "28",
                 "span_count": 1,
                 "time": 101.133,
                 "type": "Bus"
@@ -4269,7 +4269,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 89.4945,
                 "type": "Bus"
@@ -4419,7 +4419,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
+                "bus": "7k",
                 "span_count": 6,
                 "time": 478.69,
                 "type": "Bus"
@@ -4839,7 +4839,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 29.8149,
                 "type": "Bus"
@@ -5021,7 +5021,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "12",
                 "span_count": 1,
                 "time": 60.2265,
                 "type": "Bus"
@@ -5133,7 +5133,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "5k",
                 "span_count": 2,
                 "time": 220.674,
                 "type": "Bus"
@@ -5302,19 +5302,19 @@
             },
             {
                 "bus": "69k",
-                "span_count": 4,
-                "time": 447.462,
+                "span_count": 3,
+                "time": 321.402,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "55k",
-                "span_count": 1,
-                "time": 118.774,
+                "span_count": 2,
+                "time": 244.835,
                 "type": "Bus"
             }
         ],
@@ -5364,7 +5364,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "5k",
                 "span_count": 1,
                 "time": 121.692,
                 "type": "Bus"
@@ -5459,7 +5459,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "35",
+                "bus": "9k",
                 "span_count": 1,
                 "time": 134.038,
                 "type": "Bus"
@@ -5599,7 +5599,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "15",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 116.024,
                 "type": "Bus"
@@ -5978,7 +5978,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "8",
                 "span_count": 2,
                 "time": 286.737,
                 "type": "Bus"
@@ -6091,20 +6091,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "52",
-                "span_count": 2,
-                "time": 97.4754,
+                "bus": "86k",
+                "span_count": 3,
+                "time": 271.362,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "31k",
-                "span_count": 3,
-                "time": 252.067,
+                "span_count": 2,
+                "time": 78.1811,
                 "type": "Bus"
             }
         ],
@@ -6136,20 +6136,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "24k",
-                "span_count": 2,
-                "time": 143.019,
+                "bus": "42",
+                "span_count": 3,
+                "time": 242,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "1",
-                "span_count": 2,
-                "time": 210.942,
+                "span_count": 1,
+                "time": 111.961,
                 "type": "Bus"
             }
         ],
@@ -6194,19 +6194,19 @@
             },
             {
                 "bus": "82k",
-                "span_count": 4,
-                "time": 512.532,
+                "span_count": 5,
+                "time": 702.701,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "7k",
-                "span_count": 5,
-                "time": 280.629,
+                "span_count": 4,
+                "time": 90.4596,
                 "type": "Bus"
             }
         ],
@@ -6249,7 +6249,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 71.5817,
                 "type": "Bus"
@@ -6273,7 +6273,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "6k",
                 "span_count": 1,
                 "time": 54.8139,
                 "type": "Bus"
@@ -6308,7 +6308,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "15",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 116.024,
                 "type": "Bus"
@@ -6677,20 +6677,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "29k",
-                "span_count": 2,
-                "time": 308.609,
+                "bus": "87k",
+                "span_count": 3,
+                "time": 383.817,
                 "type": "Bus"
             },
             {
-                "stop_name": "Sokol",
+                "stop_name": "Belorusskiy vokzal",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "78k",
-                "span_count": 2,
-                "time": 87.7185,
+                "span_count": 1,
+                "time": 12.5106,
                 "type": "Bus"
             }
         ],
@@ -6723,19 +6723,19 @@
             },
             {
                 "bus": "7k",
-                "span_count": 3,
-                "time": 256.135,
+                "span_count": 2,
+                "time": 65.9659,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "19k",
-                "span_count": 7,
-                "time": 745.751,
+                "span_count": 8,
+                "time": 935.92,
                 "type": "Bus"
             }
         ],
@@ -6873,19 +6873,19 @@
             },
             {
                 "bus": "5k",
-                "span_count": 8,
-                "time": 984.487,
+                "span_count": 9,
+                "time": 1174.66,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "35",
-                "span_count": 4,
-                "time": 258.459,
+                "span_count": 3,
+                "time": 68.2903,
                 "type": "Bus"
             }
         ],
@@ -6963,7 +6963,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 89.4945,
                 "type": "Bus"
@@ -7028,7 +7028,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 71.5817,
                 "type": "Bus"
@@ -7062,7 +7062,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "12",
+                "bus": "8",
                 "span_count": 1,
                 "time": 152.711,
                 "type": "Bus"
@@ -7079,7 +7079,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 37.2403,
                 "type": "Bus"
@@ -7108,19 +7108,19 @@
             },
             {
                 "bus": "83k",
-                "span_count": 8,
-                "time": 995.613,
+                "span_count": 7,
+                "time": 896.631,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "11",
-                "span_count": 1,
-                "time": 48.438,
+                "span_count": 2,
+                "time": 147.42,
                 "type": "Bus"
             }
         ],
@@ -7143,19 +7143,19 @@
             },
             {
                 "bus": "99k",
-                "span_count": 3,
-                "time": 184.9,
+                "span_count": 2,
+                "time": 85.9185,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "79",
-                "span_count": 3,
-                "time": 250.504,
+                "span_count": 4,
+                "time": 349.485,
                 "type": "Bus"
             }
         ],
@@ -7361,19 +7361,19 @@
             },
             {
                 "bus": "49",
-                "span_count": 4,
-                "time": 492.745,
+                "span_count": 3,
+                "time": 318.859,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "81",
-                "span_count": 1,
-                "time": 78.7059,
+                "span_count": 2,
+                "time": 252.592,
                 "type": "Bus"
             }
         ],
@@ -7468,7 +7468,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 29.8149,
                 "type": "Bus"
@@ -7496,7 +7496,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 179.185,
                 "type": "Bus"
@@ -7507,7 +7507,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 71.5817,
                 "type": "Bus"
@@ -7668,7 +7668,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "17",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 167.785,
                 "type": "Bus"
@@ -7739,19 +7739,19 @@
             },
             {
                 "bus": "11",
-                "span_count": 2,
-                "time": 63.5484,
+                "span_count": 3,
+                "time": 162.53,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "71k",
-                "span_count": 6,
-                "time": 791.316,
+                "span_count": 5,
+                "time": 692.335,
                 "type": "Bus"
             }
         ],
@@ -7918,19 +7918,19 @@
             },
             {
                 "bus": "27k",
-                "span_count": 3,
-                "time": 284.893,
+                "span_count": 2,
+                "time": 209.686,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "50",
-                "span_count": 9,
-                "time": 661.788,
+                "span_count": 10,
+                "time": 736.996,
                 "type": "Bus"
             },
             {
@@ -8213,7 +8213,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "18",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 23.733,
                 "type": "Bus"
@@ -8269,7 +8269,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "6k",
                 "span_count": 2,
                 "time": 143.934,
                 "type": "Bus"
@@ -8303,7 +8303,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 37.2403,
                 "type": "Bus"
@@ -8314,7 +8314,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "50",
+                "bus": "6k",
                 "span_count": 1,
                 "time": 123.05,
                 "type": "Bus"
@@ -8629,30 +8629,30 @@
             },
             {
                 "bus": "1",
-                "span_count": 3,
-                "time": 203.65,
+                "span_count": 2,
+                "time": 29.7636,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "50",
                 "span_count": 6,
-                "time": 354.679,
+                "time": 402.505,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "17",
-                "span_count": 1,
-                "time": 17.1591,
+                "span_count": 2,
+                "time": 143.22,
                 "type": "Bus"
             }
         ],
@@ -8816,20 +8816,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "49",
-                "span_count": 3,
-                "time": 395.011,
+                "bus": "1",
+                "span_count": 2,
+                "time": 305.891,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "16k",
-                "span_count": 3,
-                "time": 89.3346,
+                "span_count": 4,
+                "time": 178.455,
                 "type": "Bus"
             }
         ],
@@ -9008,19 +9008,19 @@
             },
             {
                 "bus": "22k",
-                "span_count": 4,
-                "time": 306.303,
+                "span_count": 5,
+                "time": 395.423,
                 "type": "Bus"
             },
             {
-                "stop_name": "Yandex",
+                "stop_name": "Luzhniki",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "8",
-                "span_count": 3,
-                "time": 180.688,
+                "span_count": 2,
+                "time": 91.5677,
                 "type": "Bus"
             }
         ],
@@ -9207,7 +9207,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "72k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 3.93664,
                 "type": "Bus"
@@ -9259,7 +9259,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "14",
                 "span_count": 1,
                 "time": 171.836,
                 "type": "Bus"
@@ -9450,19 +9450,19 @@
             },
             {
                 "bus": "81",
-                "span_count": 1,
-                "time": 78.7059,
+                "span_count": 2,
+                "time": 252.592,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "49",
-                "span_count": 4,
-                "time": 492.745,
+                "span_count": 3,
+                "time": 318.859,
                 "type": "Bus"
             }
         ],
@@ -9623,7 +9623,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "18",
+                "bus": "2k",
                 "span_count": 2,
                 "time": 83.5879,
                 "type": "Bus"
@@ -9640,7 +9640,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 89.4945,
                 "type": "Bus"
@@ -9651,7 +9651,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 33.9426,
                 "type": "Bus"
@@ -9756,7 +9756,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "15",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 116.024,
                 "type": "Bus"
@@ -9792,19 +9792,19 @@
             },
             {
                 "bus": "77k",
-                "span_count": 4,
-                "time": 335.767,
+                "span_count": 2,
+                "time": 108.882,
                 "type": "Bus"
             },
             {
-                "stop_name": "Leningradskiy pr 60",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
-                "bus": "37k",
-                "span_count": 1,
-                "time": 5.14071,
+                "bus": "53k",
+                "span_count": 3,
+                "time": 232.026,
                 "type": "Bus"
             }
         ],
@@ -9830,7 +9830,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "4",
                 "span_count": 2,
                 "time": 194.027,
                 "type": "Bus"
@@ -9909,7 +9909,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 159.766,
                 "type": "Bus"
@@ -9990,19 +9990,19 @@
             },
             {
                 "bus": "7k",
-                "span_count": 5,
-                "time": 280.629,
+                "span_count": 4,
+                "time": 90.4596,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "47k",
-                "span_count": 11,
-                "time": 1155.71,
+                "span_count": 12,
+                "time": 1345.88,
                 "type": "Bus"
             }
         ],
@@ -10185,7 +10185,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "72k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 3.93664,
                 "type": "Bus"
@@ -10467,7 +10467,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "72k",
+                "bus": "8",
                 "span_count": 2,
                 "time": 125.297,
                 "type": "Bus"
@@ -10785,7 +10785,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "22k",
+                "bus": "2k",
                 "span_count": 2,
                 "time": 171.422,
                 "type": "Bus"
@@ -10878,7 +10878,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "27k",
+                "bus": "5k",
                 "span_count": 4,
                 "time": 421.942,
                 "type": "Bus"
@@ -11511,7 +11511,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "4",
                 "span_count": 1,
                 "time": 16.3331,
                 "type": "Bus"
@@ -11528,7 +11528,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "14",
                 "span_count": 1,
                 "time": 171.836,
                 "type": "Bus"
@@ -11647,19 +11647,19 @@
             },
             {
                 "bus": "49",
-                "span_count": 4,
-                "time": 492.745,
+                "span_count": 3,
+                "time": 318.859,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "43k",
-                "span_count": 4,
-                "time": 360.157,
+                "span_count": 5,
+                "time": 534.044,
                 "type": "Bus"
             }
         ],
@@ -12081,7 +12081,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "18",
+                "bus": "2k",
                 "span_count": 2,
                 "time": 83.5879,
                 "type": "Bus"
@@ -12239,19 +12239,19 @@
             },
             {
                 "bus": "49",
-                "span_count": 4,
-                "time": 411.35,
+                "span_count": 5,
+                "time": 510.332,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "35",
-                "span_count": 2,
-                "time": 151.729,
+                "span_count": 1,
+                "time": 52.7471,
                 "type": "Bus"
             }
         ],
@@ -12330,7 +12330,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "21k",
+                "bus": "9k",
                 "span_count": 1,
                 "time": 70.2171,
                 "type": "Bus"
@@ -12358,7 +12358,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "8",
                 "span_count": 2,
                 "time": 286.737,
                 "type": "Bus"
@@ -12375,7 +12375,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "72k",
+                "bus": "8",
                 "span_count": 2,
                 "time": 125.297,
                 "type": "Bus"
@@ -12566,7 +12566,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 60.7845,
                 "type": "Bus"
@@ -12743,20 +12743,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "66",
-                "span_count": 2,
-                "time": 249.525,
+                "bus": "82k",
+                "span_count": 3,
+                "time": 423.411,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "89",
-                "span_count": 2,
-                "time": 219.019,
+                "span_count": 1,
+                "time": 45.1329,
                 "type": "Bus"
             }
         ],
@@ -13081,7 +13081,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
+                "bus": "7k",
                 "span_count": 2,
                 "time": 67.7919,
                 "type": "Bus"
@@ -13226,7 +13226,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
+                "bus": "3k",
                 "span_count": 3,
                 "time": 261.751,
                 "type": "Bus"
@@ -13271,7 +13271,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 71.5817,
                 "type": "Bus"
@@ -13401,7 +13401,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 89.4945,
                 "type": "Bus"
@@ -13463,7 +13463,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "18",
+                "bus": "2k",
                 "span_count": 2,
                 "time": 83.5879,
                 "type": "Bus"
@@ -13502,7 +13502,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "22k",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 82.3018,
                 "type": "Bus"
@@ -13537,7 +13537,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "15",
+                "bus": "3k",
                 "span_count": 3,
                 "time": 271.727,
                 "type": "Bus"
@@ -13554,7 +13554,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "24k",
+                "bus": "4",
                 "span_count": 1,
                 "time": 67.8109,
                 "type": "Bus"
@@ -13572,19 +13572,19 @@
             },
             {
                 "bus": "71k",
-                "span_count": 6,
-                "time": 791.316,
+                "span_count": 5,
+                "time": 692.335,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "1",
-                "span_count": 1,
-                "time": 148.308,
+                "span_count": 2,
+                "time": 247.289,
                 "type": "Bus"
             }
         ],
@@ -13702,7 +13702,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 33.9718,
                 "type": "Bus"
@@ -13810,7 +13810,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "4",
                 "span_count": 1,
                 "time": 77.6061,
                 "type": "Bus"
@@ -13918,7 +13918,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
+                "bus": "7k",
                 "span_count": 5,
                 "time": 412.454,
                 "type": "Bus"
@@ -14012,7 +14012,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 89.4945,
                 "type": "Bus"
@@ -14030,19 +14030,19 @@
             },
             {
                 "bus": "31k",
-                "span_count": 3,
-                "time": 252.067,
+                "span_count": 2,
+                "time": 78.1811,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "50",
-                "span_count": 2,
-                "time": 72.3026,
+                "span_count": 3,
+                "time": 246.189,
                 "type": "Bus"
             }
         ],
@@ -14057,7 +14057,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "28",
                 "span_count": 1,
                 "time": 91.3959,
                 "type": "Bus"
@@ -14142,19 +14142,19 @@
             },
             {
                 "bus": "87k",
-                "span_count": 6,
-                "time": 716.539,
+                "span_count": 7,
+                "time": 805.66,
                 "type": "Bus"
             },
             {
-                "stop_name": "Yandex",
+                "stop_name": "Luzhniki",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "8",
-                "span_count": 3,
-                "time": 180.688,
+                "span_count": 2,
+                "time": 91.5677,
                 "type": "Bus"
             }
         ],
@@ -14227,7 +14227,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "4",
                 "span_count": 2,
                 "time": 166.726,
                 "type": "Bus"
@@ -14244,7 +14244,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "18",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 23.733,
                 "type": "Bus"
@@ -14317,7 +14317,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 8.69593,
                 "type": "Bus"
@@ -14420,7 +14420,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 159.766,
                 "type": "Bus"
@@ -14580,7 +14580,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "12",
                 "span_count": 1,
                 "time": 148.177,
                 "type": "Bus"
@@ -14631,7 +14631,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 89.4945,
                 "type": "Bus"
@@ -14739,19 +14739,19 @@
             },
             {
                 "bus": "11",
-                "span_count": 11,
-                "time": 972.775,
+                "span_count": 10,
+                "time": 846.714,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "17",
-                "span_count": 1,
-                "time": 17.1591,
+                "span_count": 2,
+                "time": 143.22,
                 "type": "Bus"
             }
         ],
@@ -15082,7 +15082,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 59.8549,
                 "type": "Bus"
@@ -15163,7 +15163,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 33.9426,
                 "type": "Bus"
@@ -15236,7 +15236,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "17",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 167.785,
                 "type": "Bus"
@@ -15268,19 +15268,19 @@
             },
             {
                 "bus": "27k",
-                "span_count": 2,
-                "time": 239.942,
+                "span_count": 1,
+                "time": 49.7732,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "19k",
-                "span_count": 7,
-                "time": 745.751,
+                "span_count": 8,
+                "time": 935.92,
                 "type": "Bus"
             }
         ],
@@ -15306,7 +15306,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "4",
                 "span_count": 2,
                 "time": 76.188,
                 "type": "Bus"
@@ -15379,7 +15379,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 206.834,
                 "type": "Bus"
@@ -15530,7 +15530,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 33.9426,
                 "type": "Bus"
@@ -15739,7 +15739,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "50",
+                "bus": "6k",
                 "span_count": 1,
                 "time": 123.05,
                 "type": "Bus"
@@ -15819,7 +15819,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "18",
+                "bus": "2k",
                 "span_count": 3,
                 "time": 113.403,
                 "type": "Bus"
@@ -15836,7 +15836,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "72k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 3.93664,
                 "type": "Bus"
@@ -16370,7 +16370,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 37.2403,
                 "type": "Bus"
@@ -16558,19 +16558,19 @@
             },
             {
                 "bus": "44",
-                "span_count": 4,
-                "time": 149.803,
+                "span_count": 3,
+                "time": 89.9481,
                 "type": "Bus"
             },
             {
-                "stop_name": "Manezh",
+                "stop_name": "Kremlin",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "88k",
-                "span_count": 2,
-                "time": 34.5977,
+                "span_count": 3,
+                "time": 94.4526,
                 "type": "Bus"
             }
         ],
@@ -16647,7 +16647,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 227.409,
                 "type": "Bus"
@@ -16835,7 +16835,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "35",
+                "bus": "9k",
                 "span_count": 3,
                 "time": 310.863,
                 "type": "Bus"
@@ -16959,19 +16959,19 @@
             },
             {
                 "bus": "17",
-                "span_count": 2,
-                "time": 143.22,
+                "span_count": 1,
+                "time": 17.1591,
                 "type": "Bus"
             },
             {
-                "stop_name": "Sokol",
+                "stop_name": "Khimki",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "21k",
-                "span_count": 4,
-                "time": 420.238,
+                "span_count": 5,
+                "time": 546.298,
                 "type": "Bus"
             }
         ],
@@ -17065,7 +17065,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 71.5817,
                 "type": "Bus"
@@ -17261,7 +17261,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "18",
+                "bus": "2k",
                 "span_count": 2,
                 "time": 83.5879,
                 "type": "Bus"
@@ -17483,20 +17483,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "52",
-                "span_count": 2,
-                "time": 97.4754,
+                "bus": "86k",
+                "span_count": 3,
+                "time": 271.362,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "31k",
-                "span_count": 3,
-                "time": 252.067,
+                "span_count": 2,
+                "time": 78.1811,
                 "type": "Bus"
             }
         ],
@@ -17522,7 +17522,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "17",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 34.1106,
                 "type": "Bus"
@@ -17653,7 +17653,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "25k",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 163.419,
                 "type": "Bus"
@@ -17728,7 +17728,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "24k",
+                "bus": "4",
                 "span_count": 2,
                 "time": 143.019,
                 "type": "Bus"
@@ -17739,7 +17739,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 60.7845,
                 "type": "Bus"
@@ -17757,19 +17757,19 @@
             },
             {
                 "bus": "1",
-                "span_count": 2,
-                "time": 182.256,
+                "span_count": 1,
+                "time": 8.36936,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
-                "bus": "66",
-                "span_count": 2,
-                "time": 249.525,
+                "bus": "82k",
+                "span_count": 3,
+                "time": 423.411,
                 "type": "Bus"
             }
         ],
@@ -17785,19 +17785,19 @@
             },
             {
                 "bus": "84k",
-                "span_count": 1,
-                "time": 23.0074,
+                "span_count": 2,
+                "time": 112.128,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "87k",
-                "span_count": 7,
-                "time": 805.66,
+                "span_count": 6,
+                "time": 716.539,
                 "type": "Bus"
             }
         ],
@@ -18079,7 +18079,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 89.4945,
                 "type": "Bus"
@@ -18125,7 +18125,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "4",
                 "span_count": 3,
                 "time": 210.36,
                 "type": "Bus"
@@ -18153,7 +18153,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 71.5817,
                 "type": "Bus"
@@ -18334,7 +18334,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "21k",
+                "bus": "9k",
                 "span_count": 2,
                 "time": 196.278,
                 "type": "Bus"
@@ -18351,7 +18351,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "4",
                 "span_count": 1,
                 "time": 16.3331,
                 "type": "Bus"
@@ -18466,7 +18466,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "8",
                 "span_count": 2,
                 "time": 286.737,
                 "type": "Bus"
@@ -18642,19 +18642,19 @@
             },
             {
                 "bus": "67",
-                "span_count": 5,
-                "time": 569.203,
+                "span_count": 6,
+                "time": 759.373,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "35",
-                "span_count": 4,
-                "time": 258.459,
+                "span_count": 3,
+                "time": 68.2903,
                 "type": "Bus"
             }
         ],
@@ -18697,7 +18697,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "4",
                 "span_count": 2,
                 "time": 166.726,
                 "type": "Bus"
@@ -18897,7 +18897,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "21k",
+                "bus": "9k",
                 "span_count": 1,
                 "time": 70.2171,
                 "type": "Bus"
@@ -19048,19 +19048,19 @@
             },
             {
                 "bus": "85k",
-                "span_count": 4,
-                "time": 399.426,
+                "span_count": 5,
+                "time": 589.595,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "7k",
-                "span_count": 5,
-                "time": 280.629,
+                "span_count": 4,
+                "time": 90.4596,
                 "type": "Bus"
             }
         ],
@@ -19198,7 +19198,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
+                "bus": "3k",
                 "span_count": 3,
                 "time": 261.751,
                 "type": "Bus"
@@ -19647,19 +19647,19 @@
             },
             {
                 "bus": "1",
-                "span_count": 3,
-                "time": 203.65,
+                "span_count": 2,
+                "time": 29.7636,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "79",
-                "span_count": 7,
-                "time": 662.996,
+                "span_count": 8,
+                "time": 836.882,
                 "type": "Bus"
             }
         ],
@@ -19691,7 +19691,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "12",
                 "span_count": 1,
                 "time": 60.2265,
                 "type": "Bus"
@@ -19759,20 +19759,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
-                "span_count": 2,
-                "time": 227.409,
+                "bus": "3k",
+                "span_count": 1,
+                "time": 37.2403,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "82k",
-                "span_count": 4,
-                "time": 512.532,
+                "span_count": 5,
+                "time": 702.701,
                 "type": "Bus"
             }
         ],
@@ -19976,7 +19976,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "4",
                 "span_count": 1,
                 "time": 16.3331,
                 "type": "Bus"
@@ -20122,7 +20122,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "22k",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 82.3018,
                 "type": "Bus"
@@ -20307,7 +20307,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "15",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 116.024,
                 "type": "Bus"
@@ -20402,19 +20402,19 @@
             },
             {
                 "bus": "89",
-                "span_count": 2,
-                "time": 219.019,
+                "span_count": 1,
+                "time": 45.1329,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "67",
-                "span_count": 3,
-                "time": 306.197,
+                "span_count": 4,
+                "time": 480.083,
                 "type": "Bus"
             }
         ],
@@ -20449,20 +20449,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "20",
-                "span_count": 3,
-                "time": 317.821,
+                "bus": "6k",
+                "span_count": 1,
+                "time": 54.8139,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Luzhniki",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "69k",
-                "span_count": 1,
-                "time": 115.027,
+                "span_count": 3,
+                "time": 378.033,
                 "type": "Bus"
             }
         ],
@@ -20477,7 +20477,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "15",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 116.024,
                 "type": "Bus"
@@ -20631,19 +20631,19 @@
             },
             {
                 "bus": "22k",
-                "span_count": 4,
-                "time": 306.303,
+                "span_count": 5,
+                "time": 395.423,
                 "type": "Bus"
             },
             {
-                "stop_name": "Yandex",
+                "stop_name": "Luzhniki",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "8",
-                "span_count": 3,
-                "time": 180.688,
+                "span_count": 2,
+                "time": 91.5677,
                 "type": "Bus"
             }
         ],
@@ -20687,19 +20687,19 @@
             },
             {
                 "bus": "79",
-                "span_count": 3,
-                "time": 250.504,
+                "span_count": 4,
+                "time": 349.485,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "77k",
-                "span_count": 3,
-                "time": 207.863,
+                "span_count": 2,
+                "time": 108.882,
                 "type": "Bus"
             }
         ],
@@ -20714,7 +20714,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "25k",
+                "bus": "9k",
                 "span_count": 1,
                 "time": 116.355,
                 "type": "Bus"
@@ -21072,19 +21072,19 @@
             },
             {
                 "bus": "7k",
-                "span_count": 5,
-                "time": 280.629,
+                "span_count": 4,
+                "time": 90.4596,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "49",
-                "span_count": 9,
-                "time": 1055.11,
+                "span_count": 10,
+                "time": 1245.28,
                 "type": "Bus"
             }
         ],
@@ -21099,7 +21099,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "12",
                 "span_count": 1,
                 "time": 8.61129,
                 "type": "Bus"
@@ -21139,19 +21139,19 @@
             },
             {
                 "bus": "35",
-                "span_count": 4,
-                "time": 258.459,
+                "span_count": 3,
+                "time": 68.2903,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "19k",
-                "span_count": 7,
-                "time": 745.751,
+                "span_count": 8,
+                "time": 935.92,
                 "type": "Bus"
             }
         ],
@@ -21358,19 +21358,19 @@
             },
             {
                 "bus": "10k",
-                "span_count": 4,
-                "time": 507.305,
+                "span_count": 5,
+                "time": 697.474,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "35",
-                "span_count": 4,
-                "time": 258.459,
+                "span_count": 3,
+                "time": 68.2903,
                 "type": "Bus"
             }
         ],
@@ -21402,7 +21402,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 158.577,
                 "type": "Bus"
@@ -21508,20 +21508,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
-                "span_count": 3,
-                "time": 261.751,
+                "bus": "3k",
+                "span_count": 2,
+                "time": 71.5817,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "47k",
-                "span_count": 6,
-                "time": 524.743,
+                "span_count": 7,
+                "time": 714.913,
                 "type": "Bus"
             }
         ],
@@ -21551,19 +21551,19 @@
             },
             {
                 "bus": "50",
-                "span_count": 3,
-                "time": 140.255,
+                "span_count": 4,
+                "time": 314.142,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "1",
-                "span_count": 3,
-                "time": 203.65,
+                "span_count": 2,
+                "time": 29.7636,
                 "type": "Bus"
             }
         ],
@@ -21838,7 +21838,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "72k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 3.93664,
                 "type": "Bus"
@@ -21897,19 +21897,19 @@
             },
             {
                 "bus": "55k",
-                "span_count": 4,
-                "time": 462.412,
+                "span_count": 5,
+                "time": 561.394,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "11",
-                "span_count": 6,
-                "time": 597.609,
+                "span_count": 5,
+                "time": 498.628,
                 "type": "Bus"
             }
         ],
@@ -22183,19 +22183,19 @@
             },
             {
                 "bus": "20",
-                "span_count": 5,
-                "time": 452.416,
+                "span_count": 3,
+                "time": 218.675,
                 "type": "Bus"
             },
             {
-                "stop_name": "Manezh",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
-                "bus": "29k",
-                "span_count": 2,
-                "time": 121.255,
+                "bus": "83k",
+                "span_count": 4,
+                "time": 354.997,
                 "type": "Bus"
             }
         ],
@@ -22221,7 +22221,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "26",
+                "bus": "8",
                 "span_count": 2,
                 "time": 98.1546,
                 "type": "Bus"
@@ -22239,19 +22239,19 @@
             },
             {
                 "bus": "25k",
-                "span_count": 1,
-                "time": 152.985,
+                "span_count": 2,
+                "time": 279.045,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "5k",
-                "span_count": 9,
-                "time": 1157.04,
+                "span_count": 8,
+                "time": 1030.98,
                 "type": "Bus"
             }
         ],
@@ -22457,7 +22457,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "4",
                 "span_count": 1,
                 "time": 77.6061,
                 "type": "Bus"
@@ -22782,7 +22782,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 89.4945,
                 "type": "Bus"
@@ -22811,19 +22811,19 @@
             },
             {
                 "bus": "5k",
-                "span_count": 3,
-                "time": 399.006,
+                "span_count": 4,
+                "time": 497.988,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "21k",
-                "span_count": 7,
-                "time": 804.26,
+                "span_count": 6,
+                "time": 705.278,
                 "type": "Bus"
             }
         ],
@@ -22849,7 +22849,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "15",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 116.024,
                 "type": "Bus"
@@ -22970,7 +22970,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 89.4945,
                 "type": "Bus"
@@ -22982,19 +22982,19 @@
             },
             {
                 "bus": "50",
-                "span_count": 8,
-                "time": 617.686,
+                "span_count": 7,
+                "time": 491.625,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "17",
-                "span_count": 1,
-                "time": 17.1591,
+                "span_count": 2,
+                "time": 143.22,
                 "type": "Bus"
             }
         ],
@@ -23179,7 +23179,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 227.409,
                 "type": "Bus"
@@ -23291,7 +23291,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "12",
                 "span_count": 1,
                 "time": 60.2265,
                 "type": "Bus"
@@ -23319,7 +23319,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "22k",
+                "bus": "8",
                 "span_count": 2,
                 "time": 122.151,
                 "type": "Bus"
@@ -23689,7 +23689,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 179.185,
                 "type": "Bus"
@@ -23868,7 +23868,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 33.9426,
                 "type": "Bus"
@@ -24008,7 +24008,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 71.5817,
                 "type": "Bus"
@@ -24151,7 +24151,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "12",
+                "bus": "8",
                 "span_count": 1,
                 "time": 0.422571,
                 "type": "Bus"
@@ -24203,7 +24203,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "6k",
                 "span_count": 1,
                 "time": 54.8139,
                 "type": "Bus"
@@ -24259,7 +24259,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "4",
                 "span_count": 2,
                 "time": 194.027,
                 "type": "Bus"
@@ -24351,7 +24351,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "4",
                 "span_count": 1,
                 "time": 134.172,
                 "type": "Bus"
@@ -24611,7 +24611,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "35",
+                "bus": "9k",
                 "span_count": 2,
                 "time": 184.802,
                 "type": "Bus"
@@ -24667,7 +24667,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "18",
+                "bus": "2k",
                 "span_count": 2,
                 "time": 83.5879,
                 "type": "Bus"
@@ -24691,7 +24691,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "8",
                 "span_count": 2,
                 "time": 286.737,
                 "type": "Bus"
@@ -24724,19 +24724,19 @@
             },
             {
                 "bus": "50",
-                "span_count": 1,
-                "time": 12.4476,
+                "span_count": 2,
+                "time": 72.3026,
                 "type": "Bus"
             },
             {
-                "stop_name": "Manezh",
+                "stop_name": "Kremlin",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "44",
-                "span_count": 2,
-                "time": 65.8296,
+                "span_count": 1,
+                "time": 5.97471,
                 "type": "Bus"
             }
         ],
@@ -24867,7 +24867,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 279.664,
                 "type": "Bus"
@@ -25146,7 +25146,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 29.8149,
                 "type": "Bus"
@@ -25237,7 +25237,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "12",
                 "span_count": 1,
                 "time": 60.2265,
                 "type": "Bus"
@@ -25408,19 +25408,19 @@
             },
             {
                 "bus": "83k",
-                "span_count": 3,
-                "time": 181.11,
+                "span_count": 4,
+                "time": 354.997,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "1",
-                "span_count": 3,
-                "time": 203.65,
+                "span_count": 2,
+                "time": 29.7636,
                 "type": "Bus"
             }
         ],
@@ -25527,19 +25527,19 @@
             },
             {
                 "bus": "79",
-                "span_count": 3,
-                "time": 250.504,
+                "span_count": 4,
+                "time": 349.485,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "93k",
-                "span_count": 3,
-                "time": 218.206,
+                "span_count": 2,
+                "time": 119.224,
                 "type": "Bus"
             }
         ],
@@ -25648,19 +25648,19 @@
             },
             {
                 "bus": "27k",
-                "span_count": 2,
-                "time": 239.942,
+                "span_count": 1,
+                "time": 49.7732,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "82k",
-                "span_count": 4,
-                "time": 512.532,
+                "span_count": 5,
+                "time": 702.701,
                 "type": "Bus"
             }
         ],
@@ -25679,7 +25679,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 71.5817,
                 "type": "Bus"
@@ -25690,7 +25690,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 179.185,
                 "type": "Bus"
@@ -25725,7 +25725,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "6k",
                 "span_count": 1,
                 "time": 54.8139,
                 "type": "Bus"
@@ -25888,19 +25888,19 @@
             },
             {
                 "bus": "27k",
-                "span_count": 1,
-                "time": 83.6252,
+                "span_count": 2,
+                "time": 209.686,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
-                "bus": "21k",
-                "span_count": 2,
-                "time": 196.278,
+                "bus": "9k",
+                "span_count": 1,
+                "time": 70.2171,
                 "type": "Bus"
             }
         ],
@@ -26147,7 +26147,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "18",
+                "bus": "2k",
                 "span_count": 2,
                 "time": 83.5879,
                 "type": "Bus"
@@ -26192,7 +26192,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "12",
                 "span_count": 1,
                 "time": 8.61129,
                 "type": "Bus"
@@ -26502,7 +26502,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "15",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 116.024,
                 "type": "Bus"
@@ -26589,19 +26589,19 @@
             },
             {
                 "bus": "10k",
-                "span_count": 4,
-                "time": 507.305,
+                "span_count": 5,
+                "time": 697.474,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "35",
-                "span_count": 4,
-                "time": 258.459,
+                "span_count": 3,
+                "time": 68.2903,
                 "type": "Bus"
             }
         ],
@@ -26965,7 +26965,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 33.9426,
                 "type": "Bus"
@@ -27028,7 +27028,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "15",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 116.024,
                 "type": "Bus"
@@ -27164,7 +27164,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "25k",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 163.419,
                 "type": "Bus"
@@ -27198,20 +27198,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "35",
-                "span_count": 2,
-                "time": 184.802,
+                "bus": "9k",
+                "span_count": 3,
+                "time": 310.863,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "50",
-                "span_count": 9,
-                "time": 672.5,
+                "span_count": 8,
+                "time": 546.439,
                 "type": "Bus"
             }
         ],
@@ -27552,7 +27552,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "8",
                 "span_count": 2,
                 "time": 286.737,
                 "type": "Bus"
@@ -27609,19 +27609,19 @@
             },
             {
                 "bus": "35",
-                "span_count": 2,
-                "time": 151.729,
+                "span_count": 1,
+                "time": 52.7471,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "49",
-                "span_count": 4,
-                "time": 411.35,
+                "span_count": 5,
+                "time": 510.332,
                 "type": "Bus"
             }
         ],
@@ -27675,7 +27675,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "12",
                 "span_count": 1,
                 "time": 13.1554,
                 "type": "Bus"
@@ -27692,7 +27692,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "18",
+                "bus": "2k",
                 "span_count": 2,
                 "time": 83.5879,
                 "type": "Bus"
@@ -27869,19 +27869,19 @@
             },
             {
                 "bus": "7k",
-                "span_count": 3,
-                "time": 256.135,
+                "span_count": 2,
+                "time": 65.9659,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "67",
-                "span_count": 5,
-                "time": 569.203,
+                "span_count": 6,
+                "time": 759.373,
                 "type": "Bus"
             }
         ],
@@ -27970,19 +27970,19 @@
             },
             {
                 "bus": "10k",
-                "span_count": 3,
-                "time": 256.799,
+                "span_count": 2,
+                "time": 130.739,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "25k",
-                "span_count": 1,
-                "time": 152.985,
+                "span_count": 2,
+                "time": 279.045,
                 "type": "Bus"
             }
         ],
@@ -28186,7 +28186,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 33.9426,
                 "type": "Bus"
@@ -28231,7 +28231,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "17",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 79.2527,
                 "type": "Bus"
@@ -28259,7 +28259,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 60.7845,
                 "type": "Bus"
@@ -28318,12 +28318,12 @@
             {
                 "bus": "84k",
                 "span_count": 4,
-                "time": 294.827,
+                "time": 294.826,
                 "type": "Bus"
             }
         ],
         "request_id": 294163844,
-        "total_time": 784.827
+        "total_time": 784.826
     },
     {
         "error_message": "not found",
@@ -28444,7 +28444,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 89.4945,
                 "type": "Bus"
@@ -28472,7 +28472,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 33.9426,
                 "type": "Bus"
@@ -28555,19 +28555,19 @@
             },
             {
                 "bus": "85k",
-                "span_count": 3,
-                "time": 255.596,
+                "span_count": 2,
+                "time": 129.535,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "53k",
-                "span_count": 1,
-                "time": 49.2356,
+                "span_count": 2,
+                "time": 175.296,
                 "type": "Bus"
             }
         ],
@@ -28698,19 +28698,19 @@
             },
             {
                 "bus": "25k",
-                "span_count": 1,
-                "time": 152.985,
+                "span_count": 2,
+                "time": 279.045,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
-                "bus": "50",
-                "span_count": 3,
-                "time": 214.424,
+                "bus": "12",
+                "span_count": 2,
+                "time": 88.3633,
                 "type": "Bus"
             }
         ],
@@ -29313,7 +29313,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "4",
                 "span_count": 1,
                 "time": 16.3331,
                 "type": "Bus"
@@ -29518,19 +29518,19 @@
             },
             {
                 "bus": "49",
-                "span_count": 5,
-                "time": 479.294,
+                "span_count": 4,
+                "time": 353.233,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "19k",
-                "span_count": 1,
-                "time": 105.757,
+                "span_count": 2,
+                "time": 231.818,
                 "type": "Bus"
             }
         ],
@@ -29853,7 +29853,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "35",
+                "bus": "9k",
                 "span_count": 1,
                 "time": 134.038,
                 "type": "Bus"
@@ -29870,7 +29870,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "25k",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 163.419,
                 "type": "Bus"
@@ -30041,19 +30041,19 @@
             },
             {
                 "bus": "27k",
-                "span_count": 2,
-                "time": 239.942,
+                "span_count": 1,
+                "time": 49.7732,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "79",
-                "span_count": 10,
-                "time": 910.313,
+                "span_count": 11,
+                "time": 1100.48,
                 "type": "Bus"
             }
         ],
@@ -30089,7 +30089,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "45k",
+                "bus": "9k",
                 "span_count": 3,
                 "time": 164.128,
                 "type": "Bus"
@@ -30407,19 +30407,19 @@
             },
             {
                 "bus": "86k",
-                "span_count": 4,
-                "time": 360.482,
+                "span_count": 3,
+                "time": 271.362,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "16k",
-                "span_count": 3,
-                "time": 89.3346,
+                "span_count": 4,
+                "time": 178.455,
                 "type": "Bus"
             }
         ],
@@ -30486,7 +30486,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 279.664,
                 "type": "Bus"
@@ -30788,7 +30788,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 227.409,
                 "type": "Bus"
@@ -31182,7 +31182,7 @@
             {
                 "bus": "68k",
                 "span_count": 2,
-                "time": 139.469,
+                "time": 139.468,
                 "type": "Bus"
             }
         ],
@@ -31479,19 +31479,19 @@
             },
             {
                 "bus": "67",
-                "span_count": 6,
-                "time": 759.373,
+                "span_count": 5,
+                "time": 569.203,
                 "type": "Bus"
             },
             {
-                "stop_name": "Troparyovo",
+                "stop_name": "Luzhniki",
                 "time": 490,
                 "type": "Wait"
             },
             {
-                "bus": "11",
-                "span_count": 1,
-                "time": 37.2403,
+                "bus": "3k",
+                "span_count": 2,
+                "time": 227.409,
                 "type": "Bus"
             }
         ],
@@ -31563,7 +31563,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "18",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 23.733,
                 "type": "Bus"
@@ -31861,7 +31861,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "15",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 116.024,
                 "type": "Bus"
@@ -31961,7 +31961,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "8",
                 "span_count": 2,
                 "time": 233.784,
                 "type": "Bus"
@@ -32040,7 +32040,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "20",
+                "bus": "6k",
                 "span_count": 4,
                 "time": 377.676,
                 "type": "Bus"
@@ -32074,7 +32074,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "14",
                 "span_count": 1,
                 "time": 171.836,
                 "type": "Bus"
@@ -32205,7 +32205,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 227.409,
                 "type": "Bus"
@@ -32326,19 +32326,19 @@
             },
             {
                 "bus": "2k",
-                "span_count": 4,
-                "time": 435.929,
+                "span_count": 3,
+                "time": 309.869,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "17",
-                "span_count": 1,
-                "time": 17.1591,
+                "span_count": 2,
+                "time": 143.22,
                 "type": "Bus"
             }
         ],
@@ -32370,7 +32370,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "15",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 116.024,
                 "type": "Bus"
@@ -32399,19 +32399,19 @@
             },
             {
                 "bus": "11",
-                "span_count": 1,
-                "time": 15.1104,
+                "span_count": 3,
+                "time": 162.53,
                 "type": "Bus"
             },
             {
-                "stop_name": "Leningradskiy pr 30",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "49",
-                "span_count": 3,
-                "time": 297.185,
+                "span_count": 1,
+                "time": 149.766,
                 "type": "Bus"
             }
         ],
@@ -32683,19 +32683,19 @@
             },
             {
                 "bus": "55k",
-                "span_count": 6,
-                "time": 527.399,
+                "span_count": 7,
+                "time": 626.381,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "43k",
-                "span_count": 6,
-                "time": 465.129,
+                "span_count": 5,
+                "time": 366.147,
                 "type": "Bus"
             }
         ],
@@ -32781,19 +32781,19 @@
             },
             {
                 "bus": "19k",
-                "span_count": 5,
-                "time": 482.744,
+                "span_count": 6,
+                "time": 656.63,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "1",
-                "span_count": 2,
-                "time": 182.256,
+                "span_count": 1,
+                "time": 8.36936,
                 "type": "Bus"
             }
         ],
@@ -33181,7 +33181,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 227.409,
                 "type": "Bus"
@@ -33584,7 +33584,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "8",
                 "span_count": 3,
                 "time": 445.313,
                 "type": "Bus"
@@ -33682,19 +33682,19 @@
             },
             {
                 "bus": "11",
-                "span_count": 2,
-                "time": 191.742,
+                "span_count": 1,
+                "time": 17.8554,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "50",
-                "span_count": 3,
-                "time": 140.255,
+                "span_count": 4,
+                "time": 314.142,
                 "type": "Bus"
             }
         ],
@@ -33709,7 +33709,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "12",
+                "bus": "8",
                 "span_count": 1,
                 "time": 152.711,
                 "type": "Bus"
@@ -33733,7 +33733,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "5k",
                 "span_count": 1,
                 "time": 121.692,
                 "type": "Bus"
@@ -33744,7 +33744,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 29.8149,
                 "type": "Bus"
@@ -34192,7 +34192,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "26",
+                "bus": "8",
                 "span_count": 2,
                 "time": 98.1546,
                 "type": "Bus"
@@ -34305,7 +34305,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "12",
                 "span_count": 1,
                 "time": 45.8934,
                 "type": "Bus"
@@ -34333,7 +34333,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 227.409,
                 "type": "Bus"
@@ -34559,7 +34559,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "38k",
+                "bus": "4",
                 "span_count": 1,
                 "time": 42.1307,
                 "type": "Bus"
@@ -34688,7 +34688,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 37.2403,
                 "type": "Bus"
@@ -34739,7 +34739,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 59.8549,
                 "type": "Bus"
@@ -34810,7 +34810,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "12",
                 "span_count": 2,
                 "time": 231.655,
                 "type": "Bus"
@@ -34859,19 +34859,19 @@
             },
             {
                 "bus": "22k",
-                "span_count": 4,
-                "time": 306.303,
+                "span_count": 5,
+                "time": 395.423,
                 "type": "Bus"
             },
             {
-                "stop_name": "Yandex",
+                "stop_name": "Luzhniki",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "21k",
-                "span_count": 3,
-                "time": 391.853,
+                "span_count": 2,
+                "time": 302.733,
                 "type": "Bus"
             }
         ],
@@ -34897,7 +34897,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "22k",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 82.3018,
                 "type": "Bus"
@@ -35253,7 +35253,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 130.925,
                 "type": "Bus"
@@ -35298,7 +35298,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "35",
+                "bus": "9k",
                 "span_count": 2,
                 "time": 184.802,
                 "type": "Bus"
@@ -35309,7 +35309,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "12",
                 "span_count": 1,
                 "time": 60.2265,
                 "type": "Bus"
@@ -35450,20 +35450,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "50",
-                "span_count": 4,
-                "time": 282.376,
+                "bus": "40k",
+                "span_count": 3,
+                "time": 156.316,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
-                "bus": "35",
-                "span_count": 2,
-                "time": 184.802,
+                "bus": "9k",
+                "span_count": 3,
+                "time": 310.863,
                 "type": "Bus"
             }
         ],
@@ -35483,19 +35483,19 @@
             },
             {
                 "bus": "1",
-                "span_count": 3,
-                "time": 203.65,
+                "span_count": 2,
+                "time": 29.7636,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "83k",
-                "span_count": 3,
-                "time": 181.11,
+                "span_count": 4,
+                "time": 354.997,
                 "type": "Bus"
             }
         ],
@@ -35538,7 +35538,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 89.4945,
                 "type": "Bus"
@@ -35627,7 +35627,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 29.8149,
                 "type": "Bus"
@@ -35750,7 +35750,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 89.4945,
                 "type": "Bus"
@@ -35864,20 +35864,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
-                "span_count": 3,
-                "time": 261.751,
+                "bus": "3k",
+                "span_count": 2,
+                "time": 71.5817,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "67",
-                "span_count": 5,
-                "time": 569.203,
+                "span_count": 6,
+                "time": 759.373,
                 "type": "Bus"
             }
         ],
@@ -35942,7 +35942,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "4",
                 "span_count": 2,
                 "time": 166.726,
                 "type": "Bus"
@@ -36113,20 +36113,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
-                "span_count": 2,
-                "time": 76.188,
+                "bus": "4",
+                "span_count": 1,
+                "time": 16.3331,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "96",
-                "span_count": 5,
-                "time": 315.407,
+                "span_count": 6,
+                "time": 375.262,
                 "type": "Bus"
             }
         ],
@@ -36141,7 +36141,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "26",
+                "bus": "8",
                 "span_count": 2,
                 "time": 98.1546,
                 "type": "Bus"
@@ -36309,7 +36309,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "4",
                 "span_count": 1,
                 "time": 16.3331,
                 "type": "Bus"
@@ -36497,19 +36497,19 @@
             },
             {
                 "bus": "71k",
-                "span_count": 6,
-                "time": 791.316,
+                "span_count": 5,
+                "time": 692.335,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
-                "bus": "13",
-                "span_count": 1,
-                "time": 60.7845,
+                "bus": "3k",
+                "span_count": 2,
+                "time": 159.766,
                 "type": "Bus"
             }
         ],
@@ -36579,7 +36579,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
+                "bus": "3k",
                 "span_count": 3,
                 "time": 261.751,
                 "type": "Bus"
@@ -36590,7 +36590,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "22k",
+                "bus": "2k",
                 "span_count": 2,
                 "time": 171.422,
                 "type": "Bus"
@@ -36607,20 +36607,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "90k",
-                "span_count": 2,
-                "time": 95.6721,
+                "bus": "32",
+                "span_count": 1,
+                "time": 89.6974,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Ostozhenka 80",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "44",
-                "span_count": 5,
-                "time": 475.961,
+                "span_count": 6,
+                "time": 481.936,
                 "type": "Bus"
             }
         ],
@@ -36663,19 +36663,19 @@
             },
             {
                 "bus": "25k",
-                "span_count": 2,
-                "time": 229.738,
+                "span_count": 1,
+                "time": 39.5694,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "79",
-                "span_count": 4,
-                "time": 349.118,
+                "span_count": 5,
+                "time": 539.287,
                 "type": "Bus"
             }
         ],
@@ -36713,7 +36713,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "15",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 116.024,
                 "type": "Bus"
@@ -36886,7 +36886,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "12",
+                "bus": "8",
                 "span_count": 1,
                 "time": 121.361,
                 "type": "Bus"
@@ -36968,7 +36968,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "22k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 98.9016,
                 "type": "Bus"
@@ -37152,20 +37152,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "20",
-                "span_count": 2,
-                "time": 240.956,
+                "bus": "64k",
+                "span_count": 5,
+                "time": 588.74,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Kremlin",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "44",
-                "span_count": 10,
-                "time": 653.841,
+                "span_count": 7,
+                "time": 306.058,
                 "type": "Bus"
             }
         ],
@@ -37232,7 +37232,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "26",
+                "bus": "8",
                 "span_count": 1,
                 "time": 9.03429,
                 "type": "Bus"
@@ -37536,7 +37536,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "24k",
+                "bus": "4",
                 "span_count": 1,
                 "time": 67.8109,
                 "type": "Bus"
@@ -37553,7 +37553,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "12",
                 "span_count": 1,
                 "time": 13.1554,
                 "type": "Bus"
@@ -37853,7 +37853,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
+                "bus": "3k",
                 "span_count": 3,
                 "time": 261.751,
                 "type": "Bus"
@@ -38156,20 +38156,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "79",
-                "span_count": 4,
-                "time": 412.21,
+                "bus": "1",
+                "span_count": 1,
+                "time": 111.961,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
-                "bus": "29k",
-                "span_count": 1,
-                "time": 182.548,
+                "bus": "87k",
+                "span_count": 4,
+                "time": 482.798,
                 "type": "Bus"
             }
         ],
@@ -38217,7 +38217,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "35",
+                "bus": "9k",
                 "span_count": 3,
                 "time": 310.863,
                 "type": "Bus"
@@ -38358,7 +38358,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "15",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 116.024,
                 "type": "Bus"
@@ -38516,7 +38516,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "8",
                 "span_count": 2,
                 "time": 286.737,
                 "type": "Bus"
@@ -38568,7 +38568,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "16k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 33.9426,
                 "type": "Bus"
@@ -38609,19 +38609,19 @@
             },
             {
                 "bus": "83k",
-                "span_count": 2,
-                "time": 287.687,
+                "span_count": 1,
+                "time": 113.801,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "5k",
-                "span_count": 1,
-                "time": 101.801,
+                "span_count": 2,
+                "time": 275.687,
                 "type": "Bus"
             }
         ],
@@ -38853,20 +38853,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
-                "span_count": 2,
-                "time": 227.409,
+                "bus": "3k",
+                "span_count": 1,
+                "time": 37.2403,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "69k",
-                "span_count": 9,
-                "time": 1049.63,
+                "span_count": 10,
+                "time": 1239.8,
                 "type": "Bus"
             }
         ],
@@ -38899,19 +38899,19 @@
             },
             {
                 "bus": "17",
-                "span_count": 1,
-                "time": 17.1591,
+                "span_count": 2,
+                "time": 143.22,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "49",
-                "span_count": 10,
-                "time": 1104.04,
+                "span_count": 9,
+                "time": 977.983,
                 "type": "Bus"
             }
         ],
@@ -38950,7 +38950,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "17",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 167.785,
                 "type": "Bus"
@@ -39019,19 +39019,19 @@
             },
             {
                 "bus": "89",
-                "span_count": 2,
-                "time": 219.019,
+                "span_count": 1,
+                "time": 45.1329,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "50",
-                "span_count": 2,
-                "time": 72.3026,
+                "span_count": 3,
+                "time": 246.189,
                 "type": "Bus"
             }
         ],
@@ -39108,19 +39108,19 @@
             },
             {
                 "bus": "25k",
-                "span_count": 1,
-                "time": 152.985,
+                "span_count": 2,
+                "time": 279.045,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "49",
-                "span_count": 10,
-                "time": 1104.04,
+                "span_count": 9,
+                "time": 977.983,
                 "type": "Bus"
             }
         ],
@@ -39686,19 +39686,19 @@
             },
             {
                 "bus": "55k",
-                "span_count": 1,
-                "time": 118.774,
+                "span_count": 2,
+                "time": 244.835,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "5k",
-                "span_count": 9,
-                "time": 1157.04,
+                "span_count": 8,
+                "time": 1030.98,
                 "type": "Bus"
             }
         ],
@@ -39748,20 +39748,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "23k",
-                "span_count": 3,
-                "time": 261.751,
+                "bus": "3k",
+                "span_count": 2,
+                "time": 71.5817,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "49",
-                "span_count": 3,
-                "time": 395.011,
+                "span_count": 4,
+                "time": 585.18,
                 "type": "Bus"
             }
         ],
@@ -39850,7 +39850,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "35",
+                "bus": "9k",
                 "span_count": 1,
                 "time": 3.99836,
                 "type": "Bus"
@@ -39868,19 +39868,19 @@
             },
             {
                 "bus": "11",
-                "span_count": 2,
-                "time": 191.742,
+                "span_count": 1,
+                "time": 17.8554,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
-                "bus": "52",
-                "span_count": 2,
-                "time": 97.4754,
+                "bus": "86k",
+                "span_count": 3,
+                "time": 271.362,
                 "type": "Bus"
             }
         ],
@@ -39895,20 +39895,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "24k",
-                "span_count": 2,
-                "time": 143.019,
+                "bus": "42",
+                "span_count": 3,
+                "time": 242,
                 "type": "Bus"
             },
             {
-                "stop_name": "Belorusskiy vokzal",
+                "stop_name": "Manezh",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "1",
-                "span_count": 2,
-                "time": 210.942,
+                "span_count": 1,
+                "time": 111.961,
                 "type": "Bus"
             }
         ],
@@ -40085,19 +40085,19 @@
             },
             {
                 "bus": "77k",
-                "span_count": 10,
-                "time": 1026.73,
+                "span_count": 9,
+                "time": 900.668,
                 "type": "Bus"
             },
             {
-                "stop_name": "Khimki",
+                "stop_name": "Sokol",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "17",
-                "span_count": 1,
-                "time": 17.1591,
+                "span_count": 2,
+                "time": 143.22,
                 "type": "Bus"
             }
         ],
@@ -40234,7 +40234,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "24k",
+                "bus": "4",
                 "span_count": 1,
                 "time": 67.8109,
                 "type": "Bus"
@@ -40439,7 +40439,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "8",
                 "span_count": 1,
                 "time": 211.529,
                 "type": "Bus"
@@ -40533,7 +40533,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "35",
+                "bus": "9k",
                 "span_count": 2,
                 "time": 184.802,
                 "type": "Bus"
@@ -40619,7 +40619,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "50",
+                "bus": "6k",
                 "span_count": 1,
                 "time": 123.05,
                 "type": "Bus"
@@ -40739,12 +40739,12 @@
             {
                 "bus": "44",
                 "span_count": 3,
-                "time": 128.999,
+                "time": 128.998,
                 "type": "Bus"
             }
         ],
         "request_id": 306698184,
-        "total_time": 618.999
+        "total_time": 618.998
     },
     {
         "buses": [
@@ -41022,19 +41022,19 @@
             },
             {
                 "bus": "44",
-                "span_count": 4,
-                "time": 416.106,
+                "span_count": 6,
+                "time": 481.936,
                 "type": "Bus"
             },
             {
-                "stop_name": "Manezh",
+                "stop_name": "Ostozhenka 80",
                 "time": 490,
                 "type": "Wait"
             },
             {
-                "bus": "90k",
-                "span_count": 3,
-                "time": 155.527,
+                "bus": "32",
+                "span_count": 1,
+                "time": 89.6974,
                 "type": "Bus"
             }
         ],
@@ -41337,19 +41337,19 @@
             },
             {
                 "bus": "89",
-                "span_count": 2,
-                "time": 219.019,
+                "span_count": 1,
+                "time": 45.1329,
                 "type": "Bus"
             },
             {
-                "stop_name": "Kremlin",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "5k",
-                "span_count": 6,
-                "time": 721.481,
+                "span_count": 7,
+                "time": 895.367,
                 "type": "Bus"
             }
         ],
@@ -41558,7 +41558,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "22k",
+                "bus": "2k",
                 "span_count": 1,
                 "time": 82.3018,
                 "type": "Bus"
@@ -41610,7 +41610,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "11",
+                "bus": "3k",
                 "span_count": 2,
                 "time": 227.409,
                 "type": "Bus"
@@ -41718,7 +41718,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "22k",
+                "bus": "2k",
                 "span_count": 2,
                 "time": 171.422,
                 "type": "Bus"
@@ -41811,19 +41811,19 @@
             },
             {
                 "bus": "35",
-                "span_count": 4,
-                "time": 258.459,
+                "span_count": 3,
+                "time": 68.2903,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Troparyovo",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "69k",
-                "span_count": 9,
-                "time": 1049.63,
+                "span_count": 10,
+                "time": 1239.8,
                 "type": "Bus"
             }
         ],
@@ -41970,7 +41970,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "13",
+                "bus": "3k",
                 "span_count": 1,
                 "time": 89.4945,
                 "type": "Bus"
@@ -42145,7 +42145,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "100k",
+                "bus": "4",
                 "span_count": 2,
                 "time": 166.726,
                 "type": "Bus"
@@ -42316,20 +42316,20 @@
                 "type": "Wait"
             },
             {
-                "bus": "85k",
-                "span_count": 3,
-                "time": 360.395,
+                "bus": "77k",
+                "span_count": 2,
+                "time": 271.275,
                 "type": "Bus"
             },
             {
-                "stop_name": "Luzhniki",
+                "stop_name": "Yandex",
                 "time": 490,
                 "type": "Wait"
             },
             {
                 "bus": "92k",
-                "span_count": 4,
-                "time": 328.129,
+                "span_count": 5,
+                "time": 417.249,
                 "type": "Bus"
             }
         ],
@@ -42456,7 +42456,7 @@
                 "type": "Wait"
             },
             {
-                "bus": "50",
+                "bus": "6k",
                 "span_count": 2,
                 "time": 177.864,
                 "type": "Bus"

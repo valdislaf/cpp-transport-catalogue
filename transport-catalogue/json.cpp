@@ -229,7 +229,7 @@ struct PrintContext {
 
     void PrintIndent() const {
         for (int i = 0; i < indent; ++i) {
-            out.put(' ');
+            out.put(' '); 
         }
     }
 
@@ -246,6 +246,7 @@ void PrintValue(const Value& value, const PrintContext& ctx) {
 }
 
 void PrintString(const std::string& value, std::ostream& out) {
+    
     out.put('"');
     for (const char c : value) {
         switch (c) {
@@ -266,6 +267,7 @@ void PrintString(const std::string& value, std::ostream& out) {
                 break;
         }
     }
+   
     out.put('"');
 }
 
@@ -291,20 +293,26 @@ void PrintValue<bool>(const bool& value, const PrintContext& ctx) {
 template <>
 void PrintValue<Array>(const Array& nodes, const PrintContext& ctx) {
     std::ostream& out = ctx.out;
+ 
     out << "[\n"sv;
     bool first = true;
+ 
     auto inner_ctx = ctx.Indented();
     for (const Node& node : nodes) {
         if (first) {
+           
             first = false;
         } else {
             out << ",\n"sv;
         }
+       // out.put(' ');
+       // out.put(' ');
         inner_ctx.PrintIndent();
         PrintNode(node, inner_ctx);
     }
     out.put('\n');
     ctx.PrintIndent();
+   // out << "  "sv;
     out.put(']');
 }
 
@@ -315,18 +323,24 @@ void PrintValue<Dict>(const Dict& nodes, const PrintContext& ctx) {
     bool first = true;
     auto inner_ctx = ctx.Indented();
     for (const auto& [key, node] : nodes) {
+        
         if (first) {
+           
             first = false;
         } else {
             out << ",\n"sv;
         }
+      
         inner_ctx.PrintIndent();
+       // out.put(' ');
+      //  out.put(' ');
         PrintString(key, ctx.out);
         out << ": "sv;
         PrintNode(node, inner_ctx);
     }
     out.put('\n');
     ctx.PrintIndent();
+  //  out << "  "sv;
     out.put('}');
 }
 
@@ -345,7 +359,13 @@ Document Load(std::istream& input) {
 }
 
 void Print(const Document& doc, std::ostream& output) {
+    bool first = true;
+    if (first) { //output.put(' '); output.put(' ');
+    }
     PrintNode(doc.GetRoot(), PrintContext{output});
+    if (first) {
+        // output.put('\n'); output.put(' '); output.put(' ');
+    }first = false;
 }
 
 }  // namespace json
