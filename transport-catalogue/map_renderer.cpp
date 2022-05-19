@@ -232,6 +232,7 @@ RenderXml::RenderXml(RequestHandler& handler, json::Dict render_settings) {
     RenderSettings rs = SetRenerSettings(render_settings);
 
     const auto& stops = handler.GetStops();
+
     const auto& buses = handler.GetBuses();
 
     std::deque<Coordinates>coord_stops = GetCoordStops(stops, buses);

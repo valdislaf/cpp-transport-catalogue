@@ -27,12 +27,14 @@ json::Dict JsonBuses(const RouteInfo& response, json::Node& doc);
 
 json::Dict JsonStops(const StopInfo& response, json::Node& doc);
 
-void FormatResponse(const json::Document& load_input, RequestHandler& handler, std::ostream& out);
+void FormatResponse(json::Document& load_input, RequestHandler& handler, std::ostream& out);
 
 json::Dict JsonMap(RequestHandler& handler, json::Node& doc, json::Document& load_input);
 
-void AddStopJson(RequestHandler& handler, json::Node load_stop);
+void AddStopJson(TransportCatalogue& TC, json::Node load_stop);
 
-void AddBusJson(RequestHandler& handler, json::Node load_bus);
+void AddBusJson(TransportCatalogue& TC, json::Node load_bus);
+
+void AddStopDistance(TransportCatalogue& TC, json::Node load_stop);
 
 void JsonReader(std::istream& in, std::ostream& out);

@@ -47,13 +47,14 @@ namespace transport {
         public:
 
             const Bus* GetBus(std::string_view stop);
+
             const std::deque<const Bus*> GetBuses();
+
             const Stop* GetStop(std::string_view stop);
+
             const std::deque<const Stop*> GetStops();
 
             void AddStop(Stop&& stop);
-
-            void AddStopsLength(std::string stops, int Length);
 
             void AddStopsDistance(std::pair<const Stop*, const Stop*> stop, size_t Length);
 
@@ -71,8 +72,6 @@ namespace transport {
 
             const RouteInfo GetRouteInfo(std::string_view str);
 
-            const std::unordered_map<std::string, int> GetStopsLengths();
-
             struct Hasher {
                 size_t operator()(std::pair<const Stop*, const Stop*> stop) const {
                     std::hash<const void*> ptr_hasher;
@@ -81,7 +80,6 @@ namespace transport {
             };
 
             const  std::unordered_map<std::pair<const Stop*, const Stop*>, size_t, Hasher> GetStopsDistance();
-
            
         private:
 
@@ -89,8 +87,7 @@ namespace transport {
             std::unordered_map<std::string_view, const Bus*> buses_;
             std::deque<Stop> deque_stops_;
             std::unordered_map<std::string_view, const Stop*> stops_;
-            std::unordered_map<const Stop*, std::deque<const Bus*>> stop_buses_;
-            std::unordered_map<std::string, int>stop_to_stop_;
+            std::unordered_map<const Stop*, std::deque<const Bus*>> stop_buses_;          
             std::unordered_map<std::pair<const Stop*, const Stop*>,size_t, Hasher>stops_distance_;
 
         };

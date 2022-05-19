@@ -57,17 +57,9 @@ namespace transport {
 
         }
 
-        void TransportCatalogue::AddStopsLength(std::string stops, int Length) {
-         
-            stop_to_stop_[stops] = Length;
-            
-        }
-
         void TransportCatalogue::AddStopsDistance(std::pair<const Stop*, const Stop*> stop, size_t Length) {
             stops_distance_[stop] = Length;
         }
-
-        
 
         void TransportCatalogue::AddBus(Bus&& bus) {
             deque_buses_.push_back(move(bus));
@@ -75,7 +67,6 @@ namespace transport {
                 stop_buses_[s].push_back(&deque_buses_.back());
             }
             buses_[deque_buses_.back().name] = &deque_buses_.back();
-
         }
 
         const StopInfo TransportCatalogue::GetListBuses(string_view str) {
@@ -97,16 +88,12 @@ namespace transport {
             double route_lenght = 0.0;
             for (size_t i = 0; i < bus->stops.size() - 1; ++i) {
            
-            const  string& name_stop = (*bus).stops[i]->name;
-            const  string& name_next = (*bus).stops[i + 1]->name;
-
-
-                if (stop_to_stop_.count(name_stop + name_next)) {
-                    route_lenght += stop_to_stop_.at(name_stop + name_next);
-                }
-                else {
-                    route_lenght += stop_to_stop_.at(name_next + name_stop);
-                }
+            if (stops_distance_.count({ (*bus).stops[i] ,(*bus).stops[i + 1] })) {
+                route_lenght += stops_distance_.at({ (*bus).stops[i] ,(*bus).stops[i + 1] });
+            }
+            else {
+                route_lenght += stops_distance_.at({ (*bus).stops[i + 1] ,(*bus).stops[i] });
+            }
 
             }
         
@@ -122,11 +109,6 @@ namespace transport {
             if (bus == nullptr) { return { bus,0,str ,0,0,0 }; }
             double routelength = GetRouteLength(bus);
             return { bus, routelength, str, bus->stops.size(), GetUnique(bus), GetCurvature(bus, routelength) };
-        }
-
-        const std::unordered_map<std::string, int> TransportCatalogue::GetStopsLengths()
-        {
-            return stop_to_stop_;
         }
 
         const std::unordered_map<std::pair<const Stop*, const Stop*>, size_t, transport::catalogue::TransportCatalogue::Hasher> TransportCatalogue::GetStopsDistance()

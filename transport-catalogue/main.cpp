@@ -25,7 +25,7 @@ int main() {
     }
     is.close();     // закрываем файл
 
-   // JsonReader(std::cin,std::cout);
+  // JsonReader(std::cin,std::cout);
    return 0;
 
 }

@@ -2,6 +2,7 @@
 #include "json_reader.h"
 #include "request_handler.h"
 #include "router.h"
+#include "transport_router.h"
 #include "log_duration.h"
 
 using namespace transport::catalogue;
@@ -66,30 +67,25 @@ json::Dict JsonMap(RequestHandler& handler, json::Node& doc, json::Document& loa
         .EndDict().Build().AsDict();
 }
 
-void AddStopJson(RequestHandler& handler, json::Node load_stop) {
-    std::string name_stop = load_stop.AsDict().at("name"s).AsString();
-    std::unordered_map<std::string, int>tostop_;
-    for (const auto& [name_to_stop, road_distances] : load_stop.AsDict().at("road_distances"s).AsDict()) {
-        handler.AddStopsLength(name_stop + name_to_stop, road_distances.AsInt());
-    }
-    handler.AddStop({
-        name_stop,
+void AddStopJson(TransportCatalogue& TC, json::Node load_stop) {
+    TC.AddStop({
+        load_stop.AsDict().at("name"s).AsString(),
         load_stop.AsDict().at("latitude"s).AsDouble(),
         load_stop.AsDict().at("longitude"s).AsDouble()
         });
 }
 
-void AddStopDistance(RequestHandler& handler, json::Node load_stop) {
+void AddStopDistance(TransportCatalogue& TC, json::Node load_stop) {
     std::string name_stop = load_stop.AsDict().at("name"s).AsString();
-    const Stop* stop1 = handler.GetStop(name_stop);
+    const Stop* stop_from = TC.GetStop(name_stop);
     std::unordered_map<std::string, int>tostop_;
     for (const auto& [name_to_stop, road_distances] : load_stop.AsDict().at("road_distances"s).AsDict()) {
-        const Stop* stop2 = handler.GetStop(name_to_stop);
-        handler.AddStopsDistance({ stop1, stop2 }, road_distances.AsInt());
+        const Stop* stop_to = TC.GetStop(name_to_stop);
+        TC.AddStopsDistance({ stop_from, stop_to }, road_distances.AsInt());
     }
 }
 
-void AddBusJson(RequestHandler& handler, json::Node load_bus) {
+void AddBusJson(TransportCatalogue& TC, json::Node load_bus) {
     std::string name;
     std::deque<const Stop*> stops;
     bool is_roundtrip;
@@ -97,14 +93,14 @@ void AddBusJson(RequestHandler& handler, json::Node load_bus) {
         is_roundtrip = true;
         name = load_bus.AsDict().at("name"s).AsString();
         for (const auto& s : load_bus.AsDict().at("stops"s).AsArray()) {
-            stops.push_back(handler.GetStop(s.AsString()));
+            stops.push_back(TC.GetStop(s.AsString()));
         }
     }
     else {
         is_roundtrip = false;
         name = load_bus.AsDict().at("name"s).AsString();
         for (const auto& s : load_bus.AsDict().at("stops"s).AsArray()) {
-            stops.push_back(handler.GetStop(s.AsString()));
+            stops.push_back(TC.GetStop(s.AsString()));
         }
 
         size_t sz = stops.size();
@@ -113,15 +109,15 @@ void AddBusJson(RequestHandler& handler, json::Node load_bus) {
         }
     }
 
-    handler.AddBus({ name, stops, is_roundtrip });
+    TC.AddBus({ name, stops, is_roundtrip });
 }
 
 void FormatResponse(json::Document& load_input, RequestHandler& handler, std::ostream& out) {
     //выводим в файл
-    std::ofstream out_("out.txt"s);
-    std::streambuf* coutbuf = out.rdbuf(); //save old buf 
-    out.rdbuf(out_.rdbuf()); //redirect std::cout to out.t
-
+    // std::ofstream out_("out.txt"s);
+    // std::streambuf* coutbuf = out.rdbuf(); //save old buf 
+    // out.rdbuf(out_.rdbuf()); //redirect std::cout to out.t
+    //LOG_DURATION("test");
     json::Array stat_requests = load_input.GetRoot().AsDict().at("stat_requests"s).AsArray();
     json::Array final_array;
 
@@ -130,53 +126,10 @@ void FormatResponse(json::Document& load_input, RequestHandler& handler, std::os
     double bus_velocity = 0.06 / rs.AsDict().at("bus_velocity"s).AsDouble();
     double bus_wait_time = rs.AsDict().at("bus_wait_time"s).AsDouble();
 
-    const std::deque<const Stop*>stops_ = handler.GetStops();
+    TransportRouter TR(handler, bus_velocity, bus_wait_time);
 
-    std::unordered_map<std::string_view, size_t> stopsinfo;
-    DirectedWeightedGraph<double> graf_stops(stops_.size() * 2);
-    stopsinfo.reserve(stops_.size() * 2);
-    size_t j = 0;
-    for (size_t i = 0; i < stops_.size(); ++i) {
-        stopsinfo[stops_[i]->name] = j;
-        graf_stops.AddEdge({ j ,j + 1 , bus_wait_time , stops_[i]->name,0,true });
-        j = j + 2;
-    }
-    std::deque<const Bus*>buses = handler.GetBuses();
-
-    const auto& stops_distance_ = handler.GetStopsDistance();
-
-    const auto& stop_to_stop_ = handler.GetStopsLengths();
-    {
-        LOG_DURATION("test");
-
-        for (const auto& name : buses) {
-            for (size_t j = 1; j < name->stops.size(); ++j) {
-                for (size_t i = 0; i < name->stops.size() - j; ++i) {
-                    double route_lenght = 0.0;
-                    size_t index = 0;
-                    size_t index_next = 0;
-                    index = stopsinfo.at(std::string_view(name->stops[i]->name));
-                    index_next = stopsinfo.at(std::string_view(name->stops[i + j]->name));
-                    size_t n = 0;
-                    while ((n < j)) {
-
-                        if (stops_distance_.count({ name->stops[i + n] ,name->stops[i + 1 + n] })) {
-                            route_lenght += stops_distance_.at({ name->stops[i + n] ,name->stops[i + 1 + n] });
-                        }
-                        else {
-                            route_lenght += stops_distance_.at({ name->stops[i + 1 + n] ,name->stops[i + n] });
-                        }
-                        n++;
-                    }
-                    if (route_lenght > 0.0) {
-                        double edge_weight = route_lenght * bus_velocity;
-                        graf_stops.AddEdge({ index + 1 ,index_next, edge_weight ,name->name ,j ,false });
-                    }
-                }
-            }
-        }
-    }
-
+    auto& graf_stops = TR.GetGraf();
+    auto& stopsinfo = TR.GetStopInfo();
     graph::Router router_stops(graf_stops);
     const std::vector<graph::Edge<double>>& vec_info = graf_stops.GetEdges();
 
@@ -212,7 +165,7 @@ void FormatResponse(json::Document& load_input, RequestHandler& handler, std::os
             else {
                 size_t index_from = stopsinfo.at(std::string_view(json_stop_from));
                 size_t index_to = stopsinfo.at(std::string_view(json_stop_to));
-                const   std::optional<graph::Router <double>::RouteInfo>& min_route_g = router_stops.BuildRoute(index_from, index_to);
+                const std::optional<graph::Router <double>::RouteInfo>& min_route_g = router_stops.BuildRoute(index_from, index_to);
 
                 if (min_route_g.has_value()) {
                     for (const auto& e : min_route_g.value().edges) {
@@ -276,15 +229,15 @@ void JsonReader(std::istream& in, std::ostream& out) {
     }
 
     for (const auto& doc : base_stops) {
-        AddStopJson(handler, doc);
+        AddStopJson(TC, doc);
     }
 
     for (const auto& doc : base_stops) {
-        AddStopDistance(handler, doc);
+        AddStopDistance(TC, doc);
     }
 
     for (const auto& doc : base_buses) {
-        AddBusJson(handler, doc);
+        AddBusJson(TC, doc);
     }
 
     FormatResponse(load_input, handler, out);
