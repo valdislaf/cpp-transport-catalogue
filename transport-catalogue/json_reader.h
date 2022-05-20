@@ -23,6 +23,12 @@ using namespace std::literals;
 using namespace svg;
 using namespace transport::catalogue;
 
+struct RouteSettings
+{
+    double bus_velocity = 0.0;
+    double bus_wait_time = 0.0;
+};
+
 json::Dict JsonBuses(const RouteInfo& response, json::Node& doc);
 
 json::Dict JsonStops(const StopInfo& response, json::Node& doc);

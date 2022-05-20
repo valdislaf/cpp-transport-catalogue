@@ -4,6 +4,7 @@
 #include "request_handler.h"
 
 #include <optional>
+#include "json_reader.h"
 
 using namespace transport::catalogue;
 using namespace graph;
@@ -11,7 +12,7 @@ using namespace graph;
 class  TransportRouter {
 
 public:
-    TransportRouter(RequestHandler& handler, double bus_velocity, double bus_wait_time);		
+    TransportRouter(RequestHandler& handler, RouteSettings route_settings);
 
     DirectedWeightedGraph<double>& GetGraf();
 
@@ -19,8 +20,7 @@ public:
 
 private:
     RequestHandler handler_;
-	double bus_velocity_;
-	double bus_wait_time_;
+    RouteSettings route_settings_;
 	DirectedWeightedGraph<double> graf_stops_;
-    std::unordered_map<std::string_view, size_t> stopsinfo_;
+    std::unordered_map<std::string_view, size_t> stops_info_;
 };

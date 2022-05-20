@@ -114,22 +114,23 @@ void AddBusJson(TransportCatalogue& TC, json::Node load_bus) {
 
 void FormatResponse(json::Document& load_input, RequestHandler& handler, std::ostream& out) {
     //выводим в файл
-    // std::ofstream out_("out.txt"s);
-    // std::streambuf* coutbuf = out.rdbuf(); //save old buf 
-    // out.rdbuf(out_.rdbuf()); //redirect std::cout to out.t
+    //std::ofstream out_("out.txt"s);
+    //std::streambuf* coutbuf = out.rdbuf(); //save old buf 
+    //out.rdbuf(out_.rdbuf()); //redirect std::cout to out.t
     //LOG_DURATION("test");
     json::Array stat_requests = load_input.GetRoot().AsDict().at("stat_requests"s).AsArray();
     json::Array final_array;
 
     using namespace graph;
+    RouteSettings route_settings;
     const auto& rs = load_input.GetRoot().AsDict().at("routing_settings"s);
-    double bus_velocity = 0.06 / rs.AsDict().at("bus_velocity"s).AsDouble();
-    double bus_wait_time = rs.AsDict().at("bus_wait_time"s).AsDouble();
-
-    TransportRouter TR(handler, bus_velocity, bus_wait_time);
+    route_settings.bus_velocity = 0.06 / rs.AsDict().at("bus_velocity"s).AsDouble();
+    route_settings.bus_wait_time = rs.AsDict().at("bus_wait_time"s).AsDouble();
+    
+    TransportRouter TR(handler, route_settings);
 
     auto& graf_stops = TR.GetGraf();
-    auto& stopsinfo = TR.GetStopInfo();
+    auto& stops_info = TR.GetStopInfo();
     graph::Router router_stops(graf_stops);
     const std::vector<graph::Edge<double>>& vec_info = graf_stops.GetEdges();
 
@@ -156,15 +157,15 @@ void FormatResponse(json::Document& load_input, RequestHandler& handler, std::os
 
             json::Array Items;
             json::Dict dict;
-            if (stopsinfo.count(json_stop_from) == 0 || stopsinfo.count(json_stop_to) == 0) {
+            if (stops_info.count(json_stop_from) == 0 || stops_info.count(json_stop_to) == 0) {
                 dict = json::Builder{}.StartDict()
                     .Key("error_message"s).Value("not found"s)
                     .Key("request_id"s).Value(doc.AsDict().at("id"s).AsInt())
                     .EndDict().Build().AsDict();
             }
             else {
-                size_t index_from = stopsinfo.at(std::string_view(json_stop_from));
-                size_t index_to = stopsinfo.at(std::string_view(json_stop_to));
+                size_t index_from = stops_info.at(std::string_view(json_stop_from));
+                size_t index_to = stops_info.at(std::string_view(json_stop_to));
                 const std::optional<graph::Router <double>::RouteInfo>& min_route_g = router_stops.BuildRoute(index_from, index_to);
 
                 if (min_route_g.has_value()) {
