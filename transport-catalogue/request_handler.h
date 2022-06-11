@@ -54,7 +54,11 @@ public:
 
     const std::deque<const Stop*> GetStops();
 
-    const  std::unordered_map<std::pair<const Stop*, const Stop*>, size_t, transport::catalogue::TransportCatalogue::Hasher> GetStopsDistance();
+    const std::unordered_map<std::pair<const Stop*, const Stop*>, size_t, transport::catalogue::TransportCatalogue::Hasher> GetStopsDistance();
+
+    const std::unordered_map<std::string, double> GetRoutingSettings();
+
+    std::map<std::string, value_4_map> GetRenderSettings();
 
 private:
 

@@ -1,4 +1,5 @@
 #include "request_handler.h"
+#include "svg.h"
 
 /*
  * Здесь можно было бы разместить код обработчика запросов к базе, содержащего логику, которую не
@@ -29,4 +30,12 @@ const std::deque<const Stop*> RequestHandler::GetStops(){
 
 const std::unordered_map<std::pair<const Stop*, const Stop*>, size_t, transport::catalogue::TransportCatalogue::Hasher> RequestHandler::GetStopsDistance(){
     return db_.GetStopsDistance();
+}
+
+const std::unordered_map<std::string, double> RequestHandler::GetRoutingSettings(){
+    return db_.GetRoutingSettings();
+}
+
+std::map<std::string, value_4_map> RequestHandler::GetRenderSettings(){
+    return db_.GetRenderSettings();
 }

@@ -3,7 +3,7 @@
 #include "request_handler.h"
 #include "router.h"
 #include "transport_router.h"
-#include "log_duration.h"
+//#include "log_duration.h"
 
 using namespace transport::catalogue;
 /*
@@ -53,11 +53,10 @@ json::Dict JsonStops(const StopInfo& response, json::Node& doc) {
     return json::Dict();
 }
 
-json::Dict JsonMap(RequestHandler& handler, json::Node& doc, json::Document& load_input) {
+json::Dict JsonMap(RequestHandler& handler, json::Node& doc) {
     json::Dict dict;
     std::vector<json::Node> data;
-    json::Dict render_settings = load_input.GetRoot().AsDict().at("render_settings"s).AsDict();
-    RenderXml render_xml(handler, render_settings);
+    RenderXml render_xml(handler);
     svg::Document&& doc_svg = std::move(render_xml.GetXml());
     std::stringstream  inputemp;
     doc_svg.Render(inputemp);
@@ -68,17 +67,24 @@ json::Dict JsonMap(RequestHandler& handler, json::Node& doc, json::Document& loa
 }
 
 void AddStopJson(TransportCatalogue& TC, json::Node load_stop) {
+    std::unordered_map<std::string, int> road_distances;
+    json::Dict  rd = load_stop.AsDict().at("road_distances"s).AsDict();
+    for (const auto& x : rd) {
+        road_distances.insert({ x.first ,x.second.AsInt() });
+    }
+
+
     TC.AddStop({
         load_stop.AsDict().at("name"s).AsString(),
         load_stop.AsDict().at("latitude"s).AsDouble(),
-        load_stop.AsDict().at("longitude"s).AsDouble()
+        load_stop.AsDict().at("longitude"s).AsDouble(),
+        road_distances
         });
 }
 
 void AddStopDistance(TransportCatalogue& TC, json::Node load_stop) {
     std::string name_stop = load_stop.AsDict().at("name"s).AsString();
     const Stop* stop_from = TC.GetStop(name_stop);
-    std::unordered_map<std::string, int>tostop_;
     for (const auto& [name_to_stop, road_distances] : load_stop.AsDict().at("road_distances"s).AsDict()) {
         const Stop* stop_to = TC.GetStop(name_to_stop);
         TC.AddStopsDistance({ stop_from, stop_to }, road_distances.AsInt());
@@ -114,19 +120,22 @@ void AddBusJson(TransportCatalogue& TC, json::Node load_bus) {
 
 void FormatResponse(json::Document& load_input, RequestHandler& handler, std::ostream& out) {
     //выводим в файл
-    //std::ofstream out_("out.txt"s);
+    //std::ofstream out_("out.json"s);
     //std::streambuf* coutbuf = out.rdbuf(); //save old buf 
     //out.rdbuf(out_.rdbuf()); //redirect std::cout to out.t
-    //LOG_DURATION("test");
+  //  LOG_DURATION("test");
     json::Array stat_requests = load_input.GetRoot().AsDict().at("stat_requests"s).AsArray();
     json::Array final_array;
 
     using namespace graph;
     RouteSettings route_settings;
-    const auto& rs = load_input.GetRoot().AsDict().at("routing_settings"s);
-    route_settings.bus_velocity = 0.06 / rs.AsDict().at("bus_velocity"s).AsDouble();
-    route_settings.bus_wait_time = rs.AsDict().at("bus_wait_time"s).AsDouble();
-    
+    std::unordered_map<std::string, double> rs = handler.GetRoutingSettings();
+    if (rs.at("bus_velocity"s) == 0) { route_settings.bus_velocity = 0.0; }
+    else {
+        route_settings.bus_velocity = 0.06 / rs.at("bus_velocity"s);
+    }
+    route_settings.bus_wait_time = rs.at("bus_wait_time"s);
+
     TransportRouter TR(handler, route_settings);
 
     auto& graf_stops = TR.GetGraf();
@@ -135,6 +144,9 @@ void FormatResponse(json::Document& load_input, RequestHandler& handler, std::os
     const std::vector<graph::Edge<double>>& vec_info = graf_stops.GetEdges();
 
     for (auto& doc : stat_requests) {
+        if (doc.AsDict().at("id") == 1151953891) {
+            int stop = 0;
+        }
         if (doc.AsDict().at("type"s).AsString() == "Bus"s) {
             const auto& json_buses = JsonBuses(handler.GetRouteInfo(doc.AsDict().at("name"s).AsString()), doc);
             final_array.push_back(json_buses);
@@ -146,7 +158,7 @@ void FormatResponse(json::Document& load_input, RequestHandler& handler, std::os
         }
 
         if (doc.AsDict().at("type"s).AsString() == "Map"s) {
-            const auto& json_map = JsonMap(handler, doc, load_input);
+            const auto& json_map = JsonMap(handler, doc);
             final_array.push_back(json_map);
         }
 
@@ -205,11 +217,13 @@ void FormatResponse(json::Document& load_input, RequestHandler& handler, std::os
             final_array.push_back(dict);
         }
     }
+
     json::Document doc(final_array);
     json::Print(doc, out);
+
 }
 
-void JsonReader(std::istream& in, std::ostream& out) {
+void JsonReaderMakeBase(std::istream& in) {
 
     TransportCatalogue TC;
     RequestHandler handler(TC);
@@ -240,6 +254,66 @@ void JsonReader(std::istream& in, std::ostream& out) {
     for (const auto& doc : base_buses) {
         AddBusJson(TC, doc);
     }
+
+    if (load_input.GetRoot().AsDict().count("routing_settings"s)) {
+        json::Dict  routing_settings = load_input.GetRoot().AsDict().at("routing_settings"s).AsDict();
+        std::unordered_map<std::string, double> routing_settings_;
+        routing_settings_.insert({ "bus_velocity"s,routing_settings.at("bus_velocity"s).AsInt() });
+        routing_settings_.insert({ "bus_wait_time"s,routing_settings.at("bus_wait_time"s).AsInt() });
+        TC.AddRoutingSettings(routing_settings_);
+    }
+
+    json::Dict serialization_settings = load_input.GetRoot().AsDict().at("serialization_settings"s).AsDict();
+
+
+    json::Dict render_settings = load_input.GetRoot().AsDict().at("render_settings"s).AsDict();
+    using value_4_map = std::variant<std::monostate, int, double, std::vector<double>, svg::Color, std::vector<svg::Color>>;
+    std::map<std::string, value_4_map>map;
+    for (const auto& v : render_settings) {
+
+        if (v.second.IsInt()) {
+            map.emplace(v.first, v.second.AsInt());
+        }
+        else if (v.second.IsDouble()) {
+            map.emplace(v.first, v.second.AsDouble());
+        }
+        else if (v.second.IsString()) {
+            map.emplace(v.first, v.second.AsString());
+        }
+
+        else if (v.second.IsArray() && v.first == "underlayer_color"s) {
+            map.emplace(v.first, GetColorFromDict(v.second.AsArray()));
+        }
+
+        else if (v.second.IsArray() && v.first == "color_palette"s) {
+            std::vector<svg::Color>  colors;
+            for (const auto& n : v.second.AsArray()) {
+                colors.push_back(GetColorFromDict(n));
+            }
+            map.emplace(v.first, colors);
+        }
+
+        else {
+            std::vector<double>  offset;
+            for (const auto& n : v.second.AsArray()) {
+                offset.push_back(n.AsDouble());
+            }
+            map.emplace(v.first, offset);
+        }
+
+    }
+    TC.AddRenderSettings(map);
+
+    Serialize(serialization_settings.at("file").AsString(), handler);
+}
+
+void JsonReaderProcessRequests(std::istream& in, std::ostream& out) {
+    TransportCatalogue TC;
+    RequestHandler handler(TC);
+    json::Document load_input = json::Load(in);//std::cin  
+    json::Dict serialization_settings = load_input.GetRoot().AsDict().at("serialization_settings"s).AsDict();
+
+    Deserialize(serialization_settings.at("file").AsString(), TC);
 
     FormatResponse(load_input, handler, out);
 }

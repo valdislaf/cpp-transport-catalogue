@@ -1,0 +1,3 @@
+D:/VLAD/C++/practicum.yandex/lessons_g++/Sprint_14/build/CMakeFiles/transport_catalogue.dir
+D:/VLAD/C++/practicum.yandex/lessons_g++/Sprint_14/build/CMakeFiles/ALL_BUILD.dir
+D:/VLAD/C++/practicum.yandex/lessons_g++/Sprint_14/build/CMakeFiles/ZERO_CHECK.dir

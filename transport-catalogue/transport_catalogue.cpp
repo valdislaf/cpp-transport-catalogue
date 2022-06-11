@@ -1,5 +1,6 @@
 #include "transport_catalogue.h"
 #include <cassert>
+#include "svg.h"
 
 using namespace std;
 
@@ -100,13 +101,13 @@ namespace transport {
             return route_lenght;
         }
 
-        double TransportCatalogue::GetCurvature(const Bus* bus, int routelength) {
+        double TransportCatalogue::GetCurvature(const Bus* bus, double routelength) {
             return static_cast<double>(routelength) / static_cast<double>(GetDistance(bus));
         }
 
         const RouteInfo TransportCatalogue::GetRouteInfo(string_view str) {
             const Bus* bus = GetBus(str);
-            if (bus == nullptr) { return { bus,0,str ,0,0,0 }; }
+            if (bus == nullptr) { return { bus,0,str ,0,0,0.0 }; }
             double routelength = GetRouteLength(bus);
             return { bus, routelength, str, bus->stops.size(), GetUnique(bus), GetCurvature(bus, routelength) };
         }
@@ -114,6 +115,22 @@ namespace transport {
         const std::unordered_map<std::pair<const Stop*, const Stop*>, size_t, transport::catalogue::TransportCatalogue::Hasher> TransportCatalogue::GetStopsDistance()
         {
             return stops_distance_;
+        }
+
+        void TransportCatalogue::AddRoutingSettings(std::unordered_map<std::string, double> routing_settings) {
+            routing_settings_ = routing_settings;
+        }
+
+        std::unordered_map<std::string, double> TransportCatalogue::GetRoutingSettings() {
+            return routing_settings_;
+        }
+
+        void TransportCatalogue::AddRenderSettings(std::map<std::string, value_4_map> render_settings) {
+            render_settings_ = render_settings;
+        }
+
+        std::map<std::string, value_4_map> TransportCatalogue::GetRenderSettings() {
+            return render_settings_;
         }
 
         size_t TransportCatalogue::GetUnique(const Bus* bus) {

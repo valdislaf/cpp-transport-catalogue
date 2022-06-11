@@ -1,0 +1,89 @@
+﻿syntax = "proto3";
+
+package transport_catalogue_serialize;
+
+
+message Table {    
+    map<string,uint32> table_stops = 1;
+}
+
+message Tableinvert {    
+    map<uint32,string> table_invert_stops = 1;
+}
+
+message Road {    
+    uint32 to = 1;
+    uint32 distance = 2;     
+}
+
+message Stop {  
+    uint32 name = 1; 
+    double latitude = 2; 
+    double longitude = 3;    
+    repeated Road road_distances = 4; 
+}
+
+message Bus {  
+    string name = 1;
+    bool is_roundtrip = 2;
+    repeated Stop stops = 3;
+}
+
+message Stops {
+    repeated Stop stops = 1;
+}
+
+message Buses {
+    repeated Bus buses = 1;
+}
+
+message TransportCatalogue {
+    Table table = 1;
+    Stops stops = 2;
+    Buses buses = 3;
+    Routesettings rs = 4;
+    Rendersettings rends = 5;
+}
+
+message Routesettings {  
+    double bus_velocity = 1;
+    double bus_wait_time = 2;
+}
+
+message Collortxt {        
+    string color = 1;
+}
+
+message Rgb {        
+    uint32 red = 1;
+    uint32 green = 2;
+    uint32 blue = 3;
+}
+
+message Rgba {      
+    uint32 red = 1;
+    uint32 green = 2;
+    uint32 blue = 3;
+    double opacity = 4;
+}
+
+message Color {
+     Collortxt collortxt = 1;
+     Rgb rgb = 2;
+     Rgba rgba = 3;
+}
+
+message Rendersettings {
+    uint32 bus_label_font_size = 1;
+    repeated double bus_label_offset = 2;
+    repeated Color color_palette = 3;
+    double height = 4;
+    double line_width = 5;
+    double padding = 6;
+    uint32 stop_label_font_size = 7;
+    repeated double stop_label_offset = 8;
+    double stop_radius = 9;
+    Color underlayer_color = 10;
+    double underlayer_width = 11;
+    double width = 12;
+}

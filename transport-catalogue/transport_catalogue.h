@@ -4,21 +4,26 @@
 #include <deque>
 #include <iomanip>
 #include <iostream>
+#include <map>
 #include <numeric>
 #include <set>
 #include <string_view>
 #include <string>
 #include <unordered_map>
 #include <unordered_set>
+#include <variant>
 #include <vector>
 
 #include "domain.h"
 #include "geo.h"
+#include "svg.h"
+
+
 
 namespace transport {
 
     namespace catalogue {
-
+        using value_4_map = std::variant<std::monostate, int, double, std::vector<double>, svg::Color, std::vector<svg::Color>>;
         struct RouteInfo {
             const Bus* bus;
             double route_length;
@@ -68,7 +73,7 @@ namespace transport {
 
             double GetRouteLength(const Bus* bus);
 
-            double GetCurvature(const Bus* bus, int routelength);
+            double GetCurvature(const Bus* bus, double routelength);
 
             const RouteInfo GetRouteInfo(std::string_view str);
 
@@ -81,6 +86,14 @@ namespace transport {
 
             const  std::unordered_map<std::pair<const Stop*, const Stop*>, size_t, Hasher> GetStopsDistance();
            
+            void AddRoutingSettings(std::unordered_map<std::string, double> routing_settings);
+
+            std::unordered_map<std::string, double> GetRoutingSettings();
+
+            void AddRenderSettings(std::map<std::string, value_4_map> render_settings);
+
+            std::map<std::string, value_4_map> GetRenderSettings();
+
         private:
 
             std::deque<Bus> deque_buses_;
@@ -89,6 +102,9 @@ namespace transport {
             std::unordered_map<std::string_view, const Stop*> stops_;
             std::unordered_map<const Stop*, std::deque<const Bus*>> stop_buses_;          
             std::unordered_map<std::pair<const Stop*, const Stop*>,size_t, Hasher>stops_distance_;
+
+            std::unordered_map<std::string, double> routing_settings_;
+            std::map<std::string, value_4_map> render_settings_;
 
         };
     }

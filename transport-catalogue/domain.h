@@ -2,7 +2,7 @@
 
 #include <deque>
 #include <string>
-
+#include <unordered_map>
 #include "geo.h"
 
 /*
@@ -20,6 +20,7 @@
 struct Stop {
     std::string name;
     transport::geo_coordinates::Coordinates coord;
+    std::unordered_map<std::string, int> road_distances;
 };
 
 struct Bus {

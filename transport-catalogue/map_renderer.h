@@ -26,12 +26,12 @@ struct RenderSettings{
     double padding;
     double stop_radius;
     double line_width;
-    uint64_t stop_label_font_size;
+    uint32_t stop_label_font_size;
     Point stop_label_offset;
     Color underlayer_color;
     double underlayer_width;
     std::deque<Color> color_palette;
-    uint64_t bus_label_font_size;
+    uint32_t bus_label_font_size;
     Point  bus_label_offset;
 };
 
@@ -97,7 +97,7 @@ private:
 
 Color GetColorFromDict(json::Node color);
 
-RenderSettings SetRenerSettings(json::Dict render_settings);
+RenderSettings SetRenerSettings(RequestHandler& handler);
 
 std::deque<Coordinates> GetCoordStops(const std::deque<const Stop*>& stops, const std::deque<const Bus*>& buses);
 
@@ -116,7 +116,7 @@ void AddStopsToXml(svg::Document& doc_svg,
 
 class RenderXml {
 public:
-    RenderXml(RequestHandler& handler, json::Dict render_settings);
+    RenderXml(RequestHandler& handler);
 
     svg::Document&& GetXml() {
        return std::move(doc_svg_);

@@ -30,24 +30,25 @@ Color GetColorFromDict(json::Node color) {
     return  color_;
 }
 
-RenderSettings SetRenerSettings(json::Dict render_settings) {
+RenderSettings SetRenerSettings(RequestHandler& handler) {
+    const auto& render_settings = handler.GetRenderSettings();
     RenderSettings RS;
-    RS.bus_label_font_size = static_cast<uint64_t>(render_settings.at("bus_label_font_size").AsInt());
-    RS.bus_label_offset.x = render_settings.at("bus_label_offset").AsArray()[0].AsDouble();
-    RS.bus_label_offset.y = render_settings.at("bus_label_offset").AsArray()[1].AsDouble();
-    for (const auto& color : render_settings.at("color_palette").AsArray()) {
-        RS.color_palette.push_back(GetColorFromDict(color));
+    RS.bus_label_font_size = static_cast<uint64_t>(std::get<int>(render_settings.at("bus_label_font_size"s)));
+    RS.bus_label_offset.x = static_cast<double>(std::get<std::vector<double>>(render_settings.at("bus_label_offset"s))[0]);
+    RS.bus_label_offset.y = static_cast<double>(std::get<std::vector<double>>(render_settings.at("bus_label_offset"s))[1]);
+    for (const auto& color : std::get<std::vector<svg::Color>>(render_settings.at("color_palette"s))) {
+        RS.color_palette.push_back((color));
     }
-    RS.height = render_settings.at("height").AsDouble();
-    RS.line_width = render_settings.at("line_width").AsDouble();
-    RS.padding = render_settings.at("padding").AsDouble();
-    RS.stop_label_font_size = static_cast<uint64_t>(render_settings.at("stop_label_font_size").AsInt());
-    RS.stop_label_offset.x = render_settings.at("stop_label_offset").AsArray()[0].AsDouble();
-    RS.stop_label_offset.y = render_settings.at("stop_label_offset").AsArray()[1].AsDouble();
-    RS.stop_radius = render_settings.at("stop_radius").AsDouble();
-    RS.underlayer_color = GetColorFromDict(render_settings.at("underlayer_color"));
-    RS.underlayer_width = render_settings.at("underlayer_width").AsDouble();
-    RS.width = render_settings.at("width").AsDouble();
+    RS.height = static_cast<double>(std::get<double>(render_settings.at("height"s)));
+    RS.line_width = static_cast<double>(std::get<double>(render_settings.at("line_width"s)));
+    RS.padding = static_cast<double>(std::get<double>(render_settings.at("padding"s)));
+    RS.stop_label_font_size = static_cast<uint64_t>(std::get<int>(render_settings.at("stop_label_font_size"s)));
+    RS.stop_label_offset.x = static_cast<double>(std::get<std::vector<double>>(render_settings.at("stop_label_offset"s))[0]);
+    RS.stop_label_offset.y = static_cast<double>(std::get<std::vector<double>>(render_settings.at("stop_label_offset"s))[1]);
+    RS.stop_radius = static_cast<double>(std::get<double>(render_settings.at("stop_radius"s)));
+    RS.underlayer_color = std::get<svg::Color>(render_settings.at("underlayer_color"s));
+    RS.underlayer_width = static_cast<double>(std::get<double>(render_settings.at("underlayer_width"s)));
+    RS.width = static_cast<double>(std::get<double>(render_settings.at("width"s)));
     return RS;
 }
 
@@ -88,7 +89,7 @@ void AddBusesToXml(svg::Document& doc_svg,
     int col_i = 0;
     for (const auto& bus : buses) {
 
-        std::cerr << "stops count: " << bus->stops.size() << " bus_name: " << bus->name.data() << "\n";
+        //std::cerr << "stops count: " << bus->stops.size() << " bus_name: " << bus->name.data() << "\n";
         if (bus->stops.size() != 0) {
             svg::Polyline polyline;
             for (const auto& stop : bus->stops) {
@@ -183,7 +184,7 @@ void AddStopsToXml(svg::Document& doc_svg,
         int chek_stop = GetStopCount(stop, buses);
 
         if (chek_stop > 0) {
-            std::cerr << "buses count: " << chek_stop << " stop_name: " << stop->name << "\n";
+            //std::cerr << "buses count: " << chek_stop << " stop_name: " << stop->name << "\n";
             svg::Circle circle;
             doc_svg.Add(circle.SetCenter(scale({
                 stop->coord.lat, stop->coord.lng
@@ -227,9 +228,9 @@ void AddStopsToXml(svg::Document& doc_svg,
     }
 }
 
-RenderXml::RenderXml(RequestHandler& handler, json::Dict render_settings) {
+RenderXml::RenderXml(RequestHandler& handler) {
 
-    RenderSettings rs = SetRenerSettings(render_settings);
+    RenderSettings rs = SetRenerSettings(handler);
 
     const auto& stops = handler.GetStops();
 
@@ -239,11 +240,11 @@ RenderXml::RenderXml(RequestHandler& handler, json::Dict render_settings) {
 
     SphereProjector scale(coord_stops.begin(), coord_stops.end(), rs.width, rs.height, rs.padding);
 
-    std::cerr << "----------buses--------------------------" << "\n";
+   // std::cerr << "----------buses--------------------------" << "\n";
 
     AddBusesToXml(doc_svg_, rs, scale, buses);
 
-    std::cerr << "----------stops--------------------------" << "\n";
+   // std::cerr << "----------stops--------------------------" << "\n";
 
     AddStopsToXml(doc_svg_, rs, scale, buses, stops);
 
