@@ -2,13 +2,13 @@
 
 package transport_catalogue_serialize;
 
-
-message Table {    
-    map<string,uint32> table_stops = 1;
+message Names {    
+    string name = 1;
+    uint32 id = 2;
 }
 
-message Tableinvert {    
-    map<uint32,string> table_invert_stops = 1;
+message Table { 
+    repeated Names table_names = 1;
 }
 
 message Road {    
@@ -37,12 +37,16 @@ message Buses {
     repeated Bus buses = 1;
 }
 
-message TransportCatalogue {
+message Objectbase {
     Table table = 1;
     Stops stops = 2;
     Buses buses = 3;
-    Routesettings rs = 4;
-    Rendersettings rends = 5;
+}
+
+message TransportCatalogue {
+    Routesettings rs = 1;
+    Rendersettings rends = 2;
+    Objectbase base = 3;
 }
 
 message Routesettings {  

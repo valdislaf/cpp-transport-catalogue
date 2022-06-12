@@ -21,20 +21,23 @@ namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
 namespace transport_catalogue_serialize {
-PROTOBUF_CONSTEXPR Table_TableStopsEntry_DoNotUse::Table_TableStopsEntry_DoNotUse(
-    ::_pbi::ConstantInitialized) {}
-struct Table_TableStopsEntry_DoNotUseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR Table_TableStopsEntry_DoNotUseDefaultTypeInternal()
+PROTOBUF_CONSTEXPR Names::Names(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.id_)*/0u
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct NamesDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR NamesDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~Table_TableStopsEntry_DoNotUseDefaultTypeInternal() {}
+  ~NamesDefaultTypeInternal() {}
   union {
-    Table_TableStopsEntry_DoNotUse _instance;
+    Names _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Table_TableStopsEntry_DoNotUseDefaultTypeInternal _Table_TableStopsEntry_DoNotUse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NamesDefaultTypeInternal _Names_default_instance_;
 PROTOBUF_CONSTEXPR Table::Table(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.table_stops_)*/{::_pbi::ConstantInitialized()}
+    /*decltype(_impl_.table_names_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct TableDefaultTypeInternal {
   PROTOBUF_CONSTEXPR TableDefaultTypeInternal()
@@ -45,30 +48,6 @@ struct TableDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TableDefaultTypeInternal _Table_default_instance_;
-PROTOBUF_CONSTEXPR Tableinvert_TableInvertStopsEntry_DoNotUse::Tableinvert_TableInvertStopsEntry_DoNotUse(
-    ::_pbi::ConstantInitialized) {}
-struct Tableinvert_TableInvertStopsEntry_DoNotUseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR Tableinvert_TableInvertStopsEntry_DoNotUseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~Tableinvert_TableInvertStopsEntry_DoNotUseDefaultTypeInternal() {}
-  union {
-    Tableinvert_TableInvertStopsEntry_DoNotUse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Tableinvert_TableInvertStopsEntry_DoNotUseDefaultTypeInternal _Tableinvert_TableInvertStopsEntry_DoNotUse_default_instance_;
-PROTOBUF_CONSTEXPR Tableinvert::Tableinvert(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.table_invert_stops_)*/{::_pbi::ConstantInitialized()}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct TableinvertDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR TableinvertDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~TableinvertDefaultTypeInternal() {}
-  union {
-    Tableinvert _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TableinvertDefaultTypeInternal _Tableinvert_default_instance_;
 PROTOBUF_CONSTEXPR Road::Road(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.to_)*/0u
@@ -140,13 +119,26 @@ struct BusesDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BusesDefaultTypeInternal _Buses_default_instance_;
-PROTOBUF_CONSTEXPR TransportCatalogue::TransportCatalogue(
+PROTOBUF_CONSTEXPR Objectbase::Objectbase(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.table_)*/nullptr
   , /*decltype(_impl_.stops_)*/nullptr
   , /*decltype(_impl_.buses_)*/nullptr
-  , /*decltype(_impl_.rs_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct ObjectbaseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ObjectbaseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ObjectbaseDefaultTypeInternal() {}
+  union {
+    Objectbase _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ObjectbaseDefaultTypeInternal _Objectbase_default_instance_;
+PROTOBUF_CONSTEXPR TransportCatalogue::TransportCatalogue(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.rs_)*/nullptr
   , /*decltype(_impl_.rends_)*/nullptr
+  , /*decltype(_impl_.base_)*/nullptr
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct TransportCatalogueDefaultTypeInternal {
   PROTOBUF_CONSTEXPR TransportCatalogueDefaultTypeInternal()
@@ -255,45 +247,26 @@ struct RendersettingsDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RendersettingsDefaultTypeInternal _Rendersettings_default_instance_;
 }  // namespace transport_catalogue_serialize
-static ::_pb::Metadata file_level_metadata_transport_5fcatalogue_2eproto[16];
+static ::_pb::Metadata file_level_metadata_transport_5fcatalogue_2eproto[15];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_transport_5fcatalogue_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_transport_5fcatalogue_2eproto = nullptr;
 
 const uint32_t TableStruct_transport_5fcatalogue_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Table_TableStopsEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Table_TableStopsEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Names, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Table_TableStopsEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Table_TableStopsEntry_DoNotUse, value_),
-  0,
-  1,
+  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Names, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Names, _impl_.id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Table, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Table, _impl_.table_stops_),
-  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Tableinvert_TableInvertStopsEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Tableinvert_TableInvertStopsEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Tableinvert_TableInvertStopsEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Tableinvert_TableInvertStopsEntry_DoNotUse, value_),
-  0,
-  1,
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Tableinvert, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Tableinvert, _impl_.table_invert_stops_),
+  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Table, _impl_.table_names_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Road, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -336,16 +309,23 @@ const uint32_t TableStruct_transport_5fcatalogue_2eproto::offsets[] PROTOBUF_SEC
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Buses, _impl_.buses_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Objectbase, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Objectbase, _impl_.table_),
+  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Objectbase, _impl_.stops_),
+  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Objectbase, _impl_.buses_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::TransportCatalogue, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::TransportCatalogue, _impl_.table_),
-  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::TransportCatalogue, _impl_.stops_),
-  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::TransportCatalogue, _impl_.buses_),
   PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::TransportCatalogue, _impl_.rs_),
   PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::TransportCatalogue, _impl_.rends_),
+  PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::TransportCatalogue, _impl_.base_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Routesettings, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -409,34 +389,32 @@ const uint32_t TableStruct_transport_5fcatalogue_2eproto::offsets[] PROTOBUF_SEC
   PROTOBUF_FIELD_OFFSET(::transport_catalogue_serialize::Rendersettings, _impl_.width_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 8, -1, sizeof(::transport_catalogue_serialize::Table_TableStopsEntry_DoNotUse)},
-  { 10, -1, -1, sizeof(::transport_catalogue_serialize::Table)},
-  { 17, 25, -1, sizeof(::transport_catalogue_serialize::Tableinvert_TableInvertStopsEntry_DoNotUse)},
-  { 27, -1, -1, sizeof(::transport_catalogue_serialize::Tableinvert)},
-  { 34, -1, -1, sizeof(::transport_catalogue_serialize::Road)},
-  { 42, -1, -1, sizeof(::transport_catalogue_serialize::Stop)},
-  { 52, -1, -1, sizeof(::transport_catalogue_serialize::Bus)},
-  { 61, -1, -1, sizeof(::transport_catalogue_serialize::Stops)},
-  { 68, -1, -1, sizeof(::transport_catalogue_serialize::Buses)},
-  { 75, -1, -1, sizeof(::transport_catalogue_serialize::TransportCatalogue)},
-  { 86, -1, -1, sizeof(::transport_catalogue_serialize::Routesettings)},
-  { 94, -1, -1, sizeof(::transport_catalogue_serialize::Collortxt)},
-  { 101, -1, -1, sizeof(::transport_catalogue_serialize::Rgb)},
-  { 110, -1, -1, sizeof(::transport_catalogue_serialize::Rgba)},
-  { 120, -1, -1, sizeof(::transport_catalogue_serialize::Color)},
-  { 129, -1, -1, sizeof(::transport_catalogue_serialize::Rendersettings)},
+  { 0, -1, -1, sizeof(::transport_catalogue_serialize::Names)},
+  { 8, -1, -1, sizeof(::transport_catalogue_serialize::Table)},
+  { 15, -1, -1, sizeof(::transport_catalogue_serialize::Road)},
+  { 23, -1, -1, sizeof(::transport_catalogue_serialize::Stop)},
+  { 33, -1, -1, sizeof(::transport_catalogue_serialize::Bus)},
+  { 42, -1, -1, sizeof(::transport_catalogue_serialize::Stops)},
+  { 49, -1, -1, sizeof(::transport_catalogue_serialize::Buses)},
+  { 56, -1, -1, sizeof(::transport_catalogue_serialize::Objectbase)},
+  { 65, -1, -1, sizeof(::transport_catalogue_serialize::TransportCatalogue)},
+  { 74, -1, -1, sizeof(::transport_catalogue_serialize::Routesettings)},
+  { 82, -1, -1, sizeof(::transport_catalogue_serialize::Collortxt)},
+  { 89, -1, -1, sizeof(::transport_catalogue_serialize::Rgb)},
+  { 98, -1, -1, sizeof(::transport_catalogue_serialize::Rgba)},
+  { 108, -1, -1, sizeof(::transport_catalogue_serialize::Color)},
+  { 117, -1, -1, sizeof(::transport_catalogue_serialize::Rendersettings)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-  &::transport_catalogue_serialize::_Table_TableStopsEntry_DoNotUse_default_instance_._instance,
+  &::transport_catalogue_serialize::_Names_default_instance_._instance,
   &::transport_catalogue_serialize::_Table_default_instance_._instance,
-  &::transport_catalogue_serialize::_Tableinvert_TableInvertStopsEntry_DoNotUse_default_instance_._instance,
-  &::transport_catalogue_serialize::_Tableinvert_default_instance_._instance,
   &::transport_catalogue_serialize::_Road_default_instance_._instance,
   &::transport_catalogue_serialize::_Stop_default_instance_._instance,
   &::transport_catalogue_serialize::_Bus_default_instance_._instance,
   &::transport_catalogue_serialize::_Stops_default_instance_._instance,
   &::transport_catalogue_serialize::_Buses_default_instance_._instance,
+  &::transport_catalogue_serialize::_Objectbase_default_instance_._instance,
   &::transport_catalogue_serialize::_TransportCatalogue_default_instance_._instance,
   &::transport_catalogue_serialize::_Routesettings_default_instance_._instance,
   &::transport_catalogue_serialize::_Collortxt_default_instance_._instance,
@@ -448,15 +426,10 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_transport_5fcatalogue_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\031transport_catalogue.proto\022\035transport_c"
-  "atalogue_serialize\"\205\001\n\005Table\022I\n\013table_st"
-  "ops\030\001 \003(\01324.transport_catalogue_serializ"
-  "e.Table.TableStopsEntry\0321\n\017TableStopsEnt"
-  "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\r:\0028\001\"\244\001\n\013T"
-  "ableinvert\022\\\n\022table_invert_stops\030\001 \003(\0132@"
-  ".transport_catalogue_serialize.Tableinve"
-  "rt.TableInvertStopsEntry\0327\n\025TableInvertS"
-  "topsEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\t:\0028"
-  "\001\"$\n\004Road\022\n\n\002to\030\001 \001(\r\022\020\n\010distance\030\002 \001(\r\""
+  "atalogue_serialize\"!\n\005Names\022\014\n\004name\030\001 \001("
+  "\t\022\n\n\002id\030\002 \001(\r\"B\n\005Table\0229\n\013table_names\030\001 "
+  "\003(\0132$.transport_catalogue_serialize.Name"
+  "s\"$\n\004Road\022\n\n\002to\030\001 \001(\r\022\020\n\010distance\030\002 \001(\r\""
   "v\n\004Stop\022\014\n\004name\030\001 \001(\r\022\020\n\010latitude\030\002 \001(\001\022"
   "\021\n\tlongitude\030\003 \001(\001\022;\n\016road_distances\030\004 \003"
   "(\0132#.transport_catalogue_serialize.Road\""
@@ -465,39 +438,41 @@ const char descriptor_table_protodef_transport_5fcatalogue_2eproto[] PROTOBUF_SE
   "serialize.Stop\";\n\005Stops\0222\n\005stops\030\001 \003(\0132#"
   ".transport_catalogue_serialize.Stop\":\n\005B"
   "uses\0221\n\005buses\030\001 \003(\0132\".transport_catalogu"
-  "e_serialize.Bus\"\253\002\n\022TransportCatalogue\0223"
-  "\n\005table\030\001 \001(\0132$.transport_catalogue_seri"
-  "alize.Table\0223\n\005stops\030\002 \001(\0132$.transport_c"
-  "atalogue_serialize.Stops\0223\n\005buses\030\003 \001(\0132"
-  "$.transport_catalogue_serialize.Buses\0228\n"
-  "\002rs\030\004 \001(\0132,.transport_catalogue_serializ"
-  "e.Routesettings\022<\n\005rends\030\005 \001(\0132-.transpo"
-  "rt_catalogue_serialize.Rendersettings\"<\n"
-  "\rRoutesettings\022\024\n\014bus_velocity\030\001 \001(\001\022\025\n\r"
-  "bus_wait_time\030\002 \001(\001\"\032\n\tCollortxt\022\r\n\005colo"
-  "r\030\001 \001(\t\"/\n\003Rgb\022\013\n\003red\030\001 \001(\r\022\r\n\005green\030\002 \001"
-  "(\r\022\014\n\004blue\030\003 \001(\r\"A\n\004Rgba\022\013\n\003red\030\001 \001(\r\022\r\n"
-  "\005green\030\002 \001(\r\022\014\n\004blue\030\003 \001(\r\022\017\n\007opacity\030\004 "
-  "\001(\001\"\250\001\n\005Color\022;\n\tcollortxt\030\001 \001(\0132(.trans"
-  "port_catalogue_serialize.Collortxt\022/\n\003rg"
-  "b\030\002 \001(\0132\".transport_catalogue_serialize."
-  "Rgb\0221\n\004rgba\030\003 \001(\0132#.transport_catalogue_"
-  "serialize.Rgba\"\360\002\n\016Rendersettings\022\033\n\023bus"
-  "_label_font_size\030\001 \001(\r\022\030\n\020bus_label_offs"
-  "et\030\002 \003(\001\022;\n\rcolor_palette\030\003 \003(\0132$.transp"
-  "ort_catalogue_serialize.Color\022\016\n\006height\030"
-  "\004 \001(\001\022\022\n\nline_width\030\005 \001(\001\022\017\n\007padding\030\006 \001"
-  "(\001\022\034\n\024stop_label_font_size\030\007 \001(\r\022\031\n\021stop"
-  "_label_offset\030\010 \003(\001\022\023\n\013stop_radius\030\t \001(\001"
-  "\022>\n\020underlayer_color\030\n \001(\0132$.transport_c"
-  "atalogue_serialize.Color\022\030\n\020underlayer_w"
-  "idth\030\013 \001(\001\022\r\n\005width\030\014 \001(\001b\006proto3"
+  "e_serialize.Bus\"\253\001\n\nObjectbase\0223\n\005table\030"
+  "\001 \001(\0132$.transport_catalogue_serialize.Ta"
+  "ble\0223\n\005stops\030\002 \001(\0132$.transport_catalogue"
+  "_serialize.Stops\0223\n\005buses\030\003 \001(\0132$.transp"
+  "ort_catalogue_serialize.Buses\"\305\001\n\022Transp"
+  "ortCatalogue\0228\n\002rs\030\001 \001(\0132,.transport_cat"
+  "alogue_serialize.Routesettings\022<\n\005rends\030"
+  "\002 \001(\0132-.transport_catalogue_serialize.Re"
+  "ndersettings\0227\n\004base\030\003 \001(\0132).transport_c"
+  "atalogue_serialize.Objectbase\"<\n\rRoutese"
+  "ttings\022\024\n\014bus_velocity\030\001 \001(\001\022\025\n\rbus_wait"
+  "_time\030\002 \001(\001\"\032\n\tCollortxt\022\r\n\005color\030\001 \001(\t\""
+  "/\n\003Rgb\022\013\n\003red\030\001 \001(\r\022\r\n\005green\030\002 \001(\r\022\014\n\004bl"
+  "ue\030\003 \001(\r\"A\n\004Rgba\022\013\n\003red\030\001 \001(\r\022\r\n\005green\030\002"
+  " \001(\r\022\014\n\004blue\030\003 \001(\r\022\017\n\007opacity\030\004 \001(\001\"\250\001\n\005"
+  "Color\022;\n\tcollortxt\030\001 \001(\0132(.transport_cat"
+  "alogue_serialize.Collortxt\022/\n\003rgb\030\002 \001(\0132"
+  "\".transport_catalogue_serialize.Rgb\0221\n\004r"
+  "gba\030\003 \001(\0132#.transport_catalogue_serializ"
+  "e.Rgba\"\360\002\n\016Rendersettings\022\033\n\023bus_label_f"
+  "ont_size\030\001 \001(\r\022\030\n\020bus_label_offset\030\002 \003(\001"
+  "\022;\n\rcolor_palette\030\003 \003(\0132$.transport_cata"
+  "logue_serialize.Color\022\016\n\006height\030\004 \001(\001\022\022\n"
+  "\nline_width\030\005 \001(\001\022\017\n\007padding\030\006 \001(\001\022\034\n\024st"
+  "op_label_font_size\030\007 \001(\r\022\031\n\021stop_label_o"
+  "ffset\030\010 \003(\001\022\023\n\013stop_radius\030\t \001(\001\022>\n\020unde"
+  "rlayer_color\030\n \001(\0132$.transport_catalogue"
+  "_serialize.Color\022\030\n\020underlayer_width\030\013 \001"
+  "(\001\022\r\n\005width\030\014 \001(\001b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_transport_5fcatalogue_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_transport_5fcatalogue_2eproto = {
-    false, false, 1793, descriptor_table_protodef_transport_5fcatalogue_2eproto,
+    false, false, 1665, descriptor_table_protodef_transport_5fcatalogue_2eproto,
     "transport_catalogue.proto",
-    &descriptor_table_transport_5fcatalogue_2eproto_once, nullptr, 0, 16,
+    &descriptor_table_transport_5fcatalogue_2eproto_once, nullptr, 0, 15,
     schemas, file_default_instances, TableStruct_transport_5fcatalogue_2eproto::offsets,
     file_level_metadata_transport_5fcatalogue_2eproto, file_level_enum_descriptors_transport_5fcatalogue_2eproto,
     file_level_service_descriptors_transport_5fcatalogue_2eproto,
@@ -512,13 +487,229 @@ namespace transport_catalogue_serialize {
 
 // ===================================================================
 
-Table_TableStopsEntry_DoNotUse::Table_TableStopsEntry_DoNotUse() {}
-Table_TableStopsEntry_DoNotUse::Table_TableStopsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-    : SuperType(arena) {}
-void Table_TableStopsEntry_DoNotUse::MergeFrom(const Table_TableStopsEntry_DoNotUse& other) {
-  MergeFromInternal(other);
+class Names::_Internal {
+ public:
+};
+
+Names::Names(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:transport_catalogue_serialize.Names)
 }
-::PROTOBUF_NAMESPACE_ID::Metadata Table_TableStopsEntry_DoNotUse::GetMetadata() const {
+Names::Names(const Names& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Names* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.id_ = from._impl_.id_;
+  // @@protoc_insertion_point(copy_constructor:transport_catalogue_serialize.Names)
+}
+
+inline void Names::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.id_){0u}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+Names::~Names() {
+  // @@protoc_insertion_point(destructor:transport_catalogue_serialize.Names)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void Names::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.name_.Destroy();
+}
+
+void Names::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void Names::Clear() {
+// @@protoc_insertion_point(message_clear_start:transport_catalogue_serialize.Names)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.name_.ClearToEmpty();
+  _impl_.id_ = 0u;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Names::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "transport_catalogue_serialize.Names.name"));
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* Names::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:transport_catalogue_serialize.Names)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "transport_catalogue_serialize.Names.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // uint32 id = 2;
+  if (this->_internal_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:transport_catalogue_serialize.Names)
+  return target;
+}
+
+size_t Names::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:transport_catalogue_serialize.Names)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // uint32 id = 2;
+  if (this->_internal_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Names::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    Names::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Names::GetClassData() const { return &_class_data_; }
+
+
+void Names::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Names*>(&to_msg);
+  auto& from = static_cast<const Names&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:transport_catalogue_serialize.Names)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_name().empty()) {
+    _this->_internal_set_name(from._internal_name());
+  }
+  if (from._internal_id() != 0) {
+    _this->_internal_set_id(from._internal_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Names::CopyFrom(const Names& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:transport_catalogue_serialize.Names)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Names::IsInitialized() const {
+  return true;
+}
+
+void Names::InternalSwap(Names* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
+  );
+  swap(_impl_.id_, other->_impl_.id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Names::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_transport_5fcatalogue_2eproto_getter, &descriptor_table_transport_5fcatalogue_2eproto_once,
       file_level_metadata_transport_5fcatalogue_2eproto[0]);
@@ -534,20 +725,16 @@ Table::Table(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  if (arena != nullptr && !is_message_owned) {
-    arena->OwnCustomDestructor(this, &Table::ArenaDtor);
-  }
   // @@protoc_insertion_point(arena_constructor:transport_catalogue_serialize.Table)
 }
 Table::Table(const Table& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   Table* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      /*decltype(_impl_.table_stops_)*/{}
+      decltype(_impl_.table_names_){from._impl_.table_names_}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.table_stops_.MergeFrom(from._impl_.table_stops_);
   // @@protoc_insertion_point(copy_constructor:transport_catalogue_serialize.Table)
 }
 
@@ -556,7 +743,7 @@ inline void Table::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      /*decltype(_impl_.table_stops_)*/{::_pbi::ArenaInitialized(), arena}
+      decltype(_impl_.table_names_){arena}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -565,7 +752,6 @@ Table::~Table() {
   // @@protoc_insertion_point(destructor:transport_catalogue_serialize.Table)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
-    ArenaDtor(this);
     return;
   }
   SharedDtor();
@@ -573,14 +759,9 @@ Table::~Table() {
 
 inline void Table::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.table_stops_.Destruct();
-  _impl_.table_stops_.~MapField();
+  _impl_.table_names_.~RepeatedPtrField();
 }
 
-void Table::ArenaDtor(void* object) {
-  Table* _this = reinterpret_cast< Table* >(object);
-  _this->_impl_.table_stops_.Destruct();
-}
 void Table::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
@@ -591,7 +772,7 @@ void Table::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.table_stops_.Clear();
+  _impl_.table_names_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -601,13 +782,13 @@ const char* Table::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // map<string, uint32> table_stops = 1;
+      // repeated .transport_catalogue_serialize.Names table_names = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(&_impl_.table_stops_, ptr);
+            ptr = ctx->ParseMessage(_internal_add_table_names(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
@@ -643,30 +824,12 @@ uint8_t* Table::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // map<string, uint32> table_stops = 1;
-  if (!this->_internal_table_stops().empty()) {
-    using MapType = ::_pb::Map<std::string, uint32_t>;
-    using WireHelper = Table_TableStopsEntry_DoNotUse::Funcs;
-    const auto& map_field = this->_internal_table_stops();
-    auto check_utf8 = [](const MapType::value_type& entry) {
-      (void)entry;
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        entry.first.data(), static_cast<int>(entry.first.length()),
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-        "transport_catalogue_serialize.Table.TableStopsEntry.key");
-    };
-
-    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
-      for (const auto& entry : ::_pbi::MapSorterPtr<MapType>(map_field)) {
-        target = WireHelper::InternalSerialize(1, entry.first, entry.second, target, stream);
-        check_utf8(entry);
-      }
-    } else {
-      for (const auto& entry : map_field) {
-        target = WireHelper::InternalSerialize(1, entry.first, entry.second, target, stream);
-        check_utf8(entry);
-      }
-    }
+  // repeated .transport_catalogue_serialize.Names table_names = 1;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_table_names_size()); i < n; i++) {
+    const auto& repfield = this->_internal_table_names(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -685,13 +848,11 @@ size_t Table::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // map<string, uint32> table_stops = 1;
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_table_stops_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, uint32_t >::const_iterator
-      it = this->_internal_table_stops().begin();
-      it != this->_internal_table_stops().end(); ++it) {
-    total_size += Table_TableStopsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  // repeated .transport_catalogue_serialize.Names table_names = 1;
+  total_size += 1UL * this->_internal_table_names_size();
+  for (const auto& msg : this->_impl_.table_names_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -712,7 +873,7 @@ void Table::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.table_stops_.MergeFrom(from._impl_.table_stops_);
+  _this->_impl_.table_names_.MergeFrom(from._impl_.table_names_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -730,242 +891,13 @@ bool Table::IsInitialized() const {
 void Table::InternalSwap(Table* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.table_stops_.InternalSwap(&other->_impl_.table_stops_);
+  _impl_.table_names_.InternalSwap(&other->_impl_.table_names_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Table::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_transport_5fcatalogue_2eproto_getter, &descriptor_table_transport_5fcatalogue_2eproto_once,
       file_level_metadata_transport_5fcatalogue_2eproto[1]);
-}
-
-// ===================================================================
-
-Tableinvert_TableInvertStopsEntry_DoNotUse::Tableinvert_TableInvertStopsEntry_DoNotUse() {}
-Tableinvert_TableInvertStopsEntry_DoNotUse::Tableinvert_TableInvertStopsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-    : SuperType(arena) {}
-void Tableinvert_TableInvertStopsEntry_DoNotUse::MergeFrom(const Tableinvert_TableInvertStopsEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::PROTOBUF_NAMESPACE_ID::Metadata Tableinvert_TableInvertStopsEntry_DoNotUse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_transport_5fcatalogue_2eproto_getter, &descriptor_table_transport_5fcatalogue_2eproto_once,
-      file_level_metadata_transport_5fcatalogue_2eproto[2]);
-}
-
-// ===================================================================
-
-class Tableinvert::_Internal {
- public:
-};
-
-Tableinvert::Tableinvert(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  if (arena != nullptr && !is_message_owned) {
-    arena->OwnCustomDestructor(this, &Tableinvert::ArenaDtor);
-  }
-  // @@protoc_insertion_point(arena_constructor:transport_catalogue_serialize.Tableinvert)
-}
-Tableinvert::Tableinvert(const Tableinvert& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  Tableinvert* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      /*decltype(_impl_.table_invert_stops_)*/{}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.table_invert_stops_.MergeFrom(from._impl_.table_invert_stops_);
-  // @@protoc_insertion_point(copy_constructor:transport_catalogue_serialize.Tableinvert)
-}
-
-inline void Tableinvert::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      /*decltype(_impl_.table_invert_stops_)*/{::_pbi::ArenaInitialized(), arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-Tableinvert::~Tableinvert() {
-  // @@protoc_insertion_point(destructor:transport_catalogue_serialize.Tableinvert)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    ArenaDtor(this);
-    return;
-  }
-  SharedDtor();
-}
-
-inline void Tableinvert::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.table_invert_stops_.Destruct();
-  _impl_.table_invert_stops_.~MapField();
-}
-
-void Tableinvert::ArenaDtor(void* object) {
-  Tableinvert* _this = reinterpret_cast< Tableinvert* >(object);
-  _this->_impl_.table_invert_stops_.Destruct();
-}
-void Tableinvert::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void Tableinvert::Clear() {
-// @@protoc_insertion_point(message_clear_start:transport_catalogue_serialize.Tableinvert)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.table_invert_stops_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* Tableinvert::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // map<uint32, string> table_invert_stops = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(&_impl_.table_invert_stops_, ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* Tableinvert::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:transport_catalogue_serialize.Tableinvert)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // map<uint32, string> table_invert_stops = 1;
-  if (!this->_internal_table_invert_stops().empty()) {
-    using MapType = ::_pb::Map<uint32_t, std::string>;
-    using WireHelper = Tableinvert_TableInvertStopsEntry_DoNotUse::Funcs;
-    const auto& map_field = this->_internal_table_invert_stops();
-    auto check_utf8 = [](const MapType::value_type& entry) {
-      (void)entry;
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        entry.second.data(), static_cast<int>(entry.second.length()),
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-        "transport_catalogue_serialize.Tableinvert.TableInvertStopsEntry.value");
-    };
-
-    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
-      for (const auto& entry : ::_pbi::MapSorterFlat<MapType>(map_field)) {
-        target = WireHelper::InternalSerialize(1, entry.first, entry.second, target, stream);
-        check_utf8(entry);
-      }
-    } else {
-      for (const auto& entry : map_field) {
-        target = WireHelper::InternalSerialize(1, entry.first, entry.second, target, stream);
-        check_utf8(entry);
-      }
-    }
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:transport_catalogue_serialize.Tableinvert)
-  return target;
-}
-
-size_t Tableinvert::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:transport_catalogue_serialize.Tableinvert)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // map<uint32, string> table_invert_stops = 1;
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_table_invert_stops_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< uint32_t, std::string >::const_iterator
-      it = this->_internal_table_invert_stops().begin();
-      it != this->_internal_table_invert_stops().end(); ++it) {
-    total_size += Tableinvert_TableInvertStopsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Tableinvert::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    Tableinvert::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Tableinvert::GetClassData() const { return &_class_data_; }
-
-
-void Tableinvert::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<Tableinvert*>(&to_msg);
-  auto& from = static_cast<const Tableinvert&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:transport_catalogue_serialize.Tableinvert)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.table_invert_stops_.MergeFrom(from._impl_.table_invert_stops_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void Tableinvert::CopyFrom(const Tableinvert& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:transport_catalogue_serialize.Tableinvert)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool Tableinvert::IsInitialized() const {
-  return true;
-}
-
-void Tableinvert::InternalSwap(Tableinvert* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.table_invert_stops_.InternalSwap(&other->_impl_.table_invert_stops_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata Tableinvert::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_transport_5fcatalogue_2eproto_getter, &descriptor_table_transport_5fcatalogue_2eproto_once,
-      file_level_metadata_transport_5fcatalogue_2eproto[3]);
 }
 
 // ===================================================================
@@ -1176,7 +1108,7 @@ void Road::InternalSwap(Road* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Road::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_transport_5fcatalogue_2eproto_getter, &descriptor_table_transport_5fcatalogue_2eproto_once,
-      file_level_metadata_transport_5fcatalogue_2eproto[4]);
+      file_level_metadata_transport_5fcatalogue_2eproto[2]);
 }
 
 // ===================================================================
@@ -1469,7 +1401,7 @@ void Stop::InternalSwap(Stop* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Stop::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_transport_5fcatalogue_2eproto_getter, &descriptor_table_transport_5fcatalogue_2eproto_once,
-      file_level_metadata_transport_5fcatalogue_2eproto[5]);
+      file_level_metadata_transport_5fcatalogue_2eproto[3]);
 }
 
 // ===================================================================
@@ -1733,7 +1665,7 @@ void Bus::InternalSwap(Bus* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Bus::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_transport_5fcatalogue_2eproto_getter, &descriptor_table_transport_5fcatalogue_2eproto_once,
-      file_level_metadata_transport_5fcatalogue_2eproto[6]);
+      file_level_metadata_transport_5fcatalogue_2eproto[4]);
 }
 
 // ===================================================================
@@ -1918,7 +1850,7 @@ void Stops::InternalSwap(Stops* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Stops::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_transport_5fcatalogue_2eproto_getter, &descriptor_table_transport_5fcatalogue_2eproto_once,
-      file_level_metadata_transport_5fcatalogue_2eproto[7]);
+      file_level_metadata_transport_5fcatalogue_2eproto[5]);
 }
 
 // ===================================================================
@@ -2103,55 +2035,43 @@ void Buses::InternalSwap(Buses* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Buses::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_transport_5fcatalogue_2eproto_getter, &descriptor_table_transport_5fcatalogue_2eproto_once,
-      file_level_metadata_transport_5fcatalogue_2eproto[8]);
+      file_level_metadata_transport_5fcatalogue_2eproto[6]);
 }
 
 // ===================================================================
 
-class TransportCatalogue::_Internal {
+class Objectbase::_Internal {
  public:
-  static const ::transport_catalogue_serialize::Table& table(const TransportCatalogue* msg);
-  static const ::transport_catalogue_serialize::Stops& stops(const TransportCatalogue* msg);
-  static const ::transport_catalogue_serialize::Buses& buses(const TransportCatalogue* msg);
-  static const ::transport_catalogue_serialize::Routesettings& rs(const TransportCatalogue* msg);
-  static const ::transport_catalogue_serialize::Rendersettings& rends(const TransportCatalogue* msg);
+  static const ::transport_catalogue_serialize::Table& table(const Objectbase* msg);
+  static const ::transport_catalogue_serialize::Stops& stops(const Objectbase* msg);
+  static const ::transport_catalogue_serialize::Buses& buses(const Objectbase* msg);
 };
 
 const ::transport_catalogue_serialize::Table&
-TransportCatalogue::_Internal::table(const TransportCatalogue* msg) {
+Objectbase::_Internal::table(const Objectbase* msg) {
   return *msg->_impl_.table_;
 }
 const ::transport_catalogue_serialize::Stops&
-TransportCatalogue::_Internal::stops(const TransportCatalogue* msg) {
+Objectbase::_Internal::stops(const Objectbase* msg) {
   return *msg->_impl_.stops_;
 }
 const ::transport_catalogue_serialize::Buses&
-TransportCatalogue::_Internal::buses(const TransportCatalogue* msg) {
+Objectbase::_Internal::buses(const Objectbase* msg) {
   return *msg->_impl_.buses_;
 }
-const ::transport_catalogue_serialize::Routesettings&
-TransportCatalogue::_Internal::rs(const TransportCatalogue* msg) {
-  return *msg->_impl_.rs_;
-}
-const ::transport_catalogue_serialize::Rendersettings&
-TransportCatalogue::_Internal::rends(const TransportCatalogue* msg) {
-  return *msg->_impl_.rends_;
-}
-TransportCatalogue::TransportCatalogue(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+Objectbase::Objectbase(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:transport_catalogue_serialize.TransportCatalogue)
+  // @@protoc_insertion_point(arena_constructor:transport_catalogue_serialize.Objectbase)
 }
-TransportCatalogue::TransportCatalogue(const TransportCatalogue& from)
+Objectbase::Objectbase(const Objectbase& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  TransportCatalogue* const _this = this; (void)_this;
+  Objectbase* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.table_){nullptr}
     , decltype(_impl_.stops_){nullptr}
     , decltype(_impl_.buses_){nullptr}
-    , decltype(_impl_.rs_){nullptr}
-    , decltype(_impl_.rends_){nullptr}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -2164,16 +2084,10 @@ TransportCatalogue::TransportCatalogue(const TransportCatalogue& from)
   if (from._internal_has_buses()) {
     _this->_impl_.buses_ = new ::transport_catalogue_serialize::Buses(*from._impl_.buses_);
   }
-  if (from._internal_has_rs()) {
-    _this->_impl_.rs_ = new ::transport_catalogue_serialize::Routesettings(*from._impl_.rs_);
-  }
-  if (from._internal_has_rends()) {
-    _this->_impl_.rends_ = new ::transport_catalogue_serialize::Rendersettings(*from._impl_.rends_);
-  }
-  // @@protoc_insertion_point(copy_constructor:transport_catalogue_serialize.TransportCatalogue)
+  // @@protoc_insertion_point(copy_constructor:transport_catalogue_serialize.Objectbase)
 }
 
-inline void TransportCatalogue::SharedCtor(
+inline void Objectbase::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
@@ -2181,14 +2095,12 @@ inline void TransportCatalogue::SharedCtor(
       decltype(_impl_.table_){nullptr}
     , decltype(_impl_.stops_){nullptr}
     , decltype(_impl_.buses_){nullptr}
-    , decltype(_impl_.rs_){nullptr}
-    , decltype(_impl_.rends_){nullptr}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
 
-TransportCatalogue::~TransportCatalogue() {
-  // @@protoc_insertion_point(destructor:transport_catalogue_serialize.TransportCatalogue)
+Objectbase::~Objectbase() {
+  // @@protoc_insertion_point(destructor:transport_catalogue_serialize.Objectbase)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -2196,21 +2108,19 @@ TransportCatalogue::~TransportCatalogue() {
   SharedDtor();
 }
 
-inline void TransportCatalogue::SharedDtor() {
+inline void Objectbase::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete _impl_.table_;
   if (this != internal_default_instance()) delete _impl_.stops_;
   if (this != internal_default_instance()) delete _impl_.buses_;
-  if (this != internal_default_instance()) delete _impl_.rs_;
-  if (this != internal_default_instance()) delete _impl_.rends_;
 }
 
-void TransportCatalogue::SetCachedSize(int size) const {
+void Objectbase::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void TransportCatalogue::Clear() {
-// @@protoc_insertion_point(message_clear_start:transport_catalogue_serialize.TransportCatalogue)
+void Objectbase::Clear() {
+// @@protoc_insertion_point(message_clear_start:transport_catalogue_serialize.Objectbase)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2227,18 +2137,10 @@ void TransportCatalogue::Clear() {
     delete _impl_.buses_;
   }
   _impl_.buses_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.rs_ != nullptr) {
-    delete _impl_.rs_;
-  }
-  _impl_.rs_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.rends_ != nullptr) {
-    delete _impl_.rends_;
-  }
-  _impl_.rends_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* TransportCatalogue::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* Objectbase::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
@@ -2268,18 +2170,282 @@ const char* TransportCatalogue::_InternalParse(const char* ptr, ::_pbi::ParseCon
         } else
           goto handle_unusual;
         continue;
-      // .transport_catalogue_serialize.Routesettings rs = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* Objectbase::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:transport_catalogue_serialize.Objectbase)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .transport_catalogue_serialize.Table table = 1;
+  if (this->_internal_has_table()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::table(this),
+        _Internal::table(this).GetCachedSize(), target, stream);
+  }
+
+  // .transport_catalogue_serialize.Stops stops = 2;
+  if (this->_internal_has_stops()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::stops(this),
+        _Internal::stops(this).GetCachedSize(), target, stream);
+  }
+
+  // .transport_catalogue_serialize.Buses buses = 3;
+  if (this->_internal_has_buses()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, _Internal::buses(this),
+        _Internal::buses(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:transport_catalogue_serialize.Objectbase)
+  return target;
+}
+
+size_t Objectbase::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:transport_catalogue_serialize.Objectbase)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .transport_catalogue_serialize.Table table = 1;
+  if (this->_internal_has_table()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.table_);
+  }
+
+  // .transport_catalogue_serialize.Stops stops = 2;
+  if (this->_internal_has_stops()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.stops_);
+  }
+
+  // .transport_catalogue_serialize.Buses buses = 3;
+  if (this->_internal_has_buses()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.buses_);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Objectbase::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    Objectbase::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Objectbase::GetClassData() const { return &_class_data_; }
+
+
+void Objectbase::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Objectbase*>(&to_msg);
+  auto& from = static_cast<const Objectbase&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:transport_catalogue_serialize.Objectbase)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_table()) {
+    _this->_internal_mutable_table()->::transport_catalogue_serialize::Table::MergeFrom(
+        from._internal_table());
+  }
+  if (from._internal_has_stops()) {
+    _this->_internal_mutable_stops()->::transport_catalogue_serialize::Stops::MergeFrom(
+        from._internal_stops());
+  }
+  if (from._internal_has_buses()) {
+    _this->_internal_mutable_buses()->::transport_catalogue_serialize::Buses::MergeFrom(
+        from._internal_buses());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Objectbase::CopyFrom(const Objectbase& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:transport_catalogue_serialize.Objectbase)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Objectbase::IsInitialized() const {
+  return true;
+}
+
+void Objectbase::InternalSwap(Objectbase* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Objectbase, _impl_.buses_)
+      + sizeof(Objectbase::_impl_.buses_)
+      - PROTOBUF_FIELD_OFFSET(Objectbase, _impl_.table_)>(
+          reinterpret_cast<char*>(&_impl_.table_),
+          reinterpret_cast<char*>(&other->_impl_.table_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Objectbase::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_transport_5fcatalogue_2eproto_getter, &descriptor_table_transport_5fcatalogue_2eproto_once,
+      file_level_metadata_transport_5fcatalogue_2eproto[7]);
+}
+
+// ===================================================================
+
+class TransportCatalogue::_Internal {
+ public:
+  static const ::transport_catalogue_serialize::Routesettings& rs(const TransportCatalogue* msg);
+  static const ::transport_catalogue_serialize::Rendersettings& rends(const TransportCatalogue* msg);
+  static const ::transport_catalogue_serialize::Objectbase& base(const TransportCatalogue* msg);
+};
+
+const ::transport_catalogue_serialize::Routesettings&
+TransportCatalogue::_Internal::rs(const TransportCatalogue* msg) {
+  return *msg->_impl_.rs_;
+}
+const ::transport_catalogue_serialize::Rendersettings&
+TransportCatalogue::_Internal::rends(const TransportCatalogue* msg) {
+  return *msg->_impl_.rends_;
+}
+const ::transport_catalogue_serialize::Objectbase&
+TransportCatalogue::_Internal::base(const TransportCatalogue* msg) {
+  return *msg->_impl_.base_;
+}
+TransportCatalogue::TransportCatalogue(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:transport_catalogue_serialize.TransportCatalogue)
+}
+TransportCatalogue::TransportCatalogue(const TransportCatalogue& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  TransportCatalogue* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.rs_){nullptr}
+    , decltype(_impl_.rends_){nullptr}
+    , decltype(_impl_.base_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_rs()) {
+    _this->_impl_.rs_ = new ::transport_catalogue_serialize::Routesettings(*from._impl_.rs_);
+  }
+  if (from._internal_has_rends()) {
+    _this->_impl_.rends_ = new ::transport_catalogue_serialize::Rendersettings(*from._impl_.rends_);
+  }
+  if (from._internal_has_base()) {
+    _this->_impl_.base_ = new ::transport_catalogue_serialize::Objectbase(*from._impl_.base_);
+  }
+  // @@protoc_insertion_point(copy_constructor:transport_catalogue_serialize.TransportCatalogue)
+}
+
+inline void TransportCatalogue::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.rs_){nullptr}
+    , decltype(_impl_.rends_){nullptr}
+    , decltype(_impl_.base_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+TransportCatalogue::~TransportCatalogue() {
+  // @@protoc_insertion_point(destructor:transport_catalogue_serialize.TransportCatalogue)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void TransportCatalogue::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete _impl_.rs_;
+  if (this != internal_default_instance()) delete _impl_.rends_;
+  if (this != internal_default_instance()) delete _impl_.base_;
+}
+
+void TransportCatalogue::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void TransportCatalogue::Clear() {
+// @@protoc_insertion_point(message_clear_start:transport_catalogue_serialize.TransportCatalogue)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && _impl_.rs_ != nullptr) {
+    delete _impl_.rs_;
+  }
+  _impl_.rs_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.rends_ != nullptr) {
+    delete _impl_.rends_;
+  }
+  _impl_.rends_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.base_ != nullptr) {
+    delete _impl_.base_;
+  }
+  _impl_.base_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* TransportCatalogue::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .transport_catalogue_serialize.Routesettings rs = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_rs(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .transport_catalogue_serialize.Rendersettings rends = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+      // .transport_catalogue_serialize.Rendersettings rends = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_rends(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .transport_catalogue_serialize.Objectbase base = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_base(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2313,39 +2479,25 @@ uint8_t* TransportCatalogue::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .transport_catalogue_serialize.Table table = 1;
-  if (this->_internal_has_table()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::table(this),
-        _Internal::table(this).GetCachedSize(), target, stream);
-  }
-
-  // .transport_catalogue_serialize.Stops stops = 2;
-  if (this->_internal_has_stops()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, _Internal::stops(this),
-        _Internal::stops(this).GetCachedSize(), target, stream);
-  }
-
-  // .transport_catalogue_serialize.Buses buses = 3;
-  if (this->_internal_has_buses()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, _Internal::buses(this),
-        _Internal::buses(this).GetCachedSize(), target, stream);
-  }
-
-  // .transport_catalogue_serialize.Routesettings rs = 4;
+  // .transport_catalogue_serialize.Routesettings rs = 1;
   if (this->_internal_has_rs()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(4, _Internal::rs(this),
+      InternalWriteMessage(1, _Internal::rs(this),
         _Internal::rs(this).GetCachedSize(), target, stream);
   }
 
-  // .transport_catalogue_serialize.Rendersettings rends = 5;
+  // .transport_catalogue_serialize.Rendersettings rends = 2;
   if (this->_internal_has_rends()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(5, _Internal::rends(this),
+      InternalWriteMessage(2, _Internal::rends(this),
         _Internal::rends(this).GetCachedSize(), target, stream);
+  }
+
+  // .transport_catalogue_serialize.Objectbase base = 3;
+  if (this->_internal_has_base()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, _Internal::base(this),
+        _Internal::base(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2364,39 +2516,25 @@ size_t TransportCatalogue::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .transport_catalogue_serialize.Table table = 1;
-  if (this->_internal_has_table()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.table_);
-  }
-
-  // .transport_catalogue_serialize.Stops stops = 2;
-  if (this->_internal_has_stops()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.stops_);
-  }
-
-  // .transport_catalogue_serialize.Buses buses = 3;
-  if (this->_internal_has_buses()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.buses_);
-  }
-
-  // .transport_catalogue_serialize.Routesettings rs = 4;
+  // .transport_catalogue_serialize.Routesettings rs = 1;
   if (this->_internal_has_rs()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.rs_);
   }
 
-  // .transport_catalogue_serialize.Rendersettings rends = 5;
+  // .transport_catalogue_serialize.Rendersettings rends = 2;
   if (this->_internal_has_rends()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.rends_);
+  }
+
+  // .transport_catalogue_serialize.Objectbase base = 3;
+  if (this->_internal_has_base()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.base_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -2417,18 +2555,6 @@ void TransportCatalogue::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, con
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_table()) {
-    _this->_internal_mutable_table()->::transport_catalogue_serialize::Table::MergeFrom(
-        from._internal_table());
-  }
-  if (from._internal_has_stops()) {
-    _this->_internal_mutable_stops()->::transport_catalogue_serialize::Stops::MergeFrom(
-        from._internal_stops());
-  }
-  if (from._internal_has_buses()) {
-    _this->_internal_mutable_buses()->::transport_catalogue_serialize::Buses::MergeFrom(
-        from._internal_buses());
-  }
   if (from._internal_has_rs()) {
     _this->_internal_mutable_rs()->::transport_catalogue_serialize::Routesettings::MergeFrom(
         from._internal_rs());
@@ -2436,6 +2562,10 @@ void TransportCatalogue::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, con
   if (from._internal_has_rends()) {
     _this->_internal_mutable_rends()->::transport_catalogue_serialize::Rendersettings::MergeFrom(
         from._internal_rends());
+  }
+  if (from._internal_has_base()) {
+    _this->_internal_mutable_base()->::transport_catalogue_serialize::Objectbase::MergeFrom(
+        from._internal_base());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2455,17 +2585,17 @@ void TransportCatalogue::InternalSwap(TransportCatalogue* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TransportCatalogue, _impl_.rends_)
-      + sizeof(TransportCatalogue::_impl_.rends_)
-      - PROTOBUF_FIELD_OFFSET(TransportCatalogue, _impl_.table_)>(
-          reinterpret_cast<char*>(&_impl_.table_),
-          reinterpret_cast<char*>(&other->_impl_.table_));
+      PROTOBUF_FIELD_OFFSET(TransportCatalogue, _impl_.base_)
+      + sizeof(TransportCatalogue::_impl_.base_)
+      - PROTOBUF_FIELD_OFFSET(TransportCatalogue, _impl_.rs_)>(
+          reinterpret_cast<char*>(&_impl_.rs_),
+          reinterpret_cast<char*>(&other->_impl_.rs_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TransportCatalogue::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_transport_5fcatalogue_2eproto_getter, &descriptor_table_transport_5fcatalogue_2eproto_once,
-      file_level_metadata_transport_5fcatalogue_2eproto[9]);
+      file_level_metadata_transport_5fcatalogue_2eproto[8]);
 }
 
 // ===================================================================
@@ -2700,7 +2830,7 @@ void Routesettings::InternalSwap(Routesettings* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Routesettings::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_transport_5fcatalogue_2eproto_getter, &descriptor_table_transport_5fcatalogue_2eproto_once,
-      file_level_metadata_transport_5fcatalogue_2eproto[10]);
+      file_level_metadata_transport_5fcatalogue_2eproto[9]);
 }
 
 // ===================================================================
@@ -2903,7 +3033,7 @@ void Collortxt::InternalSwap(Collortxt* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Collortxt::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_transport_5fcatalogue_2eproto_getter, &descriptor_table_transport_5fcatalogue_2eproto_once,
-      file_level_metadata_transport_5fcatalogue_2eproto[11]);
+      file_level_metadata_transport_5fcatalogue_2eproto[10]);
 }
 
 // ===================================================================
@@ -3138,7 +3268,7 @@ void Rgb::InternalSwap(Rgb* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Rgb::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_transport_5fcatalogue_2eproto_getter, &descriptor_table_transport_5fcatalogue_2eproto_once,
-      file_level_metadata_transport_5fcatalogue_2eproto[12]);
+      file_level_metadata_transport_5fcatalogue_2eproto[11]);
 }
 
 // ===================================================================
@@ -3409,7 +3539,7 @@ void Rgba::InternalSwap(Rgba* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Rgba::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_transport_5fcatalogue_2eproto_getter, &descriptor_table_transport_5fcatalogue_2eproto_once,
-      file_level_metadata_transport_5fcatalogue_2eproto[13]);
+      file_level_metadata_transport_5fcatalogue_2eproto[12]);
 }
 
 // ===================================================================
@@ -3689,7 +3819,7 @@ void Color::InternalSwap(Color* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Color::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_transport_5fcatalogue_2eproto_getter, &descriptor_table_transport_5fcatalogue_2eproto_once,
-      file_level_metadata_transport_5fcatalogue_2eproto[14]);
+      file_level_metadata_transport_5fcatalogue_2eproto[13]);
 }
 
 // ===================================================================
@@ -4257,27 +4387,19 @@ void Rendersettings::InternalSwap(Rendersettings* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Rendersettings::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_transport_5fcatalogue_2eproto_getter, &descriptor_table_transport_5fcatalogue_2eproto_once,
-      file_level_metadata_transport_5fcatalogue_2eproto[15]);
+      file_level_metadata_transport_5fcatalogue_2eproto[14]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace transport_catalogue_serialize
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::transport_catalogue_serialize::Table_TableStopsEntry_DoNotUse*
-Arena::CreateMaybeMessage< ::transport_catalogue_serialize::Table_TableStopsEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::transport_catalogue_serialize::Table_TableStopsEntry_DoNotUse >(arena);
+template<> PROTOBUF_NOINLINE ::transport_catalogue_serialize::Names*
+Arena::CreateMaybeMessage< ::transport_catalogue_serialize::Names >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::transport_catalogue_serialize::Names >(arena);
 }
 template<> PROTOBUF_NOINLINE ::transport_catalogue_serialize::Table*
 Arena::CreateMaybeMessage< ::transport_catalogue_serialize::Table >(Arena* arena) {
   return Arena::CreateMessageInternal< ::transport_catalogue_serialize::Table >(arena);
-}
-template<> PROTOBUF_NOINLINE ::transport_catalogue_serialize::Tableinvert_TableInvertStopsEntry_DoNotUse*
-Arena::CreateMaybeMessage< ::transport_catalogue_serialize::Tableinvert_TableInvertStopsEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::transport_catalogue_serialize::Tableinvert_TableInvertStopsEntry_DoNotUse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::transport_catalogue_serialize::Tableinvert*
-Arena::CreateMaybeMessage< ::transport_catalogue_serialize::Tableinvert >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::transport_catalogue_serialize::Tableinvert >(arena);
 }
 template<> PROTOBUF_NOINLINE ::transport_catalogue_serialize::Road*
 Arena::CreateMaybeMessage< ::transport_catalogue_serialize::Road >(Arena* arena) {
@@ -4298,6 +4420,10 @@ Arena::CreateMaybeMessage< ::transport_catalogue_serialize::Stops >(Arena* arena
 template<> PROTOBUF_NOINLINE ::transport_catalogue_serialize::Buses*
 Arena::CreateMaybeMessage< ::transport_catalogue_serialize::Buses >(Arena* arena) {
   return Arena::CreateMessageInternal< ::transport_catalogue_serialize::Buses >(arena);
+}
+template<> PROTOBUF_NOINLINE ::transport_catalogue_serialize::Objectbase*
+Arena::CreateMaybeMessage< ::transport_catalogue_serialize::Objectbase >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::transport_catalogue_serialize::Objectbase >(arena);
 }
 template<> PROTOBUF_NOINLINE ::transport_catalogue_serialize::TransportCatalogue*
 Arena::CreateMaybeMessage< ::transport_catalogue_serialize::TransportCatalogue >(Arena* arena) {

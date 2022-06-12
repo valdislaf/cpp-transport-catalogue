@@ -33,22 +33,22 @@ Color GetColorFromDict(json::Node color) {
 RenderSettings SetRenerSettings(RequestHandler& handler) {
     const auto& render_settings = handler.GetRenderSettings();
     RenderSettings RS;
-    RS.bus_label_font_size = static_cast<uint64_t>(std::get<int>(render_settings.at("bus_label_font_size"s)));
-    RS.bus_label_offset.x = static_cast<double>(std::get<std::vector<double>>(render_settings.at("bus_label_offset"s))[0]);
-    RS.bus_label_offset.y = static_cast<double>(std::get<std::vector<double>>(render_settings.at("bus_label_offset"s))[1]);
-    for (const auto& color : std::get<std::vector<svg::Color>>(render_settings.at("color_palette"s))) {
+    RS.bus_label_font_size = static_cast<uint64_t>(render_settings.bus_label_font_size);
+    RS.bus_label_offset.x = static_cast<double>(render_settings.bus_label_offset.at(0));
+    RS.bus_label_offset.y = static_cast<double>(render_settings.bus_label_offset.at(1));
+    for (const auto& color : render_settings.color_palette) {
         RS.color_palette.push_back((color));
     }
-    RS.height = static_cast<double>(std::get<double>(render_settings.at("height"s)));
-    RS.line_width = static_cast<double>(std::get<double>(render_settings.at("line_width"s)));
-    RS.padding = static_cast<double>(std::get<double>(render_settings.at("padding"s)));
-    RS.stop_label_font_size = static_cast<uint64_t>(std::get<int>(render_settings.at("stop_label_font_size"s)));
-    RS.stop_label_offset.x = static_cast<double>(std::get<std::vector<double>>(render_settings.at("stop_label_offset"s))[0]);
-    RS.stop_label_offset.y = static_cast<double>(std::get<std::vector<double>>(render_settings.at("stop_label_offset"s))[1]);
-    RS.stop_radius = static_cast<double>(std::get<double>(render_settings.at("stop_radius"s)));
-    RS.underlayer_color = std::get<svg::Color>(render_settings.at("underlayer_color"s));
-    RS.underlayer_width = static_cast<double>(std::get<double>(render_settings.at("underlayer_width"s)));
-    RS.width = static_cast<double>(std::get<double>(render_settings.at("width"s)));
+    RS.height = static_cast<double>(render_settings.height);
+    RS.line_width = static_cast<double>(render_settings.line_width);
+    RS.padding = static_cast<double>(render_settings.padding);
+    RS.stop_label_font_size = static_cast<uint64_t>(render_settings.stop_label_font_size);
+    RS.stop_label_offset.x = static_cast<double>(render_settings.stop_label_offset.at(0));
+    RS.stop_label_offset.y = static_cast<double>(render_settings.stop_label_offset.at(1));
+    RS.stop_radius = static_cast<double>(render_settings.stop_radius);
+    RS.underlayer_color = render_settings.underlayer_color;
+    RS.underlayer_width = static_cast<double>(render_settings.underlayer_width);
+    RS.width = static_cast<double>(render_settings.width);
     return RS;
 }
 

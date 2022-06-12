@@ -36,6 +36,6 @@ const std::unordered_map<std::string, double> RequestHandler::GetRoutingSettings
     return db_.GetRoutingSettings();
 }
 
-std::map<std::string, value_4_map> RequestHandler::GetRenderSettings(){
+RenderSettingsStruct RequestHandler::GetRenderSettings(){
     return db_.GetRenderSettings();
 }

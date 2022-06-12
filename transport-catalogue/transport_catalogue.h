@@ -23,7 +23,22 @@
 namespace transport {
 
     namespace catalogue {
-        using value_4_map = std::variant<std::monostate, int, double, std::vector<double>, svg::Color, std::vector<svg::Color>>;
+      
+        struct RenderSettingsStruct {
+            int bus_label_font_size;
+            std::vector<double> bus_label_offset;
+            std::vector<svg::Color> color_palette;
+            double height;
+            double line_width;
+            double padding;
+            int stop_label_font_size;
+            std::vector<double> stop_label_offset;
+            double stop_radius;
+            svg::Color underlayer_color;
+            double underlayer_width;
+            double width;
+        };
+
         struct RouteInfo {
             const Bus* bus;
             double route_length;
@@ -90,9 +105,9 @@ namespace transport {
 
             std::unordered_map<std::string, double> GetRoutingSettings();
 
-            void AddRenderSettings(std::map<std::string, value_4_map> render_settings);
+            void AddRenderSettings(RenderSettingsStruct render_settings);
 
-            std::map<std::string, value_4_map> GetRenderSettings();
+             RenderSettingsStruct GetRenderSettings();
 
         private:
 
@@ -102,9 +117,8 @@ namespace transport {
             std::unordered_map<std::string_view, const Stop*> stops_;
             std::unordered_map<const Stop*, std::deque<const Bus*>> stop_buses_;          
             std::unordered_map<std::pair<const Stop*, const Stop*>,size_t, Hasher>stops_distance_;
-
             std::unordered_map<std::string, double> routing_settings_;
-            std::map<std::string, value_4_map> render_settings_;
+            RenderSettingsStruct render_settings_;
 
         };
     }

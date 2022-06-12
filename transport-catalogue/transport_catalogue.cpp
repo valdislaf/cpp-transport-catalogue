@@ -125,11 +125,11 @@ namespace transport {
             return routing_settings_;
         }
 
-        void TransportCatalogue::AddRenderSettings(std::map<std::string, value_4_map> render_settings) {
+        void TransportCatalogue::AddRenderSettings( RenderSettingsStruct render_settings) {
             render_settings_ = render_settings;
         }
 
-        std::map<std::string, value_4_map> TransportCatalogue::GetRenderSettings() {
+        RenderSettingsStruct TransportCatalogue::GetRenderSettings() {
             return render_settings_;
         }
 

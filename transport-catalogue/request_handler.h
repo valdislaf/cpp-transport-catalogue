@@ -58,7 +58,7 @@ public:
 
     const std::unordered_map<std::string, double> GetRoutingSettings();
 
-    std::map<std::string, value_4_map> GetRenderSettings();
+    RenderSettingsStruct GetRenderSettings();
 
 private:
 

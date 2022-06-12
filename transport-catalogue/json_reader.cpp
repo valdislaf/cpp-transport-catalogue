@@ -120,9 +120,9 @@ void AddBusJson(TransportCatalogue& TC, json::Node load_bus) {
 
 void FormatResponse(json::Document& load_input, RequestHandler& handler, std::ostream& out) {
     //выводим в файл
-    //std::ofstream out_("out.json"s);
-    //std::streambuf* coutbuf = out.rdbuf(); //save old buf 
-    //out.rdbuf(out_.rdbuf()); //redirect std::cout to out.t
+    std::ofstream out_("out.json"s);
+    std::streambuf* coutbuf = out.rdbuf(); //save old buf 
+    out.rdbuf(out_.rdbuf()); //redirect std::cout to out.t
   //  LOG_DURATION("test");
     json::Array stat_requests = load_input.GetRoot().AsDict().at("stat_requests"s).AsArray();
     json::Array final_array;
@@ -265,42 +265,70 @@ void JsonReaderMakeBase(std::istream& in) {
 
     json::Dict serialization_settings = load_input.GetRoot().AsDict().at("serialization_settings"s).AsDict();
 
-
     json::Dict render_settings = load_input.GetRoot().AsDict().at("render_settings"s).AsDict();
-    using value_4_map = std::variant<std::monostate, int, double, std::vector<double>, svg::Color, std::vector<svg::Color>>;
-    std::map<std::string, value_4_map>map;
+
+    RenderSettingsStruct map;
     for (const auto& v : render_settings) {
 
-        if (v.second.IsInt()) {
-            map.emplace(v.first, v.second.AsInt());
-        }
-        else if (v.second.IsDouble()) {
-            map.emplace(v.first, v.second.AsDouble());
-        }
-        else if (v.second.IsString()) {
-            map.emplace(v.first, v.second.AsString());
+        if (v.first == "bus_label_font_size"s) {
+            map.bus_label_font_size = v.second.AsInt();
         }
 
-        else if (v.second.IsArray() && v.first == "underlayer_color"s) {
-            map.emplace(v.first, GetColorFromDict(v.second.AsArray()));
+        if (v.first == "bus_label_offset"s) {
+            std::vector<double>  offset;
+            for (const auto& n : v.second.AsArray()) {
+                offset.push_back(n.AsDouble());
+            }          
+            map.bus_label_offset = offset;
         }
 
-        else if (v.second.IsArray() && v.first == "color_palette"s) {
+        if (v.first == "color_palette"s) {
             std::vector<svg::Color>  colors;
             for (const auto& n : v.second.AsArray()) {
                 colors.push_back(GetColorFromDict(n));
-            }
-            map.emplace(v.first, colors);
+            }           
+            map.color_palette = colors;
         }
 
-        else {
+        if (v.first == "height"s) {
+            map.height = v.second.AsDouble();
+        }
+
+        if (v.first == "line_width"s) {
+            map.line_width = v.second.AsDouble();
+        }
+
+        if (v.first == "padding"s) {
+            map.padding = v.second.AsDouble();
+        }
+
+        if (v.first == "stop_label_font_size"s) {
+            map.stop_label_font_size = v.second.AsInt();
+        }
+
+        if (v.first == "stop_label_offset"s) {
             std::vector<double>  offset;
             for (const auto& n : v.second.AsArray()) {
                 offset.push_back(n.AsDouble());
             }
-            map.emplace(v.first, offset);
+            map.stop_label_offset = offset;
         }
 
+        if (v.first == "stop_radius"s) {
+            map.stop_radius = v.second.AsDouble();
+        }
+
+        if (v.first == "underlayer_color"s) {    
+            map.underlayer_color = GetColorFromDict(v.second);
+        }
+
+        if (v.first == "underlayer_width"s) {
+            map.underlayer_width = v.second.AsDouble();
+        }
+
+        if (v.first == "width"s) {
+            map.width = v.second.AsDouble();
+        }
     }
     TC.AddRenderSettings(map);
 
