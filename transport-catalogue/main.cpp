@@ -22,28 +22,28 @@ int main(int argc, char* argv[]) {
 
     if (mode == "make_base"sv) {
 
-        std::string full_path = "s14_2_opentest_3_make_base.json"s;
-         std::ifstream is;
-         is.open(full_path.c_str(), std::ios::in | std::ios::binary);//ios::binary - бинарное открытие,ios::in - операции ввода
-         std::string line;
-         if (is.is_open()) {
-             JsonReaderMakeBase(is);
-         }
-         is.close();     // закрываем файл
-       // JsonReaderMakeBase(std::cin);
+        //std::string full_path = "s14_2_opentest_3_make_base.json"s;
+        // std::ifstream is;
+        // is.open(full_path.c_str(), std::ios::in | std::ios::binary);//ios::binary - бинарное открытие,ios::in - операции ввода
+        // std::string line;
+        // if (is.is_open()) {
+        //     JsonReaderMakeBase(is);
+        // }
+        // is.close();     // закрываем файл
+       JsonReaderMakeBase(std::cin);
 
     }
     else if (mode == "process_requests"sv) {
 
-        std::string full_path = "s14_2_opentest_3_process_requests.json"s;
-         std::ifstream is;
-         is.open(full_path.c_str(), std::ios::in | std::ios::binary);//ios::binary - бинарное открытие,ios::in - операции ввода
-         std::string line;
-         if (is.is_open()) {
-             JsonReaderProcessRequests(is, std::cout);             
-         }
-         is.close();     // закрываем файл
-       // JsonReaderProcessRequests(std::cin, std::cout);
+        //std::string full_path = "s14_2_opentest_3_process_requests.json"s;
+        // std::ifstream is;
+        // is.open(full_path.c_str(), std::ios::in | std::ios::binary);//ios::binary - бинарное открытие,ios::in - операции ввода
+        // std::string line;
+        // if (is.is_open()) {
+        //     JsonReaderProcessRequests(is, std::cout);             
+        // }
+        // is.close();     // закрываем файл
+        JsonReaderProcessRequests(std::cin, std::cout);
 
          //std::ifstream f1("s14_1_opentest_3_answer.json"s, std::ios::binary);
          //std::ifstream f2("out.json"s, std::ios::binary);

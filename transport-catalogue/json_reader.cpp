@@ -120,9 +120,9 @@ void AddBusJson(TransportCatalogue& TC, json::Node load_bus) {
 
 void FormatResponse(json::Document& load_input, RequestHandler& handler, std::ostream& out) {
     //выводим в файл
-    std::ofstream out_("out.json"s);
-    std::streambuf* coutbuf = out.rdbuf(); //save old buf 
-    out.rdbuf(out_.rdbuf()); //redirect std::cout to out.t
+    //std::ofstream out_("out.json"s);
+    //std::streambuf* coutbuf = out.rdbuf(); //save old buf 
+    //out.rdbuf(out_.rdbuf()); //redirect std::cout to out.t
   //  LOG_DURATION("test");
     json::Array stat_requests = load_input.GetRoot().AsDict().at("stat_requests"s).AsArray();
     json::Array final_array;
