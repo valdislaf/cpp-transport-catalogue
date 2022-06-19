@@ -1,0 +1,22 @@
+  {
+      "serialization_settings": {
+          "file": "transport_catalogue.db"
+      },
+      "stat_requests": [
+          {
+              "id": 218563507,
+              "type": "Bus",
+              "name": "14"
+          },
+          {
+              "id": 508658276,
+              "type": "Stop",
+              "name": "Электросети"
+          },
+          {
+              "id": 1359372752,
+              "type": "Map"
+          }
+      ]
+  }
+  
